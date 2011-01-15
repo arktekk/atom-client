@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:app="http://www.w3.org/2007/app"
+  xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">
+  <id>urn:javazone11:list:abc</id>
+  <title>abc</title>
+<opensearch:totalResults>20</opensearch:totalResults><opensearch:startIndex>11</opensearch:startIndex><opensearch:itemsPerPage>5</opensearch:itemsPerPage>
+  <link rel='first' type='application/atom+xml' href="http://localhost:8908/pages-1.atom.xml"/>
+  <link rel='next' type='application/atom+xml' href="http://localhost:8908/pages-4.atom.xml"/>
+  <link rel='prev' type='application/atom+xml' href="http://localhost:8908/pages-2.atom.xml"/>
+  <link rel='last' type='application/atom+xml' href="http://localhost:8908/pages-4.atom.xml"/>
+  <entry>
+    <id>http://javazone11.wordpress.com/?p=16</id>
+    <title type='html'>Java 4-Ever - The trailer will soon be released!</title>
+    <published>2010-06-16T16:10:46Z</published>
+    <updated>2010-06-16T16:10:46Z</updated>
+    <author>
+      <name>JavaZone</name>
+    </author>
+    <category scheme='http://foo' term='News'/>
+    <category scheme='http://foo' term='Uncategorized'/>
+    <!-- self=http://foo/?atompub=post&pt=abc&id=16 -->
+    <link rel='self' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=abc&#038;id=16'/>
+    <!-- parent=http://foo/?atompub=post&pt=abc&id=0 -->
+    <link rel='parent' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=abc&#038;id=0'/>
+    <!-- children=http://foo/?atompub=post&pt=abc&id=0 -->
+    <link rel='urn:wordpress:children' type='application/atom+xml' href='http://foo/?atompub=children&#038;pg=1&#038;pt=abc&#038;parent=16'/>
+    <app:collection href='http://foo/?atompub=children&#038;pg=1&#038;pt=abc&#038;parent=16'>
+      <title>Child pages</title>
+      <app:accept>application/atom+xml;type=entry</app:accept>
+    </app:collection>
+    <app:control><app:draft>yes</app:draft></app:control>
+    <app:edited>2010-06-16T16:10:46Z</app:edited>
+    <content type='html'>&lt;p&gt;Java is going to The Big Screen!&lt;/p&gt;
+&lt;p&gt;Here is a taste of the trailer for the &amp;#8220;Java 4-Ever&amp;#8221; movie.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://jz10.java.no/java-4-ever-teaser1.html&quot;&gt;View the snippet&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>http://javazone11.wordpress.com/?p=14</id>
+    <title type='html'>JavaZone music video - Shooting june 19th</title>
+    <published>2010-06-11T16:09:32Z</published>
+    <updated>2010-06-11T16:09:32Z</updated>
+    <author>
+      <name>JavaZone</name>
+    </author>
+    <category scheme='http://foo' term='News'/>
+    <category scheme='http://foo' term='Uncategorized'/>
+    <!-- self=http://foo/?atompub=post&pt=abc&id=14 -->
+    <link rel='self' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=abc&#038;id=14'/>
+    <!-- parent=http://foo/?atompub=post&pt=abc&id=0 -->
+    <link rel='parent' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=abc&#038;id=0'/>
+    <!-- children=http://foo/?atompub=post&pt=abc&id=0 -->
+    <link rel='urn:wordpress:children' type='application/atom+xml' href='http://foo/?atompub=children&#038;pg=1&#038;pt=abc&#038;parent=14'/>
+    <app:collection href='http://foo/?atompub=children&#038;pg=1&#038;pt=abc&#038;parent=14'>
+      <title>Child pages</title>
+      <app:accept>application/atom+xml;type=entry</app:accept>
+    </app:collection>
+    <app:control><app:draft>yes</app:draft></app:control>
+    <app:edited>2010-06-11T16:09:32Z</app:edited>
+    <content type='html'>&lt;p&gt;Yes, that&amp;#8217;s right!&lt;/p&gt;
+&lt;p&gt;We are going to make our very own music video with Jenny Skavlan in the lead role. And you are hereby invited to take part in the most spectacular JavaZone happening ever!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://jz10.java.no/invitation.html&quot;&gt;View the invitation&lt;/a&gt; and sign up as a dancer at&nbsp;&lt;a href=&quot;mailto:javazone@java.no&quot;&gt;javazone@java.no&lt;/a&gt;&lt;/p&gt;
+&lt;div&gt;
+&lt;div&gt;
+&lt;p&gt;Please note that this is an all day event with limited spaces.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  <entry>
+    <id>http://javazone11.wordpress.com/?p=12</id>
+    <title type='html'>Early Bird Ticket Sale</title>
+    <published>2010-04-14T16:08:52Z</published>
+    <updated>2010-04-14T16:08:52Z</updated>
+    <author>
+      <name>JavaZone</name>
+    </author>
+    <category scheme='http://foo' term='News'/>
+    <category scheme='http://foo' term='Uncategorized'/>
+    <!-- self=http://foo/?atompub=post&pt=abc&id=12 -->
+    <link rel='self' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=abc&#038;id=12'/>
+    <!-- parent=http://foo/?atompub=post&pt=abc&id=0 -->
+    <link rel='parent' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=abc&#038;id=0'/>
+    <!-- children=http://foo/?atompub=post&pt=abc&id=0 -->
+    <link rel='urn:wordpress:children' type='application/atom+xml' href='http://foo/?atompub=children&#038;pg=1&#038;pt=abc&#038;parent=12'/>
+    <app:collection href='http://foo/?atompub=children&#038;pg=1&#038;pt=abc&#038;parent=12'>
+      <title>Child pages</title>
+      <app:accept>application/atom+xml;type=entry</app:accept>
+    </app:collection>
+    <app:control><app:draft>yes</app:draft></app:control>
+    <app:edited>2010-04-14T16:08:52Z</app:edited>
+    <content type='html'>&lt;p&gt;We would like to remind you that the early bird discount offer ends on midnight the 24th of April. Tickets can be purchased in our webshop.&lt;/p&gt;
+&lt;p&gt;If you haven&amp;#8217;t renewed your javaBin membership for 2010 that can also be done in the webshop. If you would like to transfer members from 2009 contact&nbsp;&lt;a href=&quot;mailto:webshop@java.no&quot;&gt;webshop@java.no&lt;/a&gt; after the memberships has been purchased.&lt;/p&gt;
+&lt;div&gt;
+&lt;div&gt;
+&lt;p&gt;Visit&nbsp;&lt;a href=&quot;http://shop.java.no/&quot;&gt;http://shop.java.no&lt;/a&gt; to buy tickets and javaBin memberships&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  <entry>
+    <id>http://javazone11.wordpress.com/?p=10</id>
+    <title type='html'>Call for papers - Extended to april 9th</title>
+    <published>2010-03-05T16:08:04Z</published>
+    <updated>2010-03-05T16:08:04Z</updated>
+    <author>
+      <name>JavaZone</name>
+    </author>
+    <category scheme='http://foo' term='News'/>
+    <category scheme='http://foo' term='Uncategorized'/>
+    <!-- self=http://foo/?atompub=post&pt=abc&id=10 -->
+    <link rel='self' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=abc&#038;id=10'/>
+    <!-- parent=http://foo/?atompub=post&pt=abc&id=0 -->
+    <link rel='parent' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=abc&#038;id=0'/>
+    <!-- children=http://foo/?atompub=post&pt=abc&id=0 -->
+    <link rel='urn:wordpress:children' type='application/atom+xml' href='http://foo/?atompub=children&#038;pg=1&#038;pt=abc&#038;parent=10'/>
+    <app:collection href='http://foo/?atompub=children&#038;pg=1&#038;pt=abc&#038;parent=10'>
+      <title>Child pages</title>
+      <app:accept>application/atom+xml;type=entry</app:accept>
+    </app:collection>
+    <app:control><app:draft>yes</app:draft></app:control>
+    <app:edited>2010-03-05T16:08:04Z</app:edited>
+    <content type='html'>&lt;p&gt;The JavaZone Programme Committee would like to inform you that the Call for Papers for this year&amp;#8217;s conference has been extended to april 9th. This is due to wishes from speakers accustomed to writing abstracts during easter. The CfP is now reopened until April 9th @ 23:59 CET.&lt;/p&gt;
+&lt;p&gt;Hard-core technological abstracts are preferred by the program committee at this time.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>http://javazone11.wordpress.com/?p=7</id>
+    <title type='html'>JavaZone moves to 8th and 9th of September</title>
+    <published>2010-02-20T16:04:34Z</published>
+    <updated>2010-02-20T16:04:34Z</updated>
+    <author>
+      <name>JavaZone</name>
+    </author>
+    <category scheme='http://foo' term='News'/>
+    <category scheme='http://foo' term='Uncategorized'/>
+    <!-- self=http://foo/?atompub=post&pt=abc&id=7 -->
+    <link rel='self' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=abc&#038;id=7'/>
+    <!-- parent=http://foo/?atompub=post&pt=abc&id=0 -->
+    <link rel='parent' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=abc&#038;id=0'/>
+    <!-- children=http://foo/?atompub=post&pt=abc&id=0 -->
+    <link rel='urn:wordpress:children' type='application/atom+xml' href='http://foo/?atompub=children&#038;pg=1&#038;pt=abc&#038;parent=7'/>
+    <app:collection href='http://foo/?atompub=children&#038;pg=1&#038;pt=abc&#038;parent=7'>
+      <title>Child pages</title>
+      <app:accept>application/atom+xml;type=entry</app:accept>
+    </app:collection>
+    <app:control><app:draft>yes</app:draft></app:control>
+    <app:edited>2010-02-20T16:04:34Z</app:edited>
+    <content type='html'>&lt;p&gt;Due to the proximity with other international conferences, JavaZone will be moved one week earlier than previously announced. The new dates are 8th and 9th of September.&lt;/p&gt;
+&lt;p&gt;We hope that by doing this we will be more attractive to the speakers and participants who wish to attend both conferences.&lt;/p&gt;
+&lt;p&gt;The JavaZone Committee hopes people understand this change, which we think is the best decision for all parties.&lt;/p&gt;
+&lt;div&gt;
+&lt;div&gt;
+&lt;p&gt;Welcome to JavaZone in Oslo Spektrum the 8th and 9th of September!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+</feed>

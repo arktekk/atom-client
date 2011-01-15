@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:app="http://www.w3.org/2007/app"
+  xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">
+  <id>urn:javazone11:list:abc</id>
+  <title>abc</title>
+<opensearch:totalResults>20</opensearch:totalResults><opensearch:startIndex>1</opensearch:startIndex><opensearch:itemsPerPage>5</opensearch:itemsPerPage>
+  <link rel='first' type='application/atom+xml' href="http://localhost:8908/pages-1.atom.xml"/>
+  <link rel='next' type='application/atom+xml' href="http://localhost:8908/pages-2.atom.xml"/>
+  <link rel='last' type='application/atom+xml' href="http://localhost:8908/pages-4.atom.xml"/>
+  <entry>
+    <id>http://foo/?p=1</id>
+    <title type='html'>Hello world!</title>
+    <published>2010-11-17T20:53:59Z</published>
+    <updated>2010-11-17T20:53:59Z</updated>
+    <author>
+      <name>admin</name>
+    </author>
+    <category scheme='http://foo' term='Uncategorized'/>
+    <!-- self=http://foo/?atompub=post&pt=abc&id=1 -->
+    <link rel='self' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=abc&#038;id=1'/>
+    <!-- parent=http://foo/?atompub=post&pt=abc&id=0 -->
+    <link rel='parent' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=abc&#038;id=0'/>
+    <!-- children=http://foo/?atompub=post&pt=abc&id=0 -->
+    <link rel='urn:wordpress:children' type='application/atom+xml' href='http://foo/?atompub=children&#038;pg=1&#038;pt=abc&#038;parent=1'/>
+    <app:collection href='http://foo/?atompub=children&#038;pg=1&#038;pt=abc&#038;parent=1'>
+      <title>Child pages</title>
+      <app:accept>application/atom+xml;type=entry</app:accept>
+    </app:collection>
+    <app:control><app:draft>yes</app:draft></app:control>
+    <app:edited>2010-11-17T20:53:59Z</app:edited>
+    <content type='html'>&lt;p&gt;Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>http://javazone11.wordpress.com/?p=34</id>
+    <title type='html'>Panel debate: data&nbsp;retention directive</title>
+    <published>2010-09-01T16:24:46Z</published>
+    <updated>2010-09-01T16:24:46Z</updated>
+    <author>
+      <name>JavaZone</name>
+    </author>
+    <category scheme='http://foo' term='News'/>
+    <category scheme='http://foo' term='Panel Debate'/>
+    <!-- self=http://foo/?atompub=post&pt=abc&id=34 -->
+    <link rel='self' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=abc&#038;id=34'/>
+    <!-- parent=http://foo/?atompub=post&pt=abc&id=0 -->
+    <link rel='parent' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=abc&#038;id=0'/>
+    <!-- children=http://foo/?atompub=post&pt=abc&id=0 -->
+    <link rel='urn:wordpress:children' type='application/atom+xml' href='http://foo/?atompub=children&#038;pg=1&#038;pt=abc&#038;parent=34'/>
+    <app:collection href='http://foo/?atompub=children&#038;pg=1&#038;pt=abc&#038;parent=34'>
+      <title>Child pages</title>
+      <app:accept>application/atom+xml;type=entry</app:accept>
+    </app:collection>
+    <app:control><app:draft>yes</app:draft></app:control>
+    <app:edited>2010-09-01T16:24:46Z</app:edited>
+    <content type='html'>&lt;p&gt;There has been quite an intense public debate regarding the Data Retention Directive (abbreviated DLD in Norwegian) for a while now. As this is a topic that many people in the Java community have strong opinions about we have decided to enable the JavaZone audience to take part in the debate as well. If you are wondering what DRD (DLD) is all about you should not miss this debate!&lt;/p&gt;
+&lt;p&gt;On the pro-DRD-side we two experts from the Norwegian FBI (Kripos): Reidar Brusgaard and Rune Utne Reitan. Their opponents are: Martin Bekkelund (Friprogsenteret) and Torgeir Waterhouse (IKT-Norge).&lt;/p&gt;
+&lt;p&gt;The debate will take place on the 8th of September in room 1, lead by Christer Gundersen from The National Center for Open Source Software (Friprogsenteret). Both sides will make an initial short presentation outlining their view on this issue, and then the debate will start. The audience will be able to ask questions to the debate participants.&lt;/p&gt;
+&lt;p&gt;We hope that this debate will give the audience a more facts-based view on the matter and enable the Java community to voice their opinion.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://javazone.no/incogito10/events/JavaZone%202010/sessions/Paneldebatt:%20Datalagringsdirektivet%20(DLD)&quot;&gt;Read more here&lt;/a&gt;. Note that the debate will be held in Norwegian.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>http://javazone11.wordpress.com/?p=32</id>
+    <title type='html'>Panel debate: open public data</title>
+    <published>2010-08-26T16:24:19Z</published>
+    <updated>2010-08-26T16:24:19Z</updated>
+    <author>
+      <name>JavaZone</name>
+    </author>
+    <category scheme='http://foo' term='News'/>
+    <category scheme='http://foo' term='Panel Debate'/>
+    <!-- self=http://foo/?atompub=post&pt=abc&id=32 -->
+    <link rel='self' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=abc&#038;id=32'/>
+    <!-- parent=http://foo/?atompub=post&pt=abc&id=0 -->
+    <link rel='parent' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=abc&#038;id=0'/>
+    <!-- children=http://foo/?atompub=post&pt=abc&id=0 -->
+    <link rel='urn:wordpress:children' type='application/atom+xml' href='http://foo/?atompub=children&#038;pg=1&#038;pt=abc&#038;parent=32'/>
+    <app:collection href='http://foo/?atompub=children&#038;pg=1&#038;pt=abc&#038;parent=32'>
+      <title>Child pages</title>
+      <app:accept>application/atom+xml;type=entry</app:accept>
+    </app:collection>
+    <app:control><app:draft>yes</app:draft></app:control>
+    <app:edited>2010-08-26T16:24:19Z</app:edited>
+    <content type='html'>&lt;div&gt;
+&lt;div&gt;
+&lt;p&gt;What kind of applications could you make with complete access to all national and governmental data sets? All the map data, all the statistical data or how about all the digital media content from the national broadcaster? This spring, the Norwegian government has put creative use of public sector data in focus with the launch of the data portal data.norge.no and the Nettskap 2.0 contest. For JavaZone 2010 we have invited some of the most active participants in the ongoing debate on public sector data to a panel debate!&lt;/p&gt;
+&lt;p&gt;We all agree that free use of public sector data is a good thing, but why are the governmental agencies so hesitant to publish their data? What is the potential in these data from a democratic and entrepreneurship point of view? In this debate both the data owners, represented by Fornyingsdepartementet (The Ministry of Government Reform) and Teknologirdet (Norwegian Board of Technology), and the data consumers, represented by Oslo Open Data Forum, come together to discuss what direction open public data in Norway is heading.&lt;/p&gt;
+&lt;p&gt;Maybe you&amp;#8217;ll get inspired to start a software project using public data? Or maybe you&amp;#8217;ll get involved in the movement to publish more public data?&lt;/p&gt;
+&lt;p&gt;The panel debate will be held in Norwegian, Thursday September 9th at 10:15 in room 4.&nbsp;&lt;a href=&quot;http://javazone.no/incogito10/events/JavaZone%202010/sessions#977cd4bb-7dba-4187-9542-3393dd2bb8f7&quot;&gt;Read more here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  <entry>
+    <id>http://javazone11.wordpress.com/?p=30</id>
+    <title type='html'>JavaZone Goes Mobile!</title>
+    <published>2010-08-23T16:23:47Z</published>
+    <updated>2010-08-23T16:23:47Z</updated>
+    <author>
+      <name>JavaZone</name>
+    </author>
+    <category scheme='http://foo' term='News'/>
+    <category scheme='http://foo' term='Uncategorized'/>
+    <!-- self=http://foo/?atompub=post&pt=abc&id=30 -->
+    <link rel='self' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=abc&#038;id=30'/>
+    <!-- parent=http://foo/?atompub=post&pt=abc&id=0 -->
+    <link rel='parent' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=abc&#038;id=0'/>
+    <!-- children=http://foo/?atompub=post&pt=abc&id=0 -->
+    <link rel='urn:wordpress:children' type='application/atom+xml' href='http://foo/?atompub=children&#038;pg=1&#038;pt=abc&#038;parent=30'/>
+    <app:collection href='http://foo/?atompub=children&#038;pg=1&#038;pt=abc&#038;parent=30'>
+      <title>Child pages</title>
+      <app:accept>application/atom+xml;type=entry</app:accept>
+    </app:collection>
+    <app:control><app:draft>yes</app:draft></app:control>
+    <app:edited>2010-08-23T16:23:47Z</app:edited>
+    <content type='html'>&lt;div&gt;
+&lt;div&gt;
+&lt;p&gt;javaBin, the community behind JavaZone, has made it even easier to figure out what&amp;#8217;s happening on the JavaZone program. We have recently published two mobile applications, one for Android and one for iPhone that are loaded with the current programme.&lt;/p&gt;
+&lt;p&gt;For more information about the programme application and on to download the applications, visit&nbsp;&lt;a href=&quot;http://javazone.no/incogito10/about&quot;&gt;Incogito&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  <entry>
+    <id>http://javazone11.wordpress.com/?p=28</id>
+    <title type='html'>JavaZone will be streamed live in HD to NTNU Campus</title>
+    <published>2010-08-20T16:23:08Z</published>
+    <updated>2010-08-20T16:23:08Z</updated>
+    <author>
+      <name>JavaZone</name>
+    </author>
+    <category scheme='http://foo' term='News'/>
+    <category scheme='http://foo' term='Uncategorized'/>
+    <!-- self=http://foo/?atompub=post&pt=abc&id=28 -->
+    <link rel='self' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=abc&#038;id=28'/>
+    <!-- parent=http://foo/?atompub=post&pt=abc&id=0 -->
+    <link rel='parent' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=abc&#038;id=0'/>
+    <!-- children=http://foo/?atompub=post&pt=abc&id=0 -->
+    <link rel='urn:wordpress:children' type='application/atom+xml' href='http://foo/?atompub=children&#038;pg=1&#038;pt=abc&#038;parent=28'/>
+    <app:collection href='http://foo/?atompub=children&#038;pg=1&#038;pt=abc&#038;parent=28'>
+      <title>Child pages</title>
+      <app:accept>application/atom+xml;type=entry</app:accept>
+    </app:collection>
+    <app:control><app:draft>yes</app:draft></app:control>
+    <app:edited>2010-08-20T16:23:08Z</app:edited>
+    <content type='html'>&lt;div&gt;
+&lt;div&gt;
+&lt;p&gt;For the first time in the JavaZone history, the entire event will be streamed live in HD to Campus Gl&oslash;shaugen at&nbsp;&lt;a href=&quot;http://www.ntnu.no/&quot;&gt;NTNU&lt;/a&gt; in Trondheim.&lt;/p&gt;
+&lt;p&gt;JavaZone HD is a brand new concept which aims to involve students from Trondheim in the knowledge exchange made possible by JavaZone. The event is free for students to attend and the different speakers will be streamed simultaneously to one of auditoriums on campus. You will be able to choose which speaker you would like to listen to thru your headset.&lt;/p&gt;
+&lt;p&gt;javaBin, the organization behind JavaZone, aims to establish contacts and to promote exchange of knowledge, experience and views between those who are interested in Java technology. An important audience that has never been adequately involved in this objective is the students.&lt;/p&gt;
+&lt;p&gt;Together with our partner Tandberg, we want to involve and share knowledge with students in a much greater extent. We wish to set up a live stream in of all speeches in HD quality, where students can sit in same auditorium and hear the speaker they want. Sound is selected by the individual via headsets. JavaZone has used a similar setup for overflow of the halls in Oslo Spektrum the last three years with great success.&lt;/p&gt;
+&lt;p&gt;We think it is important to create an intimate experience. Therefore, among other things, all speeches will appear in the same auditorium. The atmosphere created here in this hall will be continued in a social ClubZone event with entertainment throughout the evening.&lt;/p&gt;
+&lt;p&gt;JavaZone HD will:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use a solution with high technical quality&lt;/li&gt;
+&lt;li&gt;Linking students closer to the academic environment&lt;/li&gt;
+&lt;li&gt;Hold an event with food, entertainment and a party&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Agenda Wednesday 8th Sept:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Live streaming of the lecture to an auditorium at Gl&oslash;shaugen&lt;/li&gt;
+&lt;li&gt;Free lunch and dinner&lt;/li&gt;
+&lt;li&gt;ClubZone at a nightclub in Trondheim&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Agenda Thursday 9th Sept:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Live streaming of the lecture to an auditorium at Gl&oslash;shaugen&lt;/li&gt;
+&lt;li&gt;Free lunch&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://jz10.java.no/images/javazone-hd.png&quot; alt=&quot;JavaZone HD 2010&quot; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</content>
+  </entry>
+</feed>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:app="http://www.w3.org/2007/app"
+  xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">
+  <id>urn:javazone11:post:xyz:74</id>
+  <title>Entry #74</title>
+  <link rel='self' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=xyz&#038;contentType=atom&#038;id=74'/>
+  <entry>
+    <id>http://javazone11.wordpress.com/?p=74</id>
+    <title type='html'>About JavaZone</title>
+    <published>2010-11-15T22:54:28Z</published>
+    <updated>2010-11-15T22:54:28Z</updated>
+    <author>
+      <name>Trygve Laugstøl</name>
+    </author>
+    <!-- self=http://foo/?atompub=post&pt=xyz&contentType=atom&id=74 -->
+    <link rel='self' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=xyz&#038;contentType=atom&#038;id=74'/>
+    <!-- parent=http://foo/?atompub=post&pt=xyz&contentType=atom&id=0 -->
+    <link rel='parent' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=xyz&#038;contentType=atom&#038;id=0'/>
+    <app:collection href="http://localhost:8908/children-74-1.atom.xml">
+      <title>Child pages</title>
+      <app:accept>application/atom+xml;type=entry</app:accept>
+    </app:collection>
+    <app:control><app:draft>yes</app:draft></app:control>
+    <app:edited>2010-11-15T22:54:28Z</app:edited>
+    <content type='html'>&lt;p&gt;On these pages you will find information about everything to do with  JavaZone. There are answers to everything: what JavaZone is, how to book  a hotel room, meeting places and events during the conference, how to  get to know other attendees, and how you can make a contribution as part  of the crew. You can also read previous years&amp;#8217; websites and get an idea  of the JavaZone atmosphere. JavaZone is more than just a conference.  It&amp;#8217;s a place to meet, network and socialise!&lt;/p&gt;
+&lt;h2&gt;What is JavaZone&lt;/h2&gt;
+&lt;p&gt;JavaZone is Scandinavia&amp;#8217;s biggest meeting place for software developers,  and one of Europe&amp;#8217;s most important. JavaZone has been described as a  high-quality, independent conference, and is a forum for knowledge  exchange, recruitment and branding. Some 40 large and mid-sized  businesses &amp;#8211; our partners &amp;#8211; exhibit their products and services in a  separate exhibition space, while more than 90 presentations are given in  the conference facilities. Each year, around 2,300 conference tickets  are sold. This means that, over the two days the conference lasts, we  deliver more than 200,000 hours of expertise. When you add to this the  many informal discussions that take place at stands and between  attendees, JavaZone stands out as a tremendous arena for knowledge  transfer. Of course, a conference involving so many developers is also a  key arena for recruitment. Through their exhibitions and other  activities, the large and mid-sized companies use the opportunity to  promote their business and recruit new staff.&lt;/p&gt;
+&lt;p&gt;One of the key factors in the huge success of JavaZone has been the  support of great numbers of volunteers. It is safe to say that this is a  conference by and for software developers. Each year, thousands of  hours are put into making the conference as successful as possible. The  technical programme is carefully structured and planned and the  programme committee invites speakers from all over the world.  Professionals know what professionals want, so the speakers are  hand-picked, and the presentations are highly relevant. In the tradition  of the conference, speakers are not paid an appearance fee for their  contributions. Around half of the presentations are given in English and  the other half in one of the Scandinavian languages. The conference&amp;#8217;s  unconventional and non-commercial approach has also boosted its  popularity.&lt;/p&gt;
+</content>
+  </entry>
+</feed>

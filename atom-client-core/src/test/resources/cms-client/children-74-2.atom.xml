@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:app="http://www.w3.org/2007/app"
+  xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">
+  <id>urn:javazone11:list:xyz</id>
+  <title>xyz</title>
+<opensearch:totalResults>10</opensearch:totalResults><opensearch:startIndex>6</opensearch:startIndex><opensearch:itemsPerPage>5</opensearch:itemsPerPage>
+  <link rel='first' type='application/atom+xml' href="http://localhost:8908/children-74-1.atom.xml"/>
+  <link rel='prev' type='application/atom+xml' href="http://localhost:8908/children-74-2.atom.xml"/>
+  <link rel='last' type='application/atom+xml' href="http://localhost:8908/children-74-2.atom.xml"/>
+  <entry>
+    <id>http://javazone11.wordpress.com/?p=88</id>
+    <title type='html'>Oslo Spektrum</title>
+    <published>2010-11-15T23:06:16Z</published>
+    <updated>2010-11-19T08:30:09Z</updated>
+    <author>
+      <name>Trygve Laugstøl</name>
+    </author>
+    <!-- self=http://foo/?atompub=post&pt=xyz&id=88 -->
+    <link rel='self' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=xyz&#038;id=88'/>
+    <!-- parent=http://foo/?atompub=post&pt=xyz&id=74 -->
+    <link rel='parent' type='application/atom+xml' href='http://localhost:8908/page-74.atom.xml'/>
+    <!-- children=http://foo/?atompub=post&pt=xyz&id=74 -->
+    <link rel='urn:wordpress:children' type='application/atom+xml' href='http://foo/?atompub=children&#038;pg=1&#038;pt=xyz&#038;parent=88'/>
+    <app:collection href='http://foo/?atompub=children&#038;pg=1&#038;pt=xyz&#038;parent=88'>
+      <title>Child pages</title>
+      <app:accept>application/atom+xml;type=entry</app:accept>
+    </app:collection>
+    <app:control><app:draft>yes</app:draft></app:control>
+    <app:edited>2010-11-19T08:30:09Z</app:edited>
+    <content type='html'>&lt;p&gt;&lt;img class=&quot;aligncenter size-medium wp-image-89&quot; title=&quot;map&quot; src=&quot;http://foo/wp-content/uploads/2010/11/kart.jpg?w=300&quot; alt=&quot;Map over the Oslo Spektrum Area&quot; width=&quot;300&quot; height=&quot;171&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;The venue&lt;/h2&gt;
+&lt;p&gt;JavaZone is held in Oslo Spektrum, in the heart of Oslo, surrounded by  the Oslo City shopping mall and Hotel Oslo Plaza. Oslo Spektrum is  within walking distance of the city&amp;#8217;s main street, Karl Johans Gate, and  the Oslo S/Airport Express train station. Oslo Spektrum is the venue  for the country&amp;#8217;s biggest concerts and it is here that major  international stars who are visiting Oslo take the stage. The exhibition  arena is exceptionally well suited to a conference like JavaZone, with a  variety of meeting places both within and outside the exhibition space  itself.&lt;/p&gt;
+&lt;h2&gt;Hotels&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.thonhotels.no/spectrum&quot;&gt;Thon Hotel Spectrum&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.thonhotels.no/terminus&quot;&gt;Thon Hotel Terminus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.thonhotels.no/opera&quot;&gt;Thon Hotel Opera&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.radissonblu.com/plazahotel-oslo&quot;&gt;Radisson SAS Plaza Hotel, Oslo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.clarionroyalchristiania.no/&quot;&gt;Royal Christiania, Oslo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <id>http://javazone11.wordpress.com/?p=92</id>
+    <title type='html'>The Organiser</title>
+    <published>2010-11-15T23:07:16Z</published>
+    <updated>2010-11-19T08:30:09Z</updated>
+    <author>
+      <name>Trygve Laugstøl</name>
+    </author>
+    <!-- self=http://foo/?atompub=post&pt=xyz&id=92 -->
+    <link rel='self' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=xyz&#038;id=92'/>
+    <!-- parent=http://foo/?atompub=post&pt=xyz&id=74 -->
+    <link rel='parent' type='application/atom+xml' href='http://localhost:8908/page-74.atom.xml'/>
+    <!-- children=http://foo/?atompub=post&pt=xyz&id=74 -->
+    <link rel='urn:wordpress:children' type='application/atom+xml' href='http://foo/?atompub=children&#038;pg=1&#038;pt=xyz&#038;parent=92'/>
+    <app:collection href='http://foo/?atompub=children&#038;pg=1&#038;pt=xyz&#038;parent=92'>
+      <title>Child pages</title>
+      <app:accept>application/atom+xml;type=entry</app:accept>
+    </app:collection>
+    <app:control><app:draft>yes</app:draft></app:control>
+    <app:edited>2010-11-19T08:30:09Z</app:edited>
+    <content type='html'>&lt;p&gt;The organiser of JavaZone is javaBin, an independent, non-profit  organisation. Its object is to promote java expertise among its members,  their companies and in the market. javaBin is based in Oslo, and there  are also groups in Stavanger, Bergen and Trondheim.&lt;/p&gt;
+&lt;p&gt;javaBin currently has more than 2,000 members from a wide range of companies.&lt;/p&gt;
+&lt;p&gt;javaBin meetings consist of one or more talks from members, members&amp;#8217;  companies or external speakers. The meetings are well-attended and bring  together experts representing wide-ranging software development  know-how.&lt;/p&gt;
+&lt;p&gt;These monthly meetings are a good way to build the java platform&amp;#8217;s  market, and provide an arena for exchanging experiences and information;  they also have a social side, promoting contact across companies and  professional environments.&lt;/p&gt;
+&lt;p&gt;The Java user group in Norway was first set up in the summer of 1996. It  faded out shortly afterwards, until a number of prime movers took the  initiative to hold a founders&amp;#8217; meeting on 23 April 1998.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>http://javazone11.wordpress.com/?p=82</id>
+    <title type='html'>Whiteboards</title>
+    <published>2010-11-15T23:01:39Z</published>
+    <updated>2010-11-19T08:30:09Z</updated>
+    <author>
+      <name>Trygve Laugstøl</name>
+    </author>
+    <!-- self=http://foo/?atompub=post&pt=xyz&id=82 -->
+    <link rel='self' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=xyz&#038;id=82'/>
+    <!-- parent=http://foo/?atompub=post&pt=xyz&id=74 -->
+    <link rel='parent' type='application/atom+xml' href='http://localhost:8908/page-74.atom.xml'/>
+    <!-- children=http://foo/?atompub=post&pt=xyz&id=74 -->
+    <link rel='urn:wordpress:children' type='application/atom+xml' href='http://foo/?atompub=children&#038;pg=1&#038;pt=xyz&#038;parent=82'/>
+    <app:collection href='http://foo/?atompub=children&#038;pg=1&#038;pt=xyz&#038;parent=82'>
+      <title>Child pages</title>
+      <app:accept>application/atom+xml;type=entry</app:accept>
+    </app:collection>
+    <app:control><app:draft>yes</app:draft></app:control>
+    <app:edited>2010-11-19T08:30:09Z</app:edited>
+    <content type='html'>&lt;p&gt;When a presentation finishes, there are always those who want to know  more, or discuss issues with the speaker. It is human nature to leave  your seat in the audience, approach the speaker&amp;#8217;s chair and exchange  further comment after the talk itself is over. And this is not an  activity we would want to suppress. So we have set up four whiteboards  and other equipment in a 50m2 space at the heart of the exhibition.  Speakers will be invited to take up position here after their  presentation and respond to all those clamouring for more information,  or who have something special to communicate.&lt;/p&gt;
+</content>
+  </entry>
+</feed>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:app="http://www.w3.org/2007/app"
+  xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">
+  <id>urn:javazone11:list:abc</id>
+  <title>abc</title>
+<opensearch:totalResults>20</opensearch:totalResults><opensearch:startIndex>16</opensearch:startIndex><opensearch:itemsPerPage>5</opensearch:itemsPerPage>
+  <link rel='first' type='application/atom+xml' href="http://localhost:8908/pages-1.atom.xml"/>
+  <link rel='prev' type='application/atom+xml' href="http://localhost:8908/pages-3.atom.xml"/>
+  <link rel='last' type='application/atom+xml' href="http://localhost:8908/pages-4.atom.xml"/>
+  <entry>
+    <id>http://javazone11.wordpress.com/?p=4</id>
+    <title type='html'>Call for papers - Open</title>
+    <published>2010-01-06T16:02:59Z</published>
+    <updated>2010-01-06T16:02:59Z</updated>
+    <author>
+      <name>JavaZone</name>
+    </author>
+    <category scheme='http://foo' term='News'/>
+    <category scheme='http://foo' term='Uncategorized'/>
+    <!-- self=http://foo/?atompub=post&pt=abc&id=56 -->
+    <link rel='self' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=abc&#038;id=56'/>
+    <!-- parent=http://foo/?atompub=post&pt=abc&id=0 -->
+    <link rel='parent' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=abc&#038;id=0'/>
+    <!-- children=http://foo/?atompub=post&pt=abc&id=0 -->
+    <link rel='urn:wordpress:children' type='application/atom+xml' href='http://foo/?atompub=children&#038;pg=1&#038;pt=abc&#038;parent=56'/>
+    <app:collection href='http://foo/?atompub=children&#038;pg=1&#038;pt=abc&#038;parent=56'>
+      <title>Child pages</title>
+      <app:accept>application/atom+xml;type=entry</app:accept>
+    </app:collection>
+    <app:control><app:draft>yes</app:draft></app:control>
+    <app:edited>2010-01-06T16:02:59Z</app:edited>
+    <content type='html'>&lt;p&gt;The JavaZone Programme Committee would like to inform you that the Call for Papers for this year&amp;#8217;s conference is right around the corner. The CfP opens on January 22nd. JavaZone takes place in Oslo, Norway on September 8th to 9th.&lt;/p&gt;
+&lt;p&gt;JavaZone offers a combination of technical presentation, lightning talks and panels in an informal atmosphere with an expected attendence of 2000. JavaZone 2010 will be the ninth consecutive JavaZone conference.&lt;/p&gt;
+</content>
+  </entry>
+</feed>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xml:lang="en"  >
+<id>http://javazone11.wordpress.com/wp-app.php/posts</id>
+<updated>2010-11-08T09:26:43Z</updated>
+<title type="text">javazone11</title>
+<subtitle type="text">Just another WordPress.com site</subtitle>
+<link rel="first" type="application/atom+xml" href="http://javazone11.wordpress.com/wp-app.php/posts" />
+<link rel="next" type="application/atom+xml" href="http://javazone11.wordpress.com/wp-app.php/posts/2" />
+<link rel="last" type="application/atom+xml" href="http://javazone11.wordpress.com/wp-app.php/posts/2" />
+<link rel="self" type="application/atom+xml" href="http://javazone11.wordpress.com/wp-app.php/posts" />
+<rights type="text">Copyright 2010</rights>
+<generator uri="http://wordpress.com/">WordPress.com</generator>
+<entry xmlns="http://www.w3.org/2005/Atom"
+       xmlns:app="http://www.w3.org/2007/app" xml:lang="en">
+	<id>http://javazone11.wordpress.com/?p=28</id>
+	<title type="html"><![CDATA[JavaZone will be streamed live in HD to NTNU&nbsp;Campus]]></title>
+	<updated>2010-11-08T09:26:43Z</updated>
+	<published>2010-08-20T16:23:08Z</published>
+	<app:edited>2010-11-08T09:26:43Z</app:edited>
+	<app:control>
+		<app:draft>no</app:draft>
+	</app:control>
+	<author>
+		<name>javazone11</name>
+		<uri>http://javazone11.wordpress.com</uri>
+	</author>
+	<link href="http://javazone11.wordpress.com/2010/08/20/javazone-will-be-streamed-live-in-hd-to-ntnu-campus/" />
+	<content type="html"><![CDATA[<div>
+<div>
+
+For the first time in the JavaZone history, the entire event will be streamed live in HD to Campus Gløshaugen at <a href="http://www.ntnu.no/">NTNU</a> in Trondheim.
+
+JavaZone HD is a brand new concept which aims to involve students from Trondheim in the knowledge exchange made possible by JavaZone. The event is free for students to attend and the different speakers will be streamed simultaneously to one of auditoriums on campus. You will be able to choose which speaker you would like to listen to thru your headset.
+
+javaBin, the organization behind JavaZone, aims to establish contacts and to promote exchange of knowledge, experience and views between those who are interested in Java technology. An important audience that has never been adequately involved in this objective is the students.
+
+Together with our partner Tandberg, we want to involve and share knowledge with students in a much greater extent. We wish to set up a live stream in of all speeches in HD quality, where students can sit in same auditorium and hear the speaker they want. Sound is selected by the individual via headsets. JavaZone has used a similar setup for overflow of the halls in Oslo Spektrum the last three years with great success.
+
+We think it is important to create an intimate experience. Therefore, among other things, all speeches will appear in the same auditorium. The atmosphere created here in this hall will be continued in a social ClubZone event with entertainment throughout the evening.
+
+JavaZone HD will:
+<ul>
+	<li>Use a solution with high technical quality</li>
+	<li>Linking students closer to the academic environment</li>
+	<li>Hold an event with food, entertainment and a party</li>
+</ul>
+Agenda Wednesday 8th Sept:
+<ul>
+	<li>Live streaming of the lecture to an auditorium at Gløshaugen</li>
+	<li>Free lunch and dinner</li>
+	<li>ClubZone at a nightclub in Trondheim</li>
+</ul>
+
+Agenda Thursday 9th Sept:
+<ul>
+	<li>Live streaming of the lecture to an auditorium at Gløshaugen</li>
+	<li>Free lunch</li>
+</ul>
+
+<img alt="JavaZone HD 2010" src="http://jz10.java.no/images/javazone-hd.png" />
+
+</div>
+</div>]]></content>
+	<link rel="edit" href="http://javazone11.wordpress.com/wp-app.php/post/28" />
+	<category scheme="http://javazone11.wordpress.com" term="Uncategorized" />	<summary type="html"><![CDATA[For the first time in the JavaZone history, the entire event will be streamed live in HD to Campus Gløshaugen at NTNU in Trondheim. JavaZone HD is a brand new concept which aims to involve students from Trondheim in the knowledge &hellip; <a href="http://javazone11.wordpress.com/2010/08/20/javazone-will-be-streamed-live-in-hd-to-ntnu-campus/">Continue reading <span class="meta-nav">&rarr;</span></a>]]></summary>
+	</entry>
+<entry xmlns="http://www.w3.org/2005/Atom"
+       xmlns:app="http://www.w3.org/2007/app" xml:lang="en">
+	<id>http://javazone11.wordpress.com/?p=34</id>
+	<title type="html"><![CDATA[Panel debate: data retention&nbsp;directive]]></title>
+	<updated>2010-11-05T12:37:12Z</updated>
+	<published>2010-09-01T16:24:46Z</published>
+	<app:edited>2010-11-05T12:37:12Z</app:edited>
+	<app:control>
+		<app:draft>no</app:draft>
+	</app:control>
+	<author>
+		<name>javazone11</name>
+		<uri>http://javazone11.wordpress.com</uri>
+	</author>
+	<link href="http://javazone11.wordpress.com/2010/09/01/panel-debate-data-retention-directive/" />
+	<content type="xhtml"><div xmlns='http://www.w3.org/1999/xhtml'>There has been quite an intense public debate regarding the Data Retention Directive (abbreviated DLD in Norwegian) for a while now. As this is a topic that many people in the Java community have strong opinions about we have decided to enable the JavaZone audience to take part in the debate as well. If you are wondering what DRD (DLD) is all about you should not miss this debate!
+
+On the pro-DRD-side we two experts from the Norwegian FBI (Kripos): Reidar Brusgaard and Rune Utne Reitan. Their opponents are: Martin Bekkelund (Friprogsenteret) and Torgeir Waterhouse (IKT-Norge).
+
+The debate will take place on the 8th of September in room 1, lead by Christer Gundersen from The National Center for Open Source Software (Friprogsenteret). Both sides will make an initial short presentation outlining their view on this issue, and then the debate will start. The audience will be able to ask questions to the debate participants.
+
+We hope that this debate will give the audience a more facts-based view on the matter and enable the Java community to voice their opinion.
+
+<a href="http://javazone.no/incogito10/events/JavaZone%202010/sessions/Paneldebatt:%20Datalagringsdirektivet%20(DLD)">Read more here</a>. Note that the debate will be held in Norwegian.</div></content>
+	<link rel="edit" href="http://javazone11.wordpress.com/wp-app.php/post/34" />
+	<category scheme="http://javazone11.wordpress.com" term="Panel Debate" />	<summary type="html"><![CDATA[There has been quite an intense public debate regarding the Data Retention Directive (abbreviated DLD in Norwegian) for a while now. As this is a topic that many people in the Java community have strong opinions about we have decided &hellip; <a href="http://javazone11.wordpress.com/2010/09/01/panel-debate-data-retention-directive/">Continue reading <span class="meta-nav">&rarr;</span></a>]]></summary>
+	</entry>
+<entry xmlns="http://www.w3.org/2005/Atom"
+       xmlns:app="http://www.w3.org/2007/app" xml:lang="en">
+	<id>http://javazone11.wordpress.com/?p=32</id>
+	<title type="html"><![CDATA[Panel debate: open public&nbsp;data]]></title>
+	<updated>2010-11-02T08:37:51Z</updated>
+	<published>2010-08-26T16:24:19Z</published>
+	<app:edited>2010-11-02T08:37:51Z</app:edited>
+	<app:control>
+		<app:draft>no</app:draft>
+	</app:control>
+	<author>
+		<name>javazone11</name>
+		<uri>http://javazone11.wordpress.com</uri>
+	</author>
+	<link href="http://javazone11.wordpress.com/2010/08/26/panel-debate-open-public-data/" />
+	<content type="xhtml"><div xmlns='http://www.w3.org/1999/xhtml'><div>
+<div>
+
+What kind of applications could you make with complete access to all national and governmental data sets? All the map data, all the statistical data or how about all the digital media content from the national broadcaster? This spring, the Norwegian government has put creative use of public sector data in focus with the launch of the data portal data.norge.no and the Nettskap 2.0 contest. For JavaZone 2010 we have invited some of the most active participants in the ongoing debate on public sector data to a panel debate!
+
+We all agree that free use of public sector data is a good thing, but why are the governmental agencies so hesitant to publish their data? What is the potential in these data from a democratic and entrepreneurship point of view? In this debate both the data owners, represented by Fornyingsdepartementet (The Ministry of Government Reform) and Teknologirdet (Norwegian Board of Technology), and the data consumers, represented by Oslo Open Data Forum, come together to discuss what direction open public data in Norway is heading.
+
+Maybe you'll get inspired to start a software project using public data? Or maybe you'll get involved in the movement to publish more public data?
+
+The panel debate will be held in Norwegian, Thursday September 9th at 10:15 in room 4. <a href="http://javazone.no/incogito10/events/JavaZone%202010/sessions#977cd4bb-7dba-4187-9542-3393dd2bb8f7">Read more here</a>.
+
+</div>
+</div></div></content>
+	<link rel="edit" href="http://javazone11.wordpress.com/wp-app.php/post/32" />
+	<category scheme="http://javazone11.wordpress.com" term="Panel Debate" />	<summary type="html"><![CDATA[What kind of applications could you make with complete access to all national and governmental data sets? All the map data, all the statistical data or how about all the digital media content from the national broadcaster? This spring, the &hellip; <a href="http://javazone11.wordpress.com/2010/08/26/panel-debate-open-public-data/">Continue reading <span class="meta-nav">&rarr;</span></a>]]></summary>
+	</entry>
+<entry xmlns="http://www.w3.org/2005/Atom"
+       xmlns:app="http://www.w3.org/2007/app" xml:lang="en">
+	<id>http://javazone11.wordpress.com/?p=30</id>
+	<title type="html"><![CDATA[JavaZone Goes&nbsp;Mobile!]]></title>
+	<updated>2010-11-01T16:24:10Z</updated>
+	<published>2010-08-23T16:23:47Z</published>
+	<app:edited>2010-11-01T16:24:10Z</app:edited>
+	<app:control>
+		<app:draft>no</app:draft>
+	</app:control>
+	<author>
+		<name>javazone11</name>
+		<uri>http://javazone11.wordpress.com</uri>
+	</author>
+	<link href="http://javazone11.wordpress.com/2010/08/23/javazone-goes-mobile/" />
+	<content type="xhtml"><div xmlns='http://www.w3.org/1999/xhtml'><div>
+<div>
+
+javaBin, the community behind JavaZone, has made it even easier to figure out what's happening on the JavaZone program. We have recently published two mobile applications, one for Android and one for iPhone that are loaded with the current programme.
+
+For more information about the programme application and on to download the applications, visit <a href="http://javazone.no/incogito10/about">Incogito</a>.
+
+</div>
+</div></div></content>
+	<link rel="edit" href="http://javazone11.wordpress.com/wp-app.php/post/30" />
+	<category scheme="http://javazone11.wordpress.com" term="Uncategorized" />	<summary type="html"><![CDATA[javaBin, the community behind JavaZone, has made it even easier to figure out what&#8217;s happening on the JavaZone program. We have recently published two mobile applications, one for Android and one for iPhone that are loaded with the current programme. &hellip; <a href="http://javazone11.wordpress.com/2010/08/23/javazone-goes-mobile/">Continue reading <span class="meta-nav">&rarr;</span></a>]]></summary>
+	</entry>
+<entry xmlns="http://www.w3.org/2005/Atom"
+       xmlns:app="http://www.w3.org/2007/app" xml:lang="en">
+	<id>http://javazone11.wordpress.com/?p=26</id>
+	<title type="html"><![CDATA[The JavaZone Music Video&nbsp;Released!]]></title>
+	<updated>2010-11-01T16:22:58Z</updated>
+	<published>2010-08-13T16:22:29Z</published>
+	<app:edited>2010-11-01T16:22:58Z</app:edited>
+	<app:control>
+		<app:draft>no</app:draft>
+	</app:control>
+	<author>
+		<name>javazone11</name>
+		<uri>http://javazone11.wordpress.com</uri>
+	</author>
+	<link href="http://javazone11.wordpress.com/2010/08/13/the-javazone-music-video-released/" />
+	<content type="xhtml"><div xmlns='http://www.w3.org/1999/xhtml'>Check out the <a href="http://jz10.java.no/ladyjava-music-video.html">LadyJava Music Video</a> featuring Jenny Skavlan and members from javaBin.
+
+See the original <a href="http://jz10.java.no/invitation.html">invitation</a> and our <a href="http://jz10.java.no/java-4-ever-trailer.html">Java 4-Ever Trailer</a> video.
+
+<a href="http://jz10.java.no/ladyjava-music-video.html">View the video</a></div></content>
+	<link rel="edit" href="http://javazone11.wordpress.com/wp-app.php/post/26" />
+	<category scheme="http://javazone11.wordpress.com" term="Uncategorized" />	<summary type="text">Check out the LadyJava Music Video featuring Jenny Skavlan and members from javaBin. See the original invitation and our Java 4-Ever Trailer video. View the video</summary>
+	</entry>
+<entry xmlns="http://www.w3.org/2005/Atom"
+       xmlns:app="http://www.w3.org/2007/app" xml:lang="en">
+	<id>http://javazone11.wordpress.com/?p=24</id>
+	<title type="html"><![CDATA[The JavaZone 2010 Agenda is now&nbsp;available]]></title>
+	<updated>2010-11-01T16:22:21Z</updated>
+	<published>2010-07-01T16:21:56Z</published>
+	<app:edited>2010-11-01T16:22:21Z</app:edited>
+	<app:control>
+		<app:draft>no</app:draft>
+	</app:control>
+	<author>
+		<name>javazone11</name>
+		<uri>http://javazone11.wordpress.com</uri>
+	</author>
+	<link href="http://javazone11.wordpress.com/2010/07/01/the-javazone-2010-agenda-is-now-available/" />
+	<content type="xhtml"><div xmlns='http://www.w3.org/1999/xhtml'>The Agenda for JavaZone 2010 is now available at <a href="http://jz10.java.no/agenda">http://jz10.java.no/agenda</a>.
+<div>
+<div>
+
+Please note that this is not the complete program for the conference. We are still working on distributing feedback to everyone who have contributed with abstracts for the conference. This means that the process of publishing confirmed presentations and lightning talks is an ongoing process. Expect more time-slots to be filled during the next couple of days.
+
+</div>
+</div></div></content>
+	<link rel="edit" href="http://javazone11.wordpress.com/wp-app.php/post/24" />
+	<category scheme="http://javazone11.wordpress.com" term="Uncategorized" />	<summary type="html"><![CDATA[The Agenda for JavaZone 2010 is now available at http://jz10.java.no/agenda. Please note that this is not the complete program for the conference. We are still working on distributing feedback to everyone who have contributed with abstracts for the conference. This means &hellip; <a href="http://javazone11.wordpress.com/2010/07/01/the-javazone-2010-agenda-is-now-available/">Continue reading <span class="meta-nav">&rarr;</span></a>]]></summary>
+	</entry>
+<entry xmlns="http://www.w3.org/2005/Atom"
+       xmlns:app="http://www.w3.org/2007/app" xml:lang="en">
+	<id>http://javazone11.wordpress.com/?p=22</id>
+	<title type="html"><![CDATA[The official JavaZone Program will be available July&nbsp;1st]]></title>
+	<updated>2010-11-01T16:21:47Z</updated>
+	<published>2010-06-25T16:12:37Z</published>
+	<app:edited>2010-11-01T16:21:47Z</app:edited>
+	<app:control>
+		<app:draft>no</app:draft>
+	</app:control>
+	<author>
+		<name>javazone11</name>
+		<uri>http://javazone11.wordpress.com</uri>
+	</author>
+	<link href="http://javazone11.wordpress.com/2010/06/25/the-official-javazone-program-will-be-available-july-1st/" />
+	<content type="text">After a lot of hard work in the JavaZone Program Committee, we are happy to announce that we will start to distribute feedback to everyone who have submitted abstracts for this year's conference in a couple of days.
+
+Shortly after the speakers have received their feedback, we will start to confirm them officially. The conference schedule will then be published gradually.
+
+Our agenda application will be available to July 1st and we will add speakers and presentations to the schedule on as soon as the speakers confirm that they will appear at the conference.</content>
+	<link rel="edit" href="http://javazone11.wordpress.com/wp-app.php/post/22" />
+	<category scheme="http://javazone11.wordpress.com" term="Uncategorized" />	<summary type="html"><![CDATA[After a lot of hard work in the JavaZone Program Committee, we are happy to announce that we will start to distribute feedback to everyone who have submitted abstracts for this year&#8217;s conference in a couple of days. Shortly after &hellip; <a href="http://javazone11.wordpress.com/2010/06/25/the-official-javazone-program-will-be-available-july-1st/">Continue reading <span class="meta-nav">&rarr;</span></a>]]></summary>
+	</entry>
+<entry xmlns="http://www.w3.org/2005/Atom"
+       xmlns:app="http://www.w3.org/2007/app" xml:lang="en">
+	<id>http://javazone11.wordpress.com/?p=20</id>
+	<title type="html"><![CDATA[Java 4-Ever &#8211;&nbsp;Trailer]]></title>
+	<updated>2010-11-01T16:12:28Z</updated>
+	<published>2010-06-25T16:12:02Z</published>
+	<app:edited>2010-11-01T16:12:28Z</app:edited>
+	<app:control>
+		<app:draft>no</app:draft>
+	</app:control>
+	<author>
+		<name>javazone11</name>
+		<uri>http://javazone11.wordpress.com</uri>
+	</author>
+	<link href="http://javazone11.wordpress.com/2010/06/25/java-4-ever-trailer/" />
+	<content type="xhtml"><div xmlns='http://www.w3.org/1999/xhtml'>We know you have been waiting for this:
+
+The full trailer for <em>Java 4-ever</em> is ready! Enjoy!
+
+<a href="http://jz10.java.no/java-4-ever-trailer.html">View the trailer</a></div></content>
+	<link rel="edit" href="http://javazone11.wordpress.com/wp-app.php/post/20" />
+	<category scheme="http://javazone11.wordpress.com" term="Uncategorized" />	<summary type="text">We know you have been waiting for this: The full trailer for Java 4-ever is ready! Enjoy! View the trailer</summary>
+	</entry>
+<entry xmlns="http://www.w3.org/2005/Atom"
+       xmlns:app="http://www.w3.org/2007/app" xml:lang="en">
+	<id>http://javazone11.wordpress.com/?p=18</id>
+	<title type="html"><![CDATA[Java 4-Ever &#8211; Snippet&nbsp;2]]></title>
+	<updated>2010-11-01T16:11:55Z</updated>
+	<published>2010-06-18T16:11:31Z</published>
+	<app:edited>2010-11-01T16:11:55Z</app:edited>
+	<app:control>
+		<app:draft>no</app:draft>
+	</app:control>
+	<author>
+		<name>javazone11</name>
+		<uri>http://javazone11.wordpress.com</uri>
+	</author>
+	<link href="http://javazone11.wordpress.com/2010/06/18/java-4-ever-snippet-2/" />
+	<content type="xhtml"><div xmlns='http://www.w3.org/1999/xhtml'>Here is yet another snippet from the upcoming movie trailer.
+
+Enjoy!
+
+<a href="http://jz10.java.no/java-4-ever-teaser2.html">View the snippet</a></div></content>
+	<link rel="edit" href="http://javazone11.wordpress.com/wp-app.php/post/18" />
+	<category scheme="http://javazone11.wordpress.com" term="Uncategorized" />	<summary type="text">Here is yet another snippet from the upcoming movie trailer. Enjoy! View the snippet</summary>
+	</entry>
+<entry xmlns="http://www.w3.org/2005/Atom"
+       xmlns:app="http://www.w3.org/2007/app" xml:lang="en">
+	<id>http://javazone11.wordpress.com/?p=16</id>
+	<title type="html"><![CDATA[Java 4-Ever &#8211; The trailer will soon be&nbsp;released!]]></title>
+	<updated>2010-11-01T16:11:23Z</updated>
+	<published>2010-06-16T16:10:46Z</published>
+	<app:edited>2010-11-01T16:11:23Z</app:edited>
+	<app:control>
+		<app:draft>no</app:draft>
+	</app:control>
+	<author>
+		<name>javazone11</name>
+		<uri>http://javazone11.wordpress.com</uri>
+	</author>
+	<link href="http://javazone11.wordpress.com/2010/06/16/java-4-ever-the-trailer-will-soon-be-released/" />
+	<content type="xhtml"><div xmlns='http://www.w3.org/1999/xhtml'>Java is going to The Big Screen!
+
+Here is a taste of the trailer for the "Java 4-Ever" movie.
+
+<a href="http://jz10.java.no/java-4-ever-teaser1.html">View the snippet</a></div></content>
+	<link rel="edit" href="http://javazone11.wordpress.com/wp-app.php/post/16" />
+	<category scheme="http://javazone11.wordpress.com" term="Uncategorized" />	<summary type="text">Java is going to The Big Screen! Here is a taste of the trailer for the &#8220;Java 4-Ever&#8221; movie. View the snippet</summary>
+	</entry>
+</feed>

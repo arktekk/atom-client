@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:app="http://www.w3.org/2007/app"
+  xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">
+  <id>urn:javazone11:list:xyz</id>
+  <title>xyz</title>
+<opensearch:totalResults>10</opensearch:totalResults><opensearch:startIndex>6</opensearch:startIndex><opensearch:itemsPerPage>5</opensearch:itemsPerPage>
+  <link rel='first' type='application/atom+xml' href="http://localhost:8908/pages-1.atom.xml"/>
+  <link rel='prev' type='application/atom+xml' href="http://localhost:8908/pages-2.atom.xml"/>
+  <link rel='last' type='application/atom+xml' href="http://localhost:8908/pages-2.atom.xml"/>
+  <entry>
+    <id>http://javazone11.wordpress.com/?p=82</id>
+    <title type='html'>Whiteboards</title>
+    <published>2010-11-15T23:01:39Z</published>
+    <updated>2010-11-19T08:30:09Z</updated>
+    <author>
+      <name>Trygve Laugstøl</name>
+    </author>
+    <!-- self=http://foo/?atompub=post&pt=xyz&id=82 -->
+    <link rel='self' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=xyz&#038;id=82'/>
+    <!-- parent=http://foo/?atompub=post&pt=xyz&id=74 -->
+    <link rel='parent' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=xyz&#038;id=74'/>
+    <!-- children=http://foo/?atompub=post&pt=xyz&id=74 -->
+    <link rel='urn:wordpress:children' type='application/atom+xml' href='http://foo/?atompub=children&#038;pg=1&#038;pt=xyz&#038;parent=82'/>
+    <app:collection href='http://foo/?atompub=children&#038;pg=1&#038;pt=xyz&#038;parent=82'>
+      <title>Child pages</title>
+      <app:accept>application/atom+xml;type=entry</app:accept>
+    </app:collection>
+    <app:control><app:draft>yes</app:draft></app:control>
+    <app:edited>2010-11-19T08:30:09Z</app:edited>
+    <content type='html'>&lt;p&gt;When a presentation finishes, there are always those who want to know  more, or discuss issues with the speaker. It is human nature to leave  your seat in the audience, approach the speaker&amp;#8217;s chair and exchange  further comment after the talk itself is over. And this is not an  activity we would want to suppress. So we have set up four whiteboards  and other equipment in a 50m2 space at the heart of the exhibition.  Speakers will be invited to take up position here after their  presentation and respond to all those clamouring for more information,  or who have something special to communicate.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>http://javazone11.wordpress.com/?p=78</id>
+    <title type='html'>Expo</title>
+    <published>2010-11-15T23:01:09Z</published>
+    <updated>2010-11-19T08:30:09Z</updated>
+    <author>
+      <name>Trygve Laugstøl</name>
+    </author>
+    <!-- self=http://foo/?atompub=post&pt=xyz&id=78 -->
+    <link rel='self' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=xyz&#038;id=78'/>
+    <!-- parent=http://foo/?atompub=post&pt=xyz&id=74 -->
+    <link rel='parent' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=xyz&#038;id=74'/>
+    <!-- children=http://foo/?atompub=post&pt=xyz&id=74 -->
+    <link rel='urn:wordpress:children' type='application/atom+xml' href='http://foo/?atompub=children&#038;pg=1&#038;pt=xyz&#038;parent=78'/>
+    <app:collection href='http://foo/?atompub=children&#038;pg=1&#038;pt=xyz&#038;parent=78'>
+      <title>Child pages</title>
+      <app:accept>application/atom+xml;type=entry</app:accept>
+    </app:collection>
+    <app:control><app:draft>yes</app:draft></app:control>
+    <app:edited>2010-11-19T08:30:09Z</app:edited>
+    <content type='html'>&lt;div id=&quot;lc&quot;&gt;
+&lt;div id=&quot;attachment_80&quot; class=&quot;wp-caption alignleft&quot; style=&quot;width: 190px&quot;&gt;&lt;a href=&quot;http://foo/wp-content/uploads/2010/11/expo.jpg&quot;&gt;&lt;img class=&quot;size-full wp-image-80&quot; title=&quot;expo&quot; src=&quot;http://foo/wp-content/uploads/2010/11/expo.jpg&quot; alt=&quot;The expo area at Oslo Spektrum&quot; width=&quot;180&quot; height=&quot;180&quot; /&gt;&lt;/a&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;The expo area at Oslo Spektrum&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;The exhibition space at JavaZone is a central meeting place for partners  and attendees. All of the conference partners will be here. During the  conference, this area becomes a real melting pot of activities, with  events organised by the individual partners and centrally by JavaZone.  There will be a variety of competitions with great prizes to be won.  There will be talks and discussions linked to the presentations,  along  with more social events.&lt;/p&gt;
+&lt;h2&gt;Relax/gamezone&lt;/h2&gt;
+&lt;p&gt;The exhibition space is also where we give in to our natural human  frailties. There are limits to what the body can tolerate, over the  course of two days, in our quest for knowledge. So at JavaZone, between  the action, we let you abandon yourself to old vices! Relax/gamezone is  our take on the watering hole, a chance to reenergise yourself playing  computer games. Here you will find hammocks and beanbags, Nintendos,  Playstations, X-boxes and worse besides!&lt;/p&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  <entry>
+    <id>http://javazone11.wordpress.com/?p=76</id>
+    <title type='html'>ClubZone</title>
+    <published>2010-11-15T22:56:19Z</published>
+    <updated>2010-11-19T08:30:09Z</updated>
+    <author>
+      <name>Trygve Laugstøl</name>
+    </author>
+    <!-- self=http://foo/?atompub=post&pt=xyz&id=76 -->
+    <link rel='self' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=xyz&#038;id=76'/>
+    <!-- parent=http://foo/?atompub=post&pt=xyz&id=74 -->
+    <link rel='parent' type='application/atom+xml' href="http://localhost:8908/page-74.atom.xml"/>
+    <!-- children=http://foo/?atompub=post&pt=xyz&id=74 -->
+    <link rel='urn:wordpress:children' type='application/atom+xml' href='http://foo/?atompub=children&#038;pg=1&#038;pt=xyz&#038;parent=76'/>
+    <app:collection href='http://foo/?atompub=children&#038;pg=1&#038;pt=xyz&#038;parent=76'>
+      <title>Child pages</title>
+      <app:accept>application/atom+xml;type=entry</app:accept>
+    </app:collection>
+    <app:control><app:draft>yes</app:draft></app:control>
+    <app:edited>2010-11-19T08:30:09Z</app:edited>
+    <content type='html'>&lt;p&gt;ClubZone is JavaZone&amp;#8217;s legendary party. With more than 2,000 attendees,  there is an obvious need for meeting places outside the conference and  exhibition spaces as well as in, a need that JavaZone accommodates with a  variety of social events. Along with individual partners, JavaZone is  sponsoring entertainment and refreshment at four different venues in  Oslo city centre during the conference. We call this ClubZone and we  think it will offer something for every taste.&lt;/p&gt;
+&lt;h2&gt;Queens Pub &amp;amp; Pianobar&lt;/h2&gt;
+&lt;p&gt;Showing the Norway-Macedonia match and serving drinks from the brewery.&lt;/p&gt;
+&lt;h2&gt;Dattera til Hagen&lt;/h2&gt;
+&lt;p&gt;A stand-up festival and drinks from the brewery.&lt;br /&gt;
+&lt;a href=&quot;http://www.dattera.no/&quot;&gt;See Dattera til Hagen&amp;#8217;s website&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Gloria Flames&lt;/h2&gt;
+&lt;p&gt;Concert with the Valentourettes and drinks from the brewery. &lt;a href=&quot;http://www.gloriaflames.no/&quot;&gt;See Gloria Flames&amp;#8217; website&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Cafe con Bar&lt;/h2&gt;
+&lt;p&gt;DJ and drinks from the brewery. &lt;a href=&quot;http://www.cafeconbar.no/&quot;&gt;See Cafe con Bar&amp;#8217;s website&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>http://javazone11.wordpress.com/?p=74</id>
+    <title type='html'>About JavaZone</title>
+    <published>2010-11-15T22:54:28Z</published>
+    <updated>2010-11-15T22:54:28Z</updated>
+    <author>
+      <name>Trygve Laugstøl</name>
+    </author>
+    <!-- self=http://foo/?atompub=post&pt=xyz&id=74 -->
+    <link rel='self' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=xyz&#038;id=74'/>
+    <!-- parent=http://foo/?atompub=post&pt=xyz&id=0 -->
+    <link rel='parent' type='application/atom+xml' href='http://foo/?atompub=post&#038;pt=xyz&#038;id=0'/>
+    <!-- children=http://foo/?atompub=post&pt=xyz&id=0 -->
+    <link rel='urn:wordpress:children' type='application/atom+xml' href='http://foo/?atompub=children&#038;pg=1&#038;pt=xyz&#038;parent=74'/>
+    <app:collection href='http://localhost:8908/children-74-1.atom.xml'>
+      <title>Child pages</title>
+      <app:accept>application/atom+xml;type=entry</app:accept>
+    </app:collection>
+    <app:control><app:draft>yes</app:draft></app:control>
+    <app:edited>2010-11-15T22:54:28Z</app:edited>
+    <content type='html'>&lt;p&gt;On these pages you will find information about everything to do with  JavaZone. There are answers to everything: what JavaZone is, how to book  a hotel room, meeting places and events during the conference, how to  get to know other attendees, and how you can make a contribution as part  of the crew. You can also read previous years&amp;#8217; websites and get an idea  of the JavaZone atmosphere. JavaZone is more than just a conference.  It&amp;#8217;s a place to meet, network and socialise!&lt;/p&gt;
+&lt;h2&gt;What is JavaZone&lt;/h2&gt;
+&lt;p&gt;JavaZone is Scandinavia&amp;#8217;s biggest meeting place for software developers,  and one of Europe&amp;#8217;s most important. JavaZone has been described as a  high-quality, independent conference, and is a forum for knowledge  exchange, recruitment and branding. Some 40 large and mid-sized  businesses &amp;#8211; our partners &amp;#8211; exhibit their products and services in a  separate exhibition space, while more than 90 presentations are given in  the conference facilities. Each year, around 2,300 conference tickets  are sold. This means that, over the two days the conference lasts, we  deliver more than 200,000 hours of expertise. When you add to this the  many informal discussions that take place at stands and between  attendees, JavaZone stands out as a tremendous arena for knowledge  transfer. Of course, a conference involving so many developers is also a  key arena for recruitment. Through their exhibitions and other  activities, the large and mid-sized companies use the opportunity to  promote their business and recruit new staff.&lt;/p&gt;
+&lt;p&gt;One of the key factors in the huge success of JavaZone has been the  support of great numbers of volunteers. It is safe to say that this is a  conference by and for software developers. Each year, thousands of  hours are put into making the conference as successful as possible. The  technical programme is carefully structured and planned and the  programme committee invites speakers from all over the world.  Professionals know what professionals want, so the speakers are  hand-picked, and the presentations are highly relevant. In the tradition  of the conference, speakers are not paid an appearance fee for their  contributions. Around half of the presentations are given in English and  the other half in one of the Scandinavian languages. The conference&amp;#8217;s  unconventional and non-commercial approach has also boosted its  popularity.&lt;/p&gt;
+</content>
+  </entry>
+</feed>

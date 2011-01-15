@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service xmlns="http://www.w3.org/2007/app" xmlns:atom="http://www.w3.org/2005/Atom">
+  <workspace>
+    <atom:title>javazone11 Workspace</atom:title>
+    <collection href="http://localhost:8908/posts-1.atom.xml">
+      <atom:title>javazone11 Posts</atom:title>
+      <accept>application/atom+xml;type=entry</accept>
+    </collection>
+    <collection href="http://localhost:8908/pages-1.atom.xml">
+      <atom:title>javazone11 Pages</atom:title>
+      <accept>application/atom+xml;type=entry</accept>
+    </collection>
+  </workspace>
+</service>
