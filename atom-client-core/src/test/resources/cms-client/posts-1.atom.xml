@@ -6,9 +6,9 @@
   <id>urn:javazone11:list:abc</id>
   <title>abc</title>
 <opensearch:totalResults>20</opensearch:totalResults><opensearch:startIndex>1</opensearch:startIndex><opensearch:itemsPerPage>5</opensearch:itemsPerPage>
-  <link rel='first' type='application/atom+xml' href="http://localhost:8908/pages-1.atom.xml"/>
-  <link rel='next' type='application/atom+xml' href="http://localhost:8908/pages-2.atom.xml"/>
-  <link rel='last' type='application/atom+xml' href="http://localhost:8908/pages-4.atom.xml"/>
+  <link rel='first' type='application/atom+xml' href="http://localhost:8908/posts-1.atom.xml"/>
+  <link rel='next' type='application/atom+xml' href="http://localhost:8908/posts-2.atom.xml"/>
+  <link rel='last' type='application/atom+xml' href="http://localhost:8908/posts-4.atom.xml"/>
   <entry>
     <id>http://foo/?p=1</id>
     <title type='html'>Hello world!</title>

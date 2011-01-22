@@ -98,7 +98,7 @@ class AtomEntryConverterSpec extends Specification {
     }
   }
 
-  "atomContentToNode" should {
+//  "atomContentToNode" should {
 //    "work for all entries" in {
 //      JavaConversions.asIterable(feed.getEntries).
 //          foreach(entry => if(CmsClient.atomContentToNode(entry.getContentElement).isEmpty) fail(entry.getId.toURL.toExternalForm))
@@ -116,52 +116,52 @@ class AtomEntryConverterSpec extends Specification {
 //    }
 
     // This spec does not apply anymore as we un-fucked wordpress instead.
-    "parse HTML entries" in {
-      val entry = feed.getEntry("http://javazone11.wordpress.com/?p=28")
-      Content.Type.HTML must_== entry.getContentType
-
-      val expected: NodeSeq =
-        <wrapper><div>
-<div>
-<p>For the first time in the JavaZone history, the entire event will be streamed live in HD to Campus Gløshaugen at <a href="http://www.ntnu.no/">NTNU</a> in Trondheim.</p>
-<p>JavaZone HD is a brand new concept which aims to involve students from Trondheim in the knowledge exchange made possible by JavaZone. The event is free for students to attend and the different speakers will be streamed simultaneously to one of auditoriums on campus. You will be able to choose which speaker you would like to listen to thru your headset.</p>
-<p>javaBin, the organization behind JavaZone, aims to establish contacts and to promote exchange of knowledge, experience and views between those who are interested in Java technology. An important audience that has never been adequately involved in this objective is the students.</p>
-<p>Together with our partner Tandberg, we want to involve and share knowledge with students in a much greater extent. We wish to set up a live stream in of all speeches in HD quality, where students can sit in same auditorium and hear the speaker they want. Sound is selected by the individual via headsets. JavaZone has used a similar setup for overflow of the halls in Oslo Spektrum the last three years with great success.</p>
-<p>We think it is important to create an intimate experience. Therefore, among other things, all speeches will appear in the same auditorium. The atmosphere created here in this hall will be continued in a social ClubZone event with entertainment throughout the evening.</p>
-<p>JavaZone HD will:</p>
-<ul>
-<li>Use a solution with high technical quality</li>
-<li>Linking students closer to the academic environment</li>
-<li>Hold an event with food, entertainment and a party</li>
-</ul>
-<p>Agenda Wednesday 8th Sept:</p>
-<ul>
-<li>Live streaming of the lecture to an auditorium at Gløshaugen</li>
-<li>Free lunch and dinner</li>
-<li>ClubZone at a nightclub in Trondheim</li>
-</ul>
-<p>{nbsp}</p>
-<p>Agenda Thursday 9th Sept:</p>
-<ul>
-<li>Live streaming of the lecture to an auditorium at Gløshaugen</li>
-<li>Free lunch</li>
-</ul>
-<p>{nbsp}</p>
-<p><img src="http://jz10.java.no/images/javazone-hd.png"/></p>
-</div>
-</div>
-<p>{nbsp}</p>
-<br></br>          </wrapper>.asInstanceOf[Node].child
-
-      val actual = atomContentToNode(entry.getContentElement)
-
-//      println("------------------------------------------------------------")
-//      println("Actual: ")
-//      println(actual.get)
-//      println("------------------------------------------------------------")
-
-      actual.right.get must ==/(expected).ordered
-    }
+//    "parse HTML entries" in {
+//      val entry = feed.getEntry("http://javazone11.wordpress.com/?p=28")
+//      Content.Type.HTML must_== entry.getContentType
+//
+//      val expected: NodeSeq =
+//        <wrapper><div>
+//<div>
+//<p>For the first time in the JavaZone history, the entire event will be streamed live in HD to Campus Gløshaugen at <a href="http://www.ntnu.no/">NTNU</a> in Trondheim.</p>
+//<p>JavaZone HD is a brand new concept which aims to involve students from Trondheim in the knowledge exchange made possible by JavaZone. The event is free for students to attend and the different speakers will be streamed simultaneously to one of auditoriums on campus. You will be able to choose which speaker you would like to listen to thru your headset.</p>
+//<p>javaBin, the organization behind JavaZone, aims to establish contacts and to promote exchange of knowledge, experience and views between those who are interested in Java technology. An important audience that has never been adequately involved in this objective is the students.</p>
+//<p>Together with our partner Tandberg, we want to involve and share knowledge with students in a much greater extent. We wish to set up a live stream in of all speeches in HD quality, where students can sit in same auditorium and hear the speaker they want. Sound is selected by the individual via headsets. JavaZone has used a similar setup for overflow of the halls in Oslo Spektrum the last three years with great success.</p>
+//<p>We think it is important to create an intimate experience. Therefore, among other things, all speeches will appear in the same auditorium. The atmosphere created here in this hall will be continued in a social ClubZone event with entertainment throughout the evening.</p>
+//<p>JavaZone HD will:</p>
+//<ul>
+//<li>Use a solution with high technical quality</li>
+//<li>Linking students closer to the academic environment</li>
+//<li>Hold an event with food, entertainment and a party</li>
+//</ul>
+//<p>Agenda Wednesday 8th Sept:</p>
+//<ul>
+//<li>Live streaming of the lecture to an auditorium at Gløshaugen</li>
+//<li>Free lunch and dinner</li>
+//<li>ClubZone at a nightclub in Trondheim</li>
+//</ul>
+//<p>{nbsp}</p>
+//<p>Agenda Thursday 9th Sept:</p>
+//<ul>
+//<li>Live streaming of the lecture to an auditorium at Gløshaugen</li>
+//<li>Free lunch</li>
+//</ul>
+//<p>{nbsp}</p>
+//<p><img src="http://jz10.java.no/images/javazone-hd.png"/></p>
+//</div>
+//</div>
+//<p>{nbsp}</p>
+//<br></br>          </wrapper>.asInstanceOf[Node].child
+//
+//      val actual = atomContentToNode(entry.getContentElement)
+//
+////      println("------------------------------------------------------------")
+////      println("Actual: ")
+////      println(actual.get)
+////      println("------------------------------------------------------------")
+//
+//      actual.right.get must ==/(expected).ordered
+//    }
 
 //    "parse text entries" in {
 //      val entry = feed.getEntry("http://javazone11.wordpress.com/?p=22")
@@ -172,5 +172,5 @@ class AtomEntryConverterSpec extends Specification {
 //      val actual = CmsClient.atomContentToNode(entry.getContentElement)
 //      actual.get must ==/(expected).ordered
 //    }
-  }
+//  }
 }

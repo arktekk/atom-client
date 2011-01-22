@@ -6,10 +6,10 @@
   <id>urn:javazone11:list:abc</id>
   <title>abc</title>
 <opensearch:totalResults>20</opensearch:totalResults><opensearch:startIndex>11</opensearch:startIndex><opensearch:itemsPerPage>5</opensearch:itemsPerPage>
-  <link rel='first' type='application/atom+xml' href="http://localhost:8908/pages-1.atom.xml"/>
-  <link rel='next' type='application/atom+xml' href="http://localhost:8908/pages-4.atom.xml"/>
-  <link rel='prev' type='application/atom+xml' href="http://localhost:8908/pages-2.atom.xml"/>
-  <link rel='last' type='application/atom+xml' href="http://localhost:8908/pages-4.atom.xml"/>
+  <link rel='first' type='application/atom+xml' href="http://localhost:8908/posts-1.atom.xml"/>
+  <link rel='next' type='application/atom+xml' href="http://localhost:8908/posts-4.atom.xml"/>
+  <link rel='prev' type='application/atom+xml' href="http://localhost:8908/posts-2.atom.xml"/>
+  <link rel='last' type='application/atom+xml' href="http://localhost:8908/posts-4.atom.xml"/>
   <entry>
     <id>http://javazone11.wordpress.com/?p=16</id>
     <title type='html'>Java 4-Ever - The trailer will soon be released!</title>

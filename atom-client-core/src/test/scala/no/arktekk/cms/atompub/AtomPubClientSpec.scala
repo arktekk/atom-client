@@ -5,7 +5,6 @@ import javax.activation.MimeType
 import no.arktekk.cms.CmsConstants._
 import org.apache.abdera.Abdera
 import org.specs.Specification
-import org.apache.abdera.model.Link
 
 class AtomPubClientSpec extends Specification {
   import AtomPubClient._

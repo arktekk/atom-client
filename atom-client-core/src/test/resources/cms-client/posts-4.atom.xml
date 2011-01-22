@@ -6,9 +6,9 @@
   <id>urn:javazone11:list:abc</id>
   <title>abc</title>
 <opensearch:totalResults>20</opensearch:totalResults><opensearch:startIndex>16</opensearch:startIndex><opensearch:itemsPerPage>5</opensearch:itemsPerPage>
-  <link rel='first' type='application/atom+xml' href="http://localhost:8908/pages-1.atom.xml"/>
-  <link rel='prev' type='application/atom+xml' href="http://localhost:8908/pages-3.atom.xml"/>
-  <link rel='last' type='application/atom+xml' href="http://localhost:8908/pages-4.atom.xml"/>
+  <link rel='first' type='application/atom+xml' href="http://localhost:8908/posts-1.atom.xml"/>
+  <link rel='prev' type='application/atom+xml' href="http://localhost:8908/posts-3.atom.xml"/>
+  <link rel='last' type='application/atom+xml' href="http://localhost:8908/posts-4.atom.xml"/>
   <entry>
     <id>http://javazone11.wordpress.com/?p=4</id>
     <title type='html'>Call for papers - Open</title>
