@@ -32,7 +32,8 @@ class AtomClientProject(info: ProjectInfo) extends ParentProject(info) with Idea
       "org.mortbay.jetty" % "jetty" % "6.1.22" % "test->default" withSources(),
       "junit" % "junit" % "4.5" % "test->default",
       "org.scala-tools.testing" %% "specs" % "1.6.5" % "test->default" withSources(),
-      "com.h2database" % "h2" % "1.2.138"
+      "com.h2database" % "h2" % "1.2.138",
+      "org.slf4j" % "slf4j-simple" % "1.5.8" % "test" withSources()
     ) ++ super.libraryDependencies
   }
 
