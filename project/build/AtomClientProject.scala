@@ -4,12 +4,12 @@ class AtomClientProject(info: ProjectInfo) extends ParentProject(info) with Idea
 {
   val logbackVersion = "0.9.18"
   val abderaVersion = "1.1"
-  val liftVersion = "2.1"
+  val liftVersion = "2.2"
 
   override def managedStyle = ManagedStyle.Maven
 
-  val repo = "central" at "http://dev.eventsystems.no/nexus/content/repositories/arktekk-public-snapshot"
-  val publishTo = repo
+  //val repo = "central" at "http://dev.eventsystems.no/nexus/content/repositories/arktekk-public-snapshot"
+  //val publishTo = repo
   Credentials(Path.userHome / ".ivy2" / "eventsystems.properties", log)
 
   lazy val core = project("atom-client-core", "atom-client-core", new CoreProject(_))
@@ -28,10 +28,10 @@ class AtomClientProject(info: ProjectInfo) extends ParentProject(info) with Idea
       "org.apache.geronimo.specs" % "geronimo-jta_1.1_spec" % "1.1.1" withSources(),
       "joda-time" % "joda-time" % "1.6" withSources(),
 
-      "org.scala-tools.testing" %% "specs" % "1.6.5" % "test" withSources(),
+      "org.scala-tools.testing" %% "specs" % "1.6.7" % "test" withSources(),
       "org.mortbay.jetty" % "jetty" % "6.1.22" % "test->default" withSources(),
       "junit" % "junit" % "4.5" % "test->default",
-      "org.scala-tools.testing" %% "specs" % "1.6.5" % "test->default" withSources(),
+      "org.scala-tools.testing" %% "specs" % "1.6.7" % "test->default" withSources(),
       "com.h2database" % "h2" % "1.2.138",
       "org.slf4j" % "slf4j-simple" % "1.5.8" % "test" withSources()
     ) ++ super.libraryDependencies
