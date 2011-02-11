@@ -104,11 +104,14 @@ object CmsClient {
     val postsCollection = Option(properties.getProperty("postsCollection")).getOrElse("")
     val pagesCollection = Option(properties.getProperty("pagesCollection")).getOrElse("")
 
-    apply(logger, name, dir, serviceUrl, workspaceName, postsCollection, pagesCollection, hubCallback)
+    val proxyHost = Option(properties.getProperty("proxyHost"));
+    val proxyPort = Option(properties.getProperty("proxyPort")).map(Integer.parseInt(_));
+
+    apply(logger, name, dir, proxyHost, proxyPort, serviceUrl, workspaceName, postsCollection, pagesCollection, hubCallback)
   }
 
-  def apply(logger: Logger, name: String, dir: File, serviceUrl: String, workspaceName: String, postsCollection: String, pagesCollection: String, hubCallback: HubCallback): CmsClient = {
-    val atomPubClient = AtomPubClient(logger, name, new File(dir, "cache"))
+  def apply(logger: Logger, name: String, dir: File, proxyHost: Option[String], proxyPort: Option[Int], serviceUrl: String, workspaceName: String, postsCollection: String, pagesCollection: String, hubCallback: HubCallback): CmsClient = {
+    val atomPubClient = AtomPubClient(logger, name, new File(dir, "cache"), proxyHost, proxyPort)
     new DefaultCmsClient(logger, atomPubClient, URI.create(serviceUrl).toURL, workspaceName, postsCollection, pagesCollection, hubCallback)
   }
 }

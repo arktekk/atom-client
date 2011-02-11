@@ -88,8 +88,14 @@ object AtomPubClient {
   private val cacheConfiguration = new CacheConfiguration
   private var cacheManager: CacheManager = null
 
-  def apply(logger: Logger, name: String, dir: File): AtomPubClient = {
+  def apply(logger: Logger, name: String, dir: File, proxyHost: Option[String], proxyPort: Option[Int]): AtomPubClient = {
     val abderaClient = new AbderaClient(abdera)
+
+    if(proxyHost.isDefined) {
+      logger.info("Proxy: " + proxyHost.get + ":" + proxyPort.get)
+      abderaClient.setProxy(proxyHost.get, proxyPort.get)
+    }
+
 //    abderaClient.setAuthenticationSchemePriority("digest", "basic");
 //    abderaClient.usePreemptiveAuthentication(true);
 //    abderaClient.addCredentials(null, "WordPress Atom Protocol", null, new UsernamePasswordCredentials(properties.getProperty("username"), properties.getProperty("password")))
