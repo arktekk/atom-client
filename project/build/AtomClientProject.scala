@@ -9,7 +9,8 @@ class AtomClientProject(info: ProjectInfo) extends ParentProject(info) with Idea
   override def managedStyle = ManagedStyle.Maven
 
   //val repo = "central" at "http://dev.eventsystems.no/nexus/content/repositories/arktekk-public-snapshot"
-  //val publishTo = repo
+  //val mavenLocal = "Local Maven Repository" at "file://"+Path.userHome+"/.m2/repository"
+  //val publishTo = mavenLocal
   Credentials(Path.userHome / ".ivy2" / "eventsystems.properties", log)
 
   lazy val core = project("atom-client-core", "atom-client-core", new CoreProject(_))
