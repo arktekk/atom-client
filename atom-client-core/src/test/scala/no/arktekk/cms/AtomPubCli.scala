@@ -14,7 +14,7 @@ import org.apache.abdera.model.{ExtensibleElement, Collection => AtomCollection}
 object AtomPubCli extends Application {
   val dir = new File(System.getProperty("user.home"), ".cache")
 
-  val client = AtomPubClient(ConsoleLogger, "cli", dir)
+  val client = AtomPubClient(AtomPubClientConfiguration(ConsoleLogger, "cli", dir))
   val logger = ConsoleLogger
 
   System.setProperty("net.sf.ehcache.skipUpdateCheck", "true")

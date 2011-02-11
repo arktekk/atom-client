@@ -7,8 +7,8 @@ import no.arktekk.cms.atompub._
 import no.arktekk.cms.CmsUtil._
 import org.apache.abdera.model.{Collection => AtomCollection}
 import org.apache.commons.io.IOUtils._
-import org.joda.time.DateTime
 import scala.xml._
+import org.joda.time.{Minutes, DateTime}
 
 case class CmsSlug(private val value: String) {
   override def toString = value
@@ -104,15 +104,22 @@ object CmsClient {
     val postsCollection = Option(properties.getProperty("postsCollection")).getOrElse("")
     val pagesCollection = Option(properties.getProperty("pagesCollection")).getOrElse("")
 
-    val proxyHost = Option(properties.getProperty("proxyHost"));
-    val proxyPort = Option(properties.getProperty("proxyPort")).map(Integer.parseInt(_));
+    val proxyConfiguration: Option[ProxyConfiguration] = for {
+      proxyHost <- Option(properties.getProperty("proxyHost"))
+      proxyPort <- Option(properties.getProperty("proxyPort")).map(Integer.parseInt(_))
+    } yield {
+      ProxyConfiguration(proxyHost, proxyPort)
+    }
 
-    apply(logger, name, dir, proxyHost, proxyPort, serviceUrl, workspaceName, postsCollection, pagesCollection, hubCallback)
+    val ttl = Option(properties.getProperty("ttl")).map(Minutes.parseMinutes(_));
+
+    val clientConfiguration = AtomPubClientConfiguration(logger, name, new File(dir, "cache"), proxyConfiguration, ttl)
+    apply(clientConfiguration, serviceUrl, workspaceName, postsCollection, pagesCollection, hubCallback)
   }
 
-  def apply(logger: Logger, name: String, dir: File, proxyHost: Option[String], proxyPort: Option[Int], serviceUrl: String, workspaceName: String, postsCollection: String, pagesCollection: String, hubCallback: HubCallback): CmsClient = {
-    val atomPubClient = AtomPubClient(logger, name, new File(dir, "cache"), proxyHost, proxyPort)
-    new DefaultCmsClient(logger, atomPubClient, URI.create(serviceUrl).toURL, workspaceName, postsCollection, pagesCollection, hubCallback)
+  def apply(clientConfiguration: AtomPubClientConfiguration, serviceUrl: String, workspaceName: String, postsCollection: String, pagesCollection: String, hubCallback: HubCallback): CmsClient = {
+    val atomPubClient = AtomPubClient(clientConfiguration)
+    new DefaultCmsClient(clientConfiguration.logger, atomPubClient, URI.create(serviceUrl).toURL, workspaceName, postsCollection, pagesCollection, hubCallback)
   }
 }
 

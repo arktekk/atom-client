@@ -2,23 +2,23 @@ package no.arktekk.cms
 
 import java.io.File
 import java.net.URL
-//import net.liftweb.util.LoggingAutoConfigurer
-import no.arktekk._
-import no.arktekk.cms.atompub.AtomId
+import no.arktekk.cms.atompub.AtomPubClientConfiguration
 import org.apache.commons.io.FileUtils._
 import org.mortbay.jetty.handler._
 import org.mortbay.jetty.{MimeTypes, Server}
 import org.specs._
 
 class CmsClientSpec extends Specification {
-//  LoggingAutoConfigurer()()
+  //  LoggingAutoConfigurer()()
   CmsUtil.skipEhcacheUpdateCheck
 
   val tmpFile = new File(System.getProperty("java.io.tmpdir"), "cms-client")
-  if(tmpFile.exists)
+  if (tmpFile.exists)
     deleteDirectory(tmpFile)
+
   def hubCallback(x: URL, y: URL) = {}
-  val client = CmsClient(ConsoleLogger, "yo", tmpFile, "http://localhost:8908/service.atomsvc.xml", "javazone11 Workspace", "javazone11 Posts", "javazone11 Pages", hubCallback)
+
+  val client = CmsClient(AtomPubClientConfiguration(ConsoleLogger, "yo", tmpFile), "http://localhost:8908/service.atomsvc.xml", "javazone11 Workspace", "javazone11 Posts", "javazone11 Pages", hubCallback)
 
   val server = new Server(8908)
   val contextPath = classOf[CmsClientSpec].getResource("/cms-client").getFile
@@ -44,33 +44,33 @@ class CmsClientSpec extends Specification {
       entries must haveSize(16)
     }
 
-//    "getChildrenOf" in {
-//      val entries = client.getChildrenOf(AtomId("http://javazone11.wordpress.com/?p=74"))
-//      entries must beSome
-//
-//      entries.get.map(_.title) must containInOrder(List("Backstory", "ClubZone", "Crew", "Entertainment", "Expo", "Oslo Spektrum", "The Organiser", "Whiteboards"))
-//    }
-//
-//    "getSiblingsOf top page" in {
-//      val siblings = client.getSiblingsOf(CmsSlug("about_javazone"))
-//
-//      siblings must beSome
-//
-//      val (left, item, right) = siblings.get
-//      left.map(_.title) must containInOrder(List("Agenda"))
-//      item.title must_== "About JavaZone"
-//      right.map(_.title) must containInOrder(List("Partners", "Press"))
-//    }
-//
-//    "getSiblingsOf" in {
-//      val siblings = client.getSiblingsOf(CmsSlug("entertainment"))
-//
-//      siblings must beSome
-//
-//      val (left, item, right) = siblings.get
-//      left.map(_.title) must containInOrder(List("Backstory", "ClubZone", "Crew"))
-//      item.title must_== "Entertainment"
-//      right.map(_.title) must containInOrder(List("Expo", "Oslo Spektrum", "The Organiser", "Whiteboards"))
-//    }
+    //"getChildrenOf" in {
+    //  val entries = client.getChildrenOf(AtomId("http://javazone11.wordpress.com/?p=74"))
+    //  entries must beSome
+    //
+    //  entries.get.map(_.title) must containInOrder(List("Backstory", "ClubZone", "Crew", "Entertainment", "Expo", "Oslo Spektrum", "The Organiser", "Whiteboards"))
+    //}
+    //
+    //"getSiblingsOf top page" in {
+    //  val siblings = client.getSiblingsOf(CmsSlug("about_javazone"))
+    //
+    //  siblings must beSome
+    //
+    //  val (left, item, right) = siblings.get
+    //  left.map(_.title) must containInOrder(List("Agenda"))
+    //  item.title must_== "About JavaZone"
+    //  right.map(_.title) must containInOrder(List("Partners", "Press"))
+    //}
+    //
+    //"getSiblingsOf" in {
+    //  val siblings = client.getSiblingsOf(CmsSlug("entertainment"))
+    //
+    //  siblings must beSome
+    //
+    //  val (left, item, right) = siblings.get
+    //  left.map(_.title) must containInOrder(List("Backstory", "ClubZone", "Crew"))
+    //  item.title must_== "Entertainment"
+    //  right.map(_.title) must containInOrder(List("Expo", "Oslo Spektrum", "The Organiser", "Whiteboards"))
+    //}
   }
 }

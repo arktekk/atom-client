@@ -82,25 +82,35 @@ trait AtomPubClient extends Closeable {
   def getFeed(url: URL): Either[String, AtomPubFeed]
 }
 
+case class ProxyConfiguration(host: String, port: Int)
+
+case class AtomPubClientConfiguration(logger: Logger, name: String, dir: File, proxy: Option[ProxyConfiguration], ttl: Option[Minutes]) {
+}
+
+object AtomPubClientConfiguration {
+  def apply(logger: Logger, name: String, dir: File) = new AtomPubClientConfiguration(logger, name, dir, None, None)
+}
+
 object AtomPubClient {
   private val abdera = new Abdera;
 
   private val cacheConfiguration = new CacheConfiguration
   private var cacheManager: CacheManager = null
 
-  def apply(logger: Logger, name: String, dir: File, proxyHost: Option[String], proxyPort: Option[Int]): AtomPubClient = {
+  def apply(configuration: AtomPubClientConfiguration): AtomPubClient = {
+    val logger = configuration.logger
     val abderaClient = new AbderaClient(abdera)
 
-    if(proxyHost.isDefined) {
-      logger.info("Proxy: " + proxyHost.get + ":" + proxyPort.get)
-      abderaClient.setProxy(proxyHost.get, proxyPort.get)
-    }
+    configuration.proxy.foreach(p => {
+      logger.info("Proxy: " + p.host + ":" + p.port)
+      abderaClient.setProxy(p.host, p.port)
+    })
 
 //    abderaClient.setAuthenticationSchemePriority("digest", "basic");
 //    abderaClient.usePreemptiveAuthentication(true);
 //    abderaClient.addCredentials(null, "WordPress Atom Protocol", null, new UsernamePasswordCredentials(properties.getProperty("username"), properties.getProperty("password")))
 
-    val ttl = Minutes.minutes(10)
+    val ttl = configuration.ttl.getOrElse(Minutes.minutes(10))
 
     // TODO: Add a listener to log when elements are timed out from the cache
 
@@ -118,17 +128,17 @@ object AtomPubClient {
         //        diskPersistent(true).   The objects must be serializable first
         name("atom")
 
-    cacheManager = CacheManager.create(new Configuration().diskStore(new DiskStoreConfiguration().path(dir.getAbsolutePath)).
+    cacheManager = CacheManager.create(new Configuration().diskStore(new DiskStoreConfiguration().path(configuration.dir.getAbsolutePath)).
         defaultCache(new CacheConfiguration()).
         cache(serviceCache).
         cache(atomCache))
-    cacheManager.setName(name)
+    cacheManager.setName(configuration.name)
 
     logger.info("Registering MBeans..")
     ManagementService.registerMBeans(cacheManager,
       ManagementFactory.getPlatformMBeanServer(), true, true, true, true, true)
 
-    new DefaultAtomPubClient(logger, abdera, abderaClient, cacheManager);
+    new DefaultAtomPubClient(configuration.logger, abdera, abderaClient, cacheManager);
   }
 
   /**

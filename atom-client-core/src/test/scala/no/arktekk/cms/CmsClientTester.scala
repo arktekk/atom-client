@@ -2,7 +2,7 @@ package no.arktekk.cms
 
 import java.io.File
 import java.net.URL
-//import net.liftweb.util.LoggingAutoConfigurer
+import no.arktekk.cms.atompub.AtomPubClientConfiguration
 
 object CmsClientTester extends Application {
 //  LoggingAutoConfigurer()()
@@ -10,7 +10,7 @@ object CmsClientTester extends Application {
 
 //  val url = "http://localhost/~trygvis/wordpress/?atompub=service"
   val url = "http://wp.java.no/?atompub=service"
-  val client = CmsClient(ConsoleLogger, "cms", dir, url, "javazone11 Workspace", "javazone11 Posts", "javazone11 Pages", (_: URL, _: URL) => {})
+  val client = CmsClient(AtomPubClientConfiguration(ConsoleLogger, "cms", dir), url, "javazone11 Workspace", "javazone11 Posts", "javazone11 Pages", (_: URL, _: URL) => {})
 
   System.setProperty("net.sf.ehcache.skipUpdateCheck", "true")
   println("Getting service document...")
