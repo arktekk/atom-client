@@ -34,14 +34,13 @@ class CachingAbderaClient[E, T](logger: Logger, val client: AbderaClient, val ca
 
       val response = time(logger)("Fetching " + url, client.get(url))
 
-      //      logger.info("------------------------------------------------------------")
-//      logger.info(response.getStatus + " " + response.getStatusText)
-//      response.getHeaderNames.
-//          map({header => (header, response.getHeader(header))}).
-//          foreach({t => logger.info(t._1 + ": " + t._2)})
+      //logger.info("------------------------------------------------------------")
+      //logger.info(response.getStatus + " " + response.getStatusText)
+      //response.getHeaderNames.
+      //    map({header => (header, response.getHeader(header))}).
+      //    foreach({t => logger.info(t._1 + ": " + t._2)})
 
-      try
-      {
+      try {
         val value = time(logger)("Processing " + url, generator(response));
 
         logger.info("Store as " + url + ", ttl=" + cache.getCacheConfiguration.getTimeToLiveSeconds)

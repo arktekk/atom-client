@@ -7,7 +7,7 @@ import no.arktekk.cms.atompub.AtomId
 class OpenSearchResponseSpec extends Specification {
   "OpenSearchResponse" should {
     "have a useful .left" in {
-      val entry = CmsEntry(AtomId("a"), None, "title", CmsSlug("slug"), NodeSeq.Empty, List.empty)
+      val entry = CmsEntry(AtomId("a"), None, "title", CmsSlug("slug"), List.empty, NodeSeq.Empty)
       val page = List(entry, entry, entry)
 
       OpenSearchResponse(page, 100, 0, 10).pageCount must_== 10

@@ -31,7 +31,7 @@ object AtomEntryConverter {
         orElse(entry.publishedElement).
         map(atomDateTimeToDateTime)
     val categories = entry.categories.map(atomCategoryToString)
-    CmsEntry(entry.id, updatedOrPublished, title, slug, content, categories)
+    CmsEntry(entry.id, updatedOrPublished, title, slug, categories, content)
   }
 
   def atomDateTimeToDateTime(dateTime: AtomDateTime) =
