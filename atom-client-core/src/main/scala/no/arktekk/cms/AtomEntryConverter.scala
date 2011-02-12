@@ -39,13 +39,13 @@ object AtomEntryConverter {
 
   def atomTextToString(text: AtomText): Either[String, String] = text.getTextType match {
     case AtomText.Type.HTML =>
-      val source: Source = Source.fromString("<span>" + text.getText + "</span>")
       for {
-        document <- Option(XhtmlParser(source)).
-            toRight("Unable to parse content as xhtml.").right
+        document <- parseXmlString("<span>" + text.getText + "</span>").right
       } yield document.headOption.map(_.text).getOrElse("") // This effectively strips all markup from the title
+
     case AtomText.Type.XHTML =>
       Right(text.getValue)
+
     case AtomText.Type.TEXT =>
       Right(text.getText)
   }
@@ -60,8 +60,6 @@ object AtomEntryConverter {
   def atomCategoryToString(category: AtomCategory) = category.getTerm
 
   def atomContentToNode(element: AtomContent): Either[String, NodeSeq] = element.getContentType match {
-    case AtomContent.Type.XHTML =>
-      Right(scala.xml.XML.loadString("<div>" + element.getValue + "</div>"))
     case AtomContent.Type.HTML =>
       val string = "<span>" + element.getValue + "</span>"
 
@@ -71,6 +69,9 @@ object AtomEntryConverter {
           map(filterWordpressJunk).right.
           flatMap(_.headOption.toRight("internal error")).right.
           map(_.child)
+
+    case AtomContent.Type.XHTML =>
+      Right(scala.xml.XML.loadString("<div>" + element.getValue + "</div>"))
 
     case AtomContent.Type.TEXT =>
       val body = new WrappedString(element.getValue).lines.map(_.stripLineEnd).filter(_.length > 0).foldLeft(NodeSeq.Empty)({(a,b) => a ++ <p>{b}</p>})

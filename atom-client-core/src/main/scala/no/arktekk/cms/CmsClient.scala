@@ -229,7 +229,7 @@ class DefaultCmsClient(val logger: Logger, val atomPubClient: AtomPubClient, ser
   }
 
   def getParentOfPageBySlug(slug: CmsSlug): Option[CmsEntry] = (for {
-    entry <- getAllAtomEntriesIn(postsCollection).
+    entry <- getAllAtomEntriesIn(pagesCollection).
         find(slug.atomEntryFilter)
     link <- entry.parent
     feed <- dumpLeftGetRight(logger)(getFeed(link.href))
