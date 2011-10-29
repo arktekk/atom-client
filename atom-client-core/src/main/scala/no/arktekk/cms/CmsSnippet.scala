@@ -118,5 +118,5 @@ object CmsSnippet {
       appendMonthOfYearText().
       appendLiteral(' ').
       appendYear(4, 4).
-      toFormatter()
+      toFormatter
 }

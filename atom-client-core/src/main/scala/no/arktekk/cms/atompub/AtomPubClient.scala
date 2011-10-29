@@ -16,12 +16,12 @@ import javax.activation.MimeType
 import no.arktekk.cms.AtomEntryConverter._
 import no.arktekk.cms.CmsConstants._
 import no.arktekk.cms.Logger
-import scala.collection.JavaConversions
+import scala.collection.JavaConversions._
 
 case class AtomPubLink(rel: String, mimeType: Option[MimeType], href: URL)
 
 trait AtomLinks {
-  val links: List[AtomPubLink]
+  def links: List[AtomPubLink]
 
   def findLink(rel: String) = AtomPubClient.findLink(links, rel)
 
@@ -46,13 +46,13 @@ case class AtomPubEntry(entry: AtomEntry) extends AtomLinks {
   lazy val title = fromNull(entry.getTitle)
   lazy val titleElement = fromNull(entry.getTitleElement)
   lazy val contentElement = fromNull(entry.getContentElement)
-  lazy val categories = fromNull(entry.getCategories).map(JavaConversions.asIterable(_).toList).getOrElse(Nil)
-  lazy val links: List[AtomPubLink] = fromNull(entry.getLinks).map(JavaConversions.asIterable(_).toList).getOrElse(Nil).flatMap(atomLinkToLink)
+  lazy val categories = fromNull(entry.getCategories).map(collectionAsScalaIterable(_).toList).getOrElse(Nil)
+  lazy val links: List[AtomPubLink] = fromNull(entry.getLinks).map(collectionAsScalaIterable(_).toList).getOrElse(Nil).flatMap(atomLinkToLink)
 }
 
 case class AtomPubService(service: AtomService) {
   lazy val workspaces: List[AtomPubWorkspace] = fromNull(service.getWorkspaces).
-      map(JavaConversions.asIterable(_).toList).getOrElse(Nil).
+      map(collectionAsScalaIterable(_).toList).getOrElse(Nil).
       map(AtomPubWorkspace)
 
   def findWorkspace(title: String): Option[AtomPubWorkspace] =
@@ -62,7 +62,7 @@ case class AtomPubService(service: AtomService) {
 
 case class AtomPubWorkspace(workspace: AtomWorkspace) {
   lazy val collections: List[AtomPubCollection] = fromNull(workspace.getCollections).
-      map(JavaConversions.asIterable(_).toList).getOrElse(Nil).
+      map(collectionAsScalaIterable(_).toList).getOrElse(Nil).
       map(AtomPubCollection)
 }
 
@@ -72,14 +72,16 @@ case class AtomPubCollection(collection: AtomCollection) {
 }
 
 case class AtomPubFeed(feed: AtomFeed) extends AtomLinks {
-  lazy val entries: List[AtomPubEntry] = JavaConversions.asIterable(feed.getEntries).map(AtomPubEntry).toList
-  lazy val links: List[AtomPubLink] = fromNull(feed.getLinks).map(JavaConversions.asIterable(_).toList).getOrElse(Nil).flatMap(atomLinkToLink)
+  lazy val entries: List[AtomPubEntry] = collectionAsScalaIterable(feed.getEntries).map(AtomPubEntry).toList
+  lazy val links: List[AtomPubLink] = fromNull(feed.getLinks).map(collectionAsScalaIterable(_).toList).getOrElse(Nil).flatMap(atomLinkToLink)
 }
 
 trait AtomPubClient extends Closeable {
-  def getService(serviceUrl: URL): Either[String, AtomPubService]
+  def fetchService(serviceUrl: URL): Either[String, AtomPubService]
 
-  def getFeed(url: URL): Either[String, AtomPubFeed]
+  def fetchFeed(url: URL): Either[String, AtomPubFeed]
+
+  def emptyCache()
 }
 
 case class ProxyConfiguration(host: String, port: Int)
@@ -94,7 +96,6 @@ object AtomPubClientConfiguration {
 object AtomPubClient {
   private val abdera = new Abdera;
 
-  private val cacheConfiguration = new CacheConfiguration
   private var cacheManager: CacheManager = null
 
   def apply(configuration: AtomPubClientConfiguration): AtomPubClient = {
@@ -136,7 +137,7 @@ object AtomPubClient {
 
     logger.info("Registering MBeans..")
     ManagementService.registerMBeans(cacheManager,
-      ManagementFactory.getPlatformMBeanServer(), true, true, true, true, true)
+      ManagementFactory.getPlatformMBeanServer, true, true, true, true, true)
 
     new DefaultAtomPubClient(configuration.logger, abdera, abderaClient, cacheManager);
   }
@@ -171,19 +172,24 @@ class DefaultAtomPubClient(logger: Logger, abdera: Abdera, client: AbderaClient,
   private val serviceCache = CachingAbderaClient[String, AtomService](logger, client, cacheManager.getCache("service"));
   private val feedCache = CachingAbderaClient[String, AtomFeed](logger, client, cacheManager.getCache("atom"));
 
-  def close {
+  def close() {
     logger.info("Closing AtomPubClient")
     // TODO: Dump the cache statistics
-    cacheManager.shutdown;
+    cacheManager.shutdown();
     client.teardown;
   }
 
-  def getService(serviceUrl: URL) =
+  def fetchService(serviceUrl: URL) =
     serviceCache.get(serviceUrl, parseService).right.map(AtomPubService)
 
-  def getFeed(url: URL) =
+  def fetchFeed(url: URL) =
     feedCache.get(url, parseFeed).right.
         map(AtomPubFeed)
+
+  def emptyCache() {
+    serviceCache.cache.flush()
+    feedCache.cache.flush()
+  }
 
   private def parseService(response: ClientResponse) = for {
     status <- Some(response.getStatus).filter(_ == 200).

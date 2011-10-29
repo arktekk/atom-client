@@ -58,31 +58,29 @@ case class OpenSearchResponse(page: List[CmsEntry], totalResults: Int, index: In
 
 trait CmsClient extends Closeable {
 
-  def getEntries(offset: Int, limit: Positive): List[CmsEntry]
+  def fetchEntries(offset: Int, limit: Positive): List[CmsEntry]
 
-  def getEntriesForCategory(category: String, offset: Int, limit: Positive): OpenSearchResponse
+  def fetchEntriesForCategory(category: String, offset: Int, limit: Positive): OpenSearchResponse
 
-  def getPageById(id: AtomId): Option[CmsEntry]
+  def fetchPageById(id: AtomId): Option[CmsEntry]
 
-  def getChildrenOf(parent: AtomId): Option[List[CmsEntry]]
+  def fetchChildrenOf(parent: AtomId): Option[List[CmsEntry]]
 
-  def getChildrenOf(parent: CmsSlug): Option[List[CmsEntry]]
+  def fetchChildrenOf(parent: CmsSlug): Option[List[CmsEntry]]
 
-  def getPageBySlug(slug: CmsSlug): Option[CmsEntry]
+  def fetchPageBySlug(slug: CmsSlug): Option[CmsEntry]
 
-  def getSiblingsOf(slug: CmsSlug): Option[(List[CmsEntry], CmsEntry, List[CmsEntry])]
+  def fetchSiblingsOf(slug: CmsSlug): Option[(List[CmsEntry], CmsEntry, List[CmsEntry])]
 
-  def getTopPages(): List[CmsEntry]
+  def fetchTopPages(): List[CmsEntry]
 
-  def getPostBySlug(slug: CmsSlug): Option[CmsEntry]
+  def fetchPostBySlug(slug: CmsSlug): Option[CmsEntry]
 
-  def getParentOfPageBySlug(slug: CmsSlug): Option[CmsEntry]
+  def fetchParentOfPageBySlug(slug: CmsSlug): Option[CmsEntry]
 }
 
 object CmsClient {
   type HubCallback = (URL, URL) => Unit
-
-  private val EOL = System.getProperty("line.separator")
 
   def apply(logger: Logger, name: String, dir: File, hubCallback: HubCallback): CmsClient = {
     logger.info("Creating new CmsClient from " + dir + " called " + name)
@@ -135,22 +133,22 @@ class DefaultCmsClient(val logger: Logger, val atomPubClient: AtomPubClient, ser
   import CmsConstants._
   import AtomEntryConverter._
 
-  def close = {
+  def close() {
     logger.info("Closing cms client...")
-    atomPubClient.close
+    atomPubClient.close()
   }
 
-  def getEntries(offset: Int, limit: Positive) = {
-//    logger.info("getEntries: offset=" + offset + ", limit=" + limit);
-    getAllAtomEntriesIn(postsCollection).
+  def fetchEntries(offset: Int, limit: Positive) = {
+//    logger.info("fetchEntries: offset=" + offset + ", limit=" + limit);
+    fetchAllAtomEntriesIn(postsCollection).
         flatMap(atomEntryToCmsEntry).
         drop(offset).
         take(limit.toInt)
   }
 
-  def getEntriesForCategory(category: String, offset: Int, limit: Positive) = {
-//    logger.info("getEntriesForCategory: category=" + category + ", offset=" + offset + ", limit=" + limit);
-    var list = getAllAtomEntriesIn(postsCollection).
+  def fetchEntriesForCategory(category: String, offset: Int, limit: Positive) = {
+//    logger.info("fetchEntriesForCategory: category=" + category + ", offset=" + offset + ", limit=" + limit);
+    var list = fetchAllAtomEntriesIn(postsCollection).
         flatMap(atomEntryToCmsEntry)
 
     val totalResults = list.size
@@ -162,93 +160,93 @@ class DefaultCmsClient(val logger: Logger, val atomPubClient: AtomPubClient, ser
     OpenSearchResponse(list, totalResults, offset, limit.toInt)
   }
 
-  def getPageById(id: AtomId) = {
-//    logger.info("getPageById: id=" + id)
-    getAllAtomEntriesIn(pagesCollection).
+  def fetchPageById(id: AtomId) = {
+//    logger.info("fetchPageById: id=" + id)
+    fetchAllAtomEntriesIn(pagesCollection).
         find(id.atomEntryFilter).
         flatMap(atomEntryToCmsEntry)
   }
 
-  def getChildrenOf(parent: AtomId): Option[List[CmsEntry]] = {
-//    logger.info("getChildrenOf: parent=" + parent);
+  def fetchChildrenOf(parent: AtomId): Option[List[CmsEntry]] = {
+//    logger.info("fetchChildrenOf: parent=" + parent);
     for {
-      parent <- getAllAtomEntriesIn(pagesCollection).find(parent.atomEntryFilter)
+      parent <- fetchAllAtomEntriesIn(pagesCollection).find(parent.atomEntryFilter)
       collection <- fromNull(parent.entry.getExtension(classOf[AtomCollection]))
       url <- fromNull(collection.getResolvedHref).flatMap(iriToUrl)
       list <- dumpLeftGetRight(logger)(downloadAllEntries(url, "next"))
     } yield {
       val entries = list.flatMap(atomEntryToCmsEntry)
-//      logger.info("getChildrenOf: entries=" + entries.map(_.title));
+//      logger.info("fetchChildrenOf: entries=" + entries.map(_.title));
       entries
     }
   }
 
-  def getChildrenOf(parent: CmsSlug): Option[List[CmsEntry]] = {
-//    logger.info("getChildrenOf: parent=" + parent);
+  def fetchChildrenOf(parent: CmsSlug): Option[List[CmsEntry]] = {
+//    logger.info("fetchChildrenOf: parent=" + parent);
     for {
-      parent <- getAllAtomEntriesIn(pagesCollection).find(parent.atomEntryFilter)
+      parent <- fetchAllAtomEntriesIn(pagesCollection).find(parent.atomEntryFilter)
       collection <- fromNull(parent.entry.getExtension(classOf[AtomCollection]))
       url <- fromNull(collection.getResolvedHref).flatMap(iriToUrl)
       list <- dumpLeftGetRight(logger)(downloadAllEntries(url, "next"))
     } yield list.flatMap(atomEntryToCmsEntry)
   }
 
-  def getPageBySlug(slug: CmsSlug): Option[CmsEntry] = {
-//    logger.info("getPageBySlug: slug=" + slug)
-    getAllAtomEntriesIn(pagesCollection).
+  def fetchPageBySlug(slug: CmsSlug): Option[CmsEntry] = {
+//    logger.info("fetchPageBySlug: slug=" + slug)
+    fetchAllAtomEntriesIn(pagesCollection).
         flatMap(atomEntryToCmsEntry).
         find(slug.cmsEntryFilter)
   }
 
-  def getSiblingsOf(slug: CmsSlug) = {
-//    logger.info("getSiblingsOf: slug=" + slug)
+  def fetchSiblingsOf(slug: CmsSlug) = {
+//    logger.info("fetchSiblingsOf: slug=" + slug)
     for {
-      entry <- getAllAtomEntriesIn(pagesCollection).find(slug.atomEntryFilter)
+      entry <- fetchAllAtomEntriesIn(pagesCollection).find(slug.atomEntryFilter)
       val siblings: List[CmsEntry] = entry.parent.
-          flatMap(getChildrenOfParent).
-          getOrElse(getTopPages)
+          flatMap(fetchChildrenOfParent).
+          getOrElse(fetchTopPages())
       index <- Some(siblings.indexWhere(slug.cmsEntryFilter)) if index != -1
       cmsEntry <- atomEntryToCmsEntry(entry)
     } yield (siblings.take(index), cmsEntry, siblings.drop(index + 1))
   }
 
-  def getTopPages() = {
-//    logger.info("getTopPages")
-    val x = getAllAtomEntriesIn(pagesCollection).
+  def fetchTopPages() = {
+//    logger.info("fetchTopPages")
+    val x = fetchAllAtomEntriesIn(pagesCollection).
         filter(_.parent.isEmpty)
     val y = x.
         flatMap(atomEntryToCmsEntry)
     y
   }
 
-  def getPostBySlug(slug: CmsSlug): Option[CmsEntry] = {
-//    logger.info("getPostBySlug: slug=" + slug)
-    getAllAtomEntriesIn(postsCollection).
+  def fetchPostBySlug(slug: CmsSlug): Option[CmsEntry] = {
+//    logger.info("fetchPostBySlug: slug=" + slug)
+    fetchAllAtomEntriesIn(postsCollection).
         flatMap(atomEntryToCmsEntry).
         find(slug.cmsEntryFilter)
   }
 
-  def getParentOfPageBySlug(slug: CmsSlug): Option[CmsEntry] = (for {
-    entry <- getAllAtomEntriesIn(pagesCollection).
+  def fetchParentOfPageBySlug(slug: CmsSlug): Option[CmsEntry] = (for {
+    entry <- fetchAllAtomEntriesIn(pagesCollection).
         find(slug.atomEntryFilter)
     link <- entry.parent
-    feed <- dumpLeftGetRight(logger)(getFeed(link.href))
+    feed <- dumpLeftGetRight(logger)(fetchFeed(link.href))
     parent <- feed.entries.headOption
   } yield parent).flatMap(atomEntryToCmsEntry(_))
 
-  def getChildrenOfParent(link: AtomPubLink) = for {
-    feed <- dumpLeftGetRight(logger)(getFeed(link.href))
+  def fetchChildrenOfParent(link: AtomPubLink) = for {
+    feed <- dumpLeftGetRight(logger)(fetchFeed(link.href))
     parent <- feed.entries.headOption
-    siblings <- getChildrenOf(parent.id)
+    siblings <- fetchChildrenOf(parent.id)
   } yield siblings
 
   /**
    * This should perhaps return a stream to minimize how many hits that has to be done.
    */
-  private def getAllAtomEntriesIn(collection: String): List[AtomPubEntry] = {
-//    logger.info("getAllAtomEntriesIn: collection=" + collection)
+  private def fetchAllAtomEntriesIn(collection: String): List[AtomPubEntry] = {
+//    logger.info("fetchAllAtomEntriesIn: collection=" + collection)
     val either: Either[String, List[AtomPubEntry]] = for {
-      service <- atomPubClient.getService(serviceUrl).right
+      service <- atomPubClient.fetchService(serviceUrl).right
       workspace <- service.findWorkspace(workspaceName).
           toRight("Could not find workspace '" + workspaceName + "'.").right
       collection <- workspace.collections.find(_.title.filter(_.equals(collection)).isDefined).
@@ -261,7 +259,7 @@ class DefaultCmsClient(val logger: Logger, val atomPubClient: AtomPubClient, ser
     dumpLeftGetRight(logger)(either).getOrElse(List.empty[AtomPubEntry])
   }
 
-  def getFeed(url: URL) = atomPubClient.getFeed(url) match {
+  def fetchFeed(url: URL) = atomPubClient.fetchFeed(url) match {
     case Left(error) => Left(error)
     case r@Right(feed) =>
       for {
@@ -283,7 +281,7 @@ class DefaultCmsClient(val logger: Logger, val atomPubClient: AtomPubClient, ser
    * TODO: To prevent bugs, check the visitedUrls to see if the URL has already been visited.
    */
   def downloadAllEntries(url: URL, rel: String, head: List[List[AtomPubEntry]], visitedUrls: Set[URL]): Either[String, List[List[AtomPubEntry]]] = {
-    getFeed(url) match {
+    fetchFeed(url) match {
       case Left(s) => Left(s)
       case Right(feed) =>
 //        logger.info("downloadAllEntries: size=" + feed.entries.size + ", head.size=" + head.size)

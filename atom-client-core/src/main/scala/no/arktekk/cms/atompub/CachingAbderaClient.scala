@@ -24,7 +24,7 @@ class CachingAbderaClient[E, T](logger: Logger, val client: AbderaClient, val ca
       return element.getObjectValue.asInstanceOf[Either[E, T]];
     }
 
-    return cache.synchronized({
+    cache.synchronized({
       val element = cache.get(url);
 
       if (element != null) {

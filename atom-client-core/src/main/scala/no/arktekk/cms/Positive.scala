@@ -23,7 +23,7 @@ sealed class Positive(private val i: Int) {
 object Positive {
   implicit def toInt(p: Positive) = p.i
 
-  def fromInt(i: Int): Positive = if (i > 0) new Positive(i) else error("Not positive: " + i)
+  def fromInt(i: Int): Positive = if (i > 0) new Positive(i) else sys.error("Not positive: " + i)
 
   def apply(i: Int): Option[Positive] = if (i > 0) Some(new Positive(i)) else None
 
