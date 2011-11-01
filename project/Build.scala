@@ -1,5 +1,8 @@
 import sbt._
-import Keys._
+import sbt.Keys._
+import sbtrelease.Release._
+import sbtrelease.ReleasePart
+import sbtrelease.ReleaseKeys._
 
 object AtomClient extends Build {
 
@@ -9,7 +12,6 @@ object AtomClient extends Build {
 
   lazy val buildSettings = Defaults.defaultSettings ++ Seq(
     organization := "no.arktekk.atom-client",
-    version := "1.0-SNAPSHOT",
     scalaVersion := "2.9.1",
     crossScalaVersions := Seq("2.9.1") // Seq("2.9.0", "2.9.1"),
   )
@@ -17,8 +19,24 @@ object AtomClient extends Build {
   lazy val root = Project(
     id = "root",
     base = file("."),
-    settings = buildSettings ++ Seq(
-      description := "Constretto Scala API"
+    settings = buildSettings ++ releaseSettings ++ Seq(
+      description := "Atom Client",
+      releaseProcess <<= thisProjectRef apply { ref =>
+        import sbtrelease.ReleaseStateTransformations._
+        Seq[ReleasePart](
+          initialGitChecks,
+          checkSnapshotDependencies,
+          inquireVersions,
+          runTest,
+          setReleaseVersion,
+          commitReleaseVersion,
+          tagRelease,
+        // Enable when we're deploying to Sonatype
+  //        releaseTask(publish in Global in ref),
+          setNextVersion,
+          commitNextVersion
+        )
+      }
     )
   ).aggregate(core, lift)
 
