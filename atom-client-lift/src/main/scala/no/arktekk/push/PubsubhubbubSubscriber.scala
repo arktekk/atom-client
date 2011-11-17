@@ -25,7 +25,7 @@ trait PubsubhubbubSubscriber extends Closeable {
 class DefaultPubsubhubbubSubscriber(val random: Random, val subscribeUrl: URL) extends PubsubhubbubSubscriber {
   private val actor = {
     val actor = new PubsubhubbubActor(random, subscribeUrl)
-    actor.start
+    actor.start()
     actor
   }
 
@@ -35,7 +35,7 @@ class DefaultPubsubhubbubSubscriber(val random: Random, val subscribeUrl: URL) e
   def verify(topic: URL, mode: String, challenge: String, leaseSeconds: Option[Positive], verifyToken: Option[String]) =
     (actor !? VerifyRequest(topic, mode, challenge, leaseSeconds, verifyToken)).asInstanceOf[VerificationResponse]
 
-  def close = {
+  def close() {
     actor.close
   }
 }
@@ -57,52 +57,54 @@ private class PubsubhubbubActor(random: Random, subscriber: URL) extends DaemonA
 
   override def start() = {
     info("Pubsubhubbub subscriber starting..")
-    super.start
+    super.start()
   }
 
-  def close = {
+  def close() {
     this !? Stop
   }
 
-  def act() = loop{
-    react{
-      case AddTopicToHub(hub, topicUrl) =>
-        topics.get(topicUrl) match {
-          case None =>
-            info("New topic: " + topicUrl)
-            val subscriptions = Map(hub -> newSubscription(subscriber, hub, topicUrl))
-            topics = topics + (topicUrl -> subscriptions)
-          case Some(topic) =>
-            topic.get(hub) match {
-              case None =>
-                info("Existing topic, new hub. topic=" + topicUrl + ", hub=" + hub)
-                val subscriptions = Map(hub -> newSubscription(subscriber, hub, topicUrl))
-                topics = topics + (topicUrl -> subscriptions)
-              case Some(subscription) =>
-                info("Existing topic, existing subscription. topic=" + topicUrl + ", hub=" + hub)
-//                subscription ! RequestSubscription
-            }
-        }
-      case r@VerifyRequest(topic, _, _, _, token) =>
-        info("Verifying " + topic + ", token=" + token)
-        reply(verifyRequest(r))
-      case Stop =>
-        info("Stopping pubsubhubbub subscriber...")
-        topics.foreach(topic => topic._2.foreach({
-          hub =>
-            info("Stopping subscription for topic=" + topic._1 + ", hub=" + hub._1)
-            hub._2 !? Stop
-        }))
-        info("Stopped pubsubhubbub subscriber")
-        reply(Unit)
-      case x: AnyRef =>
-        info("Unknown message: type=" + x.getClass)
-        reply(Unit)
+  def act() {
+    loop {
+      react {
+        case AddTopicToHub(hub, topicUrl) =>
+          topics.get(topicUrl) match {
+            case None =>
+              info("New topic: " + topicUrl)
+              val subscriptions = Map(hub -> newSubscription(subscriber, hub, topicUrl))
+              topics = topics + (topicUrl -> subscriptions)
+            case Some(topic) =>
+              topic.get(hub) match {
+                case None =>
+                  info("Existing topic, new hub. topic=" + topicUrl + ", hub=" + hub)
+                  val subscriptions = Map(hub -> newSubscription(subscriber, hub, topicUrl))
+                  topics = topics + (topicUrl -> subscriptions)
+                case Some(subscription) =>
+                  info("Existing topic, existing subscription. topic=" + topicUrl + ", hub=" + hub)
+                //                subscription ! RequestSubscription
+              }
+          }
+        case r@VerifyRequest(topic, _, _, _, token) =>
+          info("Verifying " + topic + ", token=" + token)
+          reply(verifyRequest(r))
+        case Stop =>
+          info("Stopping pubsubhubbub subscriber...")
+          topics.foreach(topic => topic._2.foreach({
+            hub =>
+              info("Stopping subscription for topic=" + topic._1 + ", hub=" + hub._1)
+              hub._2 !? Stop
+          }))
+          info("Stopped pubsubhubbub subscriber")
+          reply(Unit)
+        case x: AnyRef =>
+          info("Unknown message: type=" + x.getClass)
+          reply(Unit)
+      }
     }
   }
 
   def newSubscription(subscriber: URL, hub: URL, topic: URL) = new SubscriptionActor(random, subscriber, hub, topic) {
-    start
+    start()
     this ! RequestSubscription
   }
 
@@ -140,26 +142,28 @@ class SubscriptionActor(random: Random, subscriber: URL, hub: URL, topic: URL) e
   var subscribed = false
   var verified = false
 
-  def act() = loop{
-    react{
-      case RequestSubscription =>
-      // Always register for now
-        requestSubscription
-        subscribed = true
-      case r@VerifyRequest(topic, mode, challenge, leaseSeconds, verifyToken) =>
-        info("Verifying request for " + topic + ", mode=" + mode)
-        info("topic=" + topic)
-        info("mode=" + mode)
-        info("challenge=" + challenge)
-        info("leaseSeconds=" + leaseSeconds)
-        info("verifyToken=" + verifyToken)
-        verified = true
-        reply(VerificationResponse(200, challenge))
-      case Stop =>
-        reply(Unit)
-        exit
-      case x: AnyRef =>
-        info("Unknown message: type=" + x.getClass)
+  def act() {
+    loop{
+      react{
+        case RequestSubscription =>
+          // Always register for now
+          requestSubscription()
+          subscribed = true
+        case r@VerifyRequest(t, mode, challenge, leaseSeconds, verifyToken) =>
+          info("Verifying request for " + t + ", mode=" + mode)
+          info("topic=" + t)
+          info("mode=" + mode)
+          info("challenge=" + challenge)
+          info("leaseSeconds=" + leaseSeconds)
+          info("verifyToken=" + verifyToken)
+          verified = true
+          reply(VerificationResponse(200, challenge))
+        case Stop =>
+          reply(Unit)
+          exit()
+        case x: AnyRef =>
+          info("Unknown message: type=" + x.getClass)
+      }
     }
   }
 

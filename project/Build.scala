@@ -46,22 +46,22 @@ object AtomClient extends Build {
     settings = buildSettings ++ Seq(
       description := "Atom Client, core",
       libraryDependencies := Seq(
-        "org.apache.abdera" % "abdera-core" % abderaVersion withSources(),
-        "org.apache.abdera" % "abdera-client" % abderaVersion withSources(),
-        "org.apache.abdera" % "abdera-parser" % abderaVersion withSources(),
-        "org.apache.abdera" % "abdera-i18n" % abderaVersion withSources(),
-        "org.apache.abdera" % "abdera-extensions-opensearch" % abderaVersion withSources(),
-        "commons-httpclient" % "commons-httpclient" % "3.1" /*withSources()*/,
-        "commons-io" % "commons-io" % "1.4" withSources(),
-        "net.sf.ehcache" % "ehcache-core" % "2.3.0" withSources(),
-        "org.apache.geronimo.specs" % "geronimo-jta_1.1_spec" % "1.1.1" withSources(),
-        "joda-time" % "joda-time" % "1.6" withSources(),
+        "org.apache.abdera" % "abdera-core" % abderaVersion,
+        "org.apache.abdera" % "abdera-client" % abderaVersion,
+        "org.apache.abdera" % "abdera-parser" % abderaVersion,
+        "org.apache.abdera" % "abdera-i18n" % abderaVersion,
+        "org.apache.abdera" % "abdera-extensions-opensearch" % abderaVersion,
+        "commons-httpclient" % "commons-httpclient" % "3.1",
+        "commons-io" % "commons-io" % "1.4",
+        "net.sf.ehcache" % "ehcache-core" % "2.3.0",
+        "org.apache.geronimo.specs" % "geronimo-jta_1.1_spec" % "1.1.1",
+        "joda-time" % "joda-time" % "1.6",
 
-        "org.mortbay.jetty" % "jetty" % "6.1.22" % "test->default" withSources(),
-        "junit" % "junit" % "4.5" % "test->default",
-        "org.specs2" %% "specs2" % "1.6.1" % "test" withSources(),
-        "com.h2database" % "h2" % "1.2.138",
-        "org.slf4j" % "slf4j-simple" % "1.6.1" % "test" withSources()
+        "org.mortbay.jetty" % "jetty" % "6.1.22" % "test",
+        "junit" % "junit" % "4.5" % "test",
+        "org.specs2" %% "specs2" % "1.6.1" % "test",
+        "com.h2database" % "h2" % "1.2.138" % "test",
+        "org.slf4j" % "slf4j-simple" % "1.6.1" % "test"
       )
     )
   )

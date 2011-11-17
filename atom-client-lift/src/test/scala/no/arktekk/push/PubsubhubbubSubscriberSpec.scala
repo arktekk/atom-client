@@ -3,7 +3,7 @@ package no.arktekk.push
 import java.net.URL
 import org.mortbay.jetty.Server
 import org.mortbay.jetty.servlet._
-import org.specs.Specification
+import org.specs2.mutable._
 import scala.util.Random
 import scala.collection.JavaConversions
 import no.arktekk.cms.CmsUtil._

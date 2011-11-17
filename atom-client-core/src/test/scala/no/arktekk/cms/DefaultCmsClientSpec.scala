@@ -1,11 +1,11 @@
 package no.arktekk.cms
 
-import org.specs._
-import scala.xml.{Text => XmlText}
 import org.apache.abdera.parser.stax.FOMEntry
-import no.arktekk.cms.atompub.{AtomPubEntry, AtomPubClient}
 import org.apache.abdera.model.{Content, Entry}
+import org.specs2.mutable._
 import java.net.URL
+import no.arktekk.cms.atompub.{AtomPubEntry, AtomPubClient}
+import scala.xml.{Text => XmlText}
 
 class DefaultCmsClientSpec extends Specification {
 
@@ -33,18 +33,20 @@ class DefaultCmsClientSpec extends Specification {
         Nil
   }
 
-  def hubCallback(x: URL, y: URL) = {}
+  def hubCallback(x: URL, y: URL) {}
 
-  val client = new DefaultCmsClient(ConsoleLogger, new MockClient(entries), new URL("http://serviceUrl"), "workspace", "posts", "pages", hubCallback)
+  val client = new DefaultCmsClient(ConsoleLogger, new MockClient(entries), new CmsClient.Configuration(new URL("http://serviceUrl"), "workspace", "posts", "pages"), hubCallback)
 
   private class MockClient(val entries: List[Entry]) extends AtomPubClient {
-    def getEntries = entries.map(new AtomPubEntry(_))
+    def fetchEntries = entries.map(new AtomPubEntry(_))
 
-    def getService(serviceUrl: URL) = error("not implemented")
+    def fetchService(serviceUrl: URL) = error("not implemented")
 
-    def getFeed(url: URL) = error("not implemented")
+    def fetchFeed(url: URL) = error("not implemented")
 
-    def close = {}
+    def emptyCache() {}
+
+    def close() {}
   }
 
   def haveTitle(title: String) = (beEqualTo(_: String)) ^^^ ((_: CmsEntry).title)

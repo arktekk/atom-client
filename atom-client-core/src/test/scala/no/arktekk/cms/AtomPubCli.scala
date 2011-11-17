@@ -72,7 +72,7 @@ object AtomPubCli extends Application {
 }
 
 trait Command {
-  val text: String
+  def text: String
 
   def execute: Either[String, Map[String, Command]]
 }
@@ -81,7 +81,7 @@ case class ServiceCommand(logger: Logger, url: URL) extends Command {
   val text = "Service"
 
   def execute = for {
-    service <- AtomPubCli.client.getService(url).right
+    service <- AtomPubCli.client.fetchService(url).right
   } yield {
     dumpService(service)
     toCommands(service)
@@ -103,7 +103,7 @@ case class FeedCommand(logger: Logger, up: Command, url: URL, title: Option[Stri
   lazy val text = "Fetch " + title.map("'" + _ + "', ").getOrElse("untitled feed ") + url
 
   def execute = for {
-    feed <- AtomPubCli.client.getFeed(url).right
+    feed <- AtomPubCli.client.fetchFeed(url).right
   } yield {
     println("Feed overview")
     println("Id: " + feed.feed.getId)

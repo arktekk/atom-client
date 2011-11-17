@@ -1,22 +1,23 @@
 package no.arktekk.cms.atompub
 
+import java.io.{Closeable, File}
+import java.lang.management.ManagementFactory
+import java.net.URL
+import javax.activation.MimeType
 import net.sf.ehcache.CacheManager
 import net.sf.ehcache.config.{DiskStoreConfiguration, Configuration, CacheConfiguration}
 import net.sf.ehcache.management.ManagementService
+import no.arktekk.cms.AtomEntryConverter._
+import no.arktekk.cms.CmsConstants._
 import no.arktekk.cms.CmsUtil._
+import no.arktekk.cms.Logger
 import org.apache.abdera._
 import org.apache.abdera.model.{Base => AtomBase, Collection => AtomCollection, Entry => AtomEntry, Feed => AtomFeed, Service => AtomService, Workspace => AtomWorkspace}
 import org.apache.abdera.parser.ParseException
 import org.apache.abdera.protocol.client._
 import org.joda.time.Minutes
-import java.io.{Closeable, File}
-import java.lang.management.ManagementFactory
-import java.net.URL
-import javax.activation.MimeType
-import no.arktekk.cms.AtomEntryConverter._
-import no.arktekk.cms.CmsConstants._
-import no.arktekk.cms.Logger
 import scala.collection.JavaConversions._
+import scala.util.control.Exception._
 
 case class AtomPubLink(rel: String, mimeType: Option[MimeType], href: URL)
 
@@ -96,8 +97,6 @@ object AtomPubClientConfiguration {
 object AtomPubClient {
   private val abdera = new Abdera;
 
-  private var cacheManager: CacheManager = null
-
   def apply(configuration: AtomPubClientConfiguration): AtomPubClient = {
     val logger = configuration.logger
     val abderaClient = new AbderaClient(abdera)
@@ -129,17 +128,22 @@ object AtomPubClient {
         //        diskPersistent(true).   The objects must be serializable first
         name("atom")
 
-    cacheManager = CacheManager.create(new Configuration().diskStore(new DiskStoreConfiguration().path(configuration.dir.getAbsolutePath)).
+    val cacheManager = CacheManager.create(new Configuration().diskStore(new DiskStoreConfiguration().path(configuration.dir.getAbsolutePath)).
         defaultCache(new CacheConfiguration()).
         cache(serviceCache).
         cache(atomCache))
     cacheManager.setName(configuration.name)
 
     logger.info("Registering MBeans..")
-    ManagementService.registerMBeans(cacheManager,
-      ManagementFactory.getPlatformMBeanServer, true, true, true, true, true)
 
-    new DefaultAtomPubClient(configuration.logger, abdera, abderaClient, cacheManager);
+    val registry = new ManagementService(
+      cacheManager, 
+      ManagementFactory.getPlatformMBeanServer, 
+      true, true, true, true, true)
+
+    registry.init()
+
+    new DefaultAtomPubClient(configuration.logger, abdera, abderaClient, cacheManager, registry);
   }
 
   /**
@@ -168,15 +172,17 @@ object AtomPubClient {
     findLinks(links, rel).filter(link => link.mimeType.isDefined && mimeType.toString.equals(link.mimeType.get.toString))
 }
 
-class DefaultAtomPubClient(logger: Logger, abdera: Abdera, client: AbderaClient, cacheManager: CacheManager) extends AtomPubClient {
+class DefaultAtomPubClient(logger: Logger, abdera: Abdera, client: AbderaClient, cacheManager: CacheManager, registry: ManagementService) extends AtomPubClient {
   private val serviceCache = CachingAbderaClient[String, AtomService](logger, client, cacheManager.getCache("service"));
   private val feedCache = CachingAbderaClient[String, AtomFeed](logger, client, cacheManager.getCache("atom"));
 
   def close() {
+    logger.info("Unregistering JMX beans")
+    allCatch {registry.dispose()}
     logger.info("Closing AtomPubClient")
     // TODO: Dump the cache statistics
-    cacheManager.shutdown();
-    client.teardown;
+    allCatch {cacheManager.shutdown()}
+    allCatch {client.teardown}
   }
 
   def fetchService(serviceUrl: URL) =

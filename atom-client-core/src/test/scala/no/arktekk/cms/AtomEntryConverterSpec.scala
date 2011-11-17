@@ -4,7 +4,7 @@ import org.apache.abdera.Abdera
 import org.apache.abdera.model._
 import org.apache.axiom.om.impl.llom.OMTextImpl
 import org.apache.commons.io.IOUtils
-import org.specs._
+import org.specs2.mutable._
 import scala.collection.JavaConversions
 import scala.xml.{Text => XmlText, _}
 
