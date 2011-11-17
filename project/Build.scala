@@ -40,6 +40,13 @@ object AtomClient extends Build {
     )
   ).aggregate(core, lift)
 
+  val testDependencies = Seq(
+    "org.mortbay.jetty" % "jetty" % "6.1.22" % "test",
+    "junit" % "junit" % "4.5" % "test",
+    "org.specs2" %% "specs2" % "1.6.1" % "test",
+    "com.h2database" % "h2" % "1.2.138" % "test",
+    "org.slf4j" % "slf4j-simple" % "1.6.1" % "test")
+
   lazy val core = Project(
     id = "atom-client-core",
     base = file("atom-client-core"),
@@ -55,14 +62,8 @@ object AtomClient extends Build {
         "commons-io" % "commons-io" % "1.4",
         "net.sf.ehcache" % "ehcache-core" % "2.3.0",
         "org.apache.geronimo.specs" % "geronimo-jta_1.1_spec" % "1.1.1",
-        "joda-time" % "joda-time" % "1.6",
-
-        "org.mortbay.jetty" % "jetty" % "6.1.22" % "test",
-        "junit" % "junit" % "4.5" % "test",
-        "org.specs2" %% "specs2" % "1.6.1" % "test",
-        "com.h2database" % "h2" % "1.2.138" % "test",
-        "org.slf4j" % "slf4j-simple" % "1.6.1" % "test"
-      )
+        "joda-time" % "joda-time" % "1.6"
+      ) ++ testDependencies
     )
   )
 
@@ -73,7 +74,7 @@ object AtomClient extends Build {
       description := "Atom Client, Lift support",
       libraryDependencies := Seq(
         "net.liftweb" %% "lift-webkit" % liftVersion
-      )
+      ) ++ testDependencies
     )
   ).dependsOn(core)
 }

@@ -77,6 +77,8 @@ trait CmsClient extends Closeable {
   def fetchPostBySlug(slug: CmsSlug): Option[CmsEntry]
 
   def fetchParentOfPageBySlug(slug: CmsSlug): Option[CmsEntry]
+
+  def fetchEntry(url: URL): Option[CmsEntry]
 }
 
 object CmsClient {
@@ -237,6 +239,12 @@ class DefaultCmsClient(val logger: Logger, val atomPubClient: AtomPubClient, con
     feed <- dumpLeftGetRight(logger)(fetchFeed(link.href))
     parent <- feed.entries.headOption
   } yield parent).flatMap(atomEntryToCmsEntry(_))
+
+  def fetchEntry(url: URL) = for {
+    feed <- dumpLeftGetRight(logger)(fetchFeed(url))
+    entry <- feed.entries.headOption
+    cmsEntry <- atomEntryToCmsEntry(entry)
+  } yield cmsEntry
 
   def fetchChildrenOfParent(link: AtomPubLink) = for {
     feed <- dumpLeftGetRight(logger)(fetchFeed(link.href))
