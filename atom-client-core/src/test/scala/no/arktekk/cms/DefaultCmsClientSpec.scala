@@ -35,7 +35,7 @@ class DefaultCmsClientSpec extends Specification {
 
   def hubCallback(x: URL, y: URL) {}
 
-  val client = new DefaultCmsClient(ConsoleLogger, new MockClient(entries), new CmsClient.Configuration(new URL("http://serviceUrl"), "workspace", "posts", "pages"), hubCallback)
+  val client = new DefaultCmsClient(ConsoleLogger, new MockClient(entries), new CmsClient.ServiceDocumentConfiguration(new URL("http://serviceUrl"), "workspace", "posts", "pages"), hubCallback)
 
   private class MockClient(val entries: List[Entry]) extends AtomPubClient {
     def fetchEntries = entries.map(new AtomPubEntry(_))

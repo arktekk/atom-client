@@ -19,7 +19,7 @@ class CmsClientSpec extends Specification {
 
   def hubCallback(x: URL, y: URL) {}
 
-  val client = CmsClient(AtomPubClientConfiguration(ConsoleLogger, "yo", tmpFile), CmsClient.Configuration(new URL("http://localhost:8908/service.atomsvc.xml"), "javazone11 Workspace", "javazone11 Posts", "javazone11 Pages"), hubCallback)
+  val client = CmsClient(AtomPubClientConfiguration(ConsoleLogger, "yo", tmpFile), CmsClient.ServiceDocumentConfiguration(new URL("http://localhost:8908/service.atomsvc.xml"), "javazone11 Workspace", "javazone11 Posts", "javazone11 Pages"), hubCallback)
 
   val server = new Server(8908)
   val contextPath = classOf[CmsClientSpec].getResource("/cms-client").getFile

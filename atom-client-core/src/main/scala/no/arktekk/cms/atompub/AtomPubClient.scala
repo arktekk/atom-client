@@ -87,11 +87,11 @@ trait AtomPubClient extends Closeable {
 
 case class ProxyConfiguration(host: String, port: Int)
 
-case class AtomPubClientConfiguration(logger: Logger, name: String, dir: File, proxy: Option[ProxyConfiguration], ttl: Option[Minutes]) {
+case class AtomPubClientConfiguration(logger: Logger, name: String, dir: File, proxy: Option[ProxyConfiguration], ttl: Option[Minutes], requestOptions: Option[RequestOptions]) {
 }
 
 object AtomPubClientConfiguration {
-  def apply(logger: Logger, name: String, dir: File) = new AtomPubClientConfiguration(logger, name, dir, None, None)
+  def apply(logger: Logger, name: String, dir: File) = new AtomPubClientConfiguration(logger, name, dir, None, None, None)
 }
 
 object AtomPubClient {
@@ -143,7 +143,7 @@ object AtomPubClient {
 
     registry.init()
 
-    new DefaultAtomPubClient(configuration.logger, abdera, abderaClient, cacheManager, registry);
+    new DefaultAtomPubClient(configuration.logger, abdera, abderaClient, configuration.requestOptions.getOrElse(CachingAbderaClient.defaultRequestOptions), cacheManager, registry);
   }
 
   /**
@@ -172,9 +172,9 @@ object AtomPubClient {
     findLinks(links, rel).filter(link => link.mimeType.isDefined && mimeType.toString.equals(link.mimeType.get.toString))
 }
 
-class DefaultAtomPubClient(logger: Logger, abdera: Abdera, client: AbderaClient, cacheManager: CacheManager, registry: ManagementService) extends AtomPubClient {
-  private val serviceCache = CachingAbderaClient[String, AtomService](logger, client, cacheManager.getCache("service"));
-  private val feedCache = CachingAbderaClient[String, AtomFeed](logger, client, cacheManager.getCache("atom"));
+class DefaultAtomPubClient(logger: Logger, abdera: Abdera, client: AbderaClient, requestOptions: RequestOptions, cacheManager: CacheManager, registry: ManagementService) extends AtomPubClient {
+  private val serviceCache = CachingAbderaClient[String, AtomService](logger, client, requestOptions, cacheManager.getCache("service"));
+  private val feedCache = CachingAbderaClient[String, AtomFeed](logger, client, requestOptions, cacheManager.getCache("atom"));
 
   def close() {
     logger.info("Unregistering JMX beans")

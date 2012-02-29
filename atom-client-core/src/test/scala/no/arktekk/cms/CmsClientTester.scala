@@ -10,7 +10,7 @@ object CmsClientTester extends Application {
 
 //  val url = "http://localhost/~trygvis/wordpress/?atompub=service"
   val url = "http://wp.java.no/?atompub=service"
-  val client = CmsClient(AtomPubClientConfiguration(ConsoleLogger, "cms", dir), CmsClient.Configuration(new URL(url), "javazone11 Workspace", "javazone11 Posts", "javazone11 Pages"), (_: URL, _: URL) => {})
+  val client = CmsClient(AtomPubClientConfiguration(ConsoleLogger, "cms", dir), CmsClient.ServiceDocumentConfiguration(new URL(url), "javazone11 Workspace", "javazone11 Posts", "javazone11 Pages"), (_: URL, _: URL) => {})
 
   System.setProperty("net.sf.ehcache.skipUpdateCheck", "true")
   println("Getting service document...")
