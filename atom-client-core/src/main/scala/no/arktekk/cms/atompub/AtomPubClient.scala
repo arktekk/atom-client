@@ -199,16 +199,16 @@ class DefaultAtomPubClient(logger: Logger, abdera: Abdera, client: AbderaClient,
 
   private def parseService(response: ClientResponse) = for {
     status <- Some(response.getStatus).filter(_ == 200).
-        toRight("Unexpected status code: " + response.getStatus).right
+      toRight("Unexpected status code, got: " + response.getStatus + ", expected 200.").right
     contentType <- Some(response.getContentType).filter(_.`match`(serviceMimeType)).
-        toRight("Unexpected content type: " + response.getContentType).right
+      toRight("Unexpected content type, got: " + response.getContentType + ", expected: " + serviceMimeType + ".").right
   } yield response.getDocument[AtomService].getRoot.complete[AtomService]
 
   private def parseFeed(response: ClientResponse): Either[String, AtomFeed] = for {
     status <- Some(response.getStatus).filter(_ == 200).
-        toRight("Unexpected status code: " + response.getStatus).right
+      toRight("Unexpected status code, got: " + response.getStatus + ", expected 200.").right
     contentType <- Some(response.getContentType).filter(_.`match`(atomMimeType)).
-        toRight("Unexpected content type: " + response.getContentType).right
+      toRight("Unexpected content type, got: " + response.getContentType + ", expected: " + atomMimeType + ".").right
     feed <- parseXml(response).right
   } yield {
     logger.info("Feed has " + feed.getEntries.size + " entries")
