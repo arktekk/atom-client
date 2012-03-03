@@ -4,7 +4,7 @@ import java.net.URL
 import javax.activation.MimeType
 import no.arktekk.cms.CmsConstants._
 import org.apache.abdera.Abdera
-import org.specs.Specification
+import org.specs2.mutable._
 
 class AtomPubClientSpec extends Specification {
   import AtomPubClient._

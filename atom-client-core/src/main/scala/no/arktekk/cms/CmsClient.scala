@@ -1,14 +1,15 @@
 package no.arktekk.cms
 
 import java.io._
+import java.net._
 import java.util.Properties
-import java.net.{URI, URL}
-import no.arktekk.cms.atompub._
 import no.arktekk.cms.CmsUtil._
+import no.arktekk.cms.atompub._
 import org.apache.abdera.model.{Collection => AtomCollection}
 import org.apache.commons.io.IOUtils._
+import org.joda.time._
 import scala.xml._
-import org.joda.time.{Minutes, DateTime}
+import no.arktekk.cms.CmsClient.{ExplicitConfiguration, ServiceDocumentConfiguration}
 
 case class CmsSlug(private val value: String) {
   override def toString = value
@@ -77,10 +78,26 @@ trait CmsClient extends Closeable {
   def fetchPostBySlug(slug: CmsSlug): Option[CmsEntry]
 
   def fetchParentOfPageBySlug(slug: CmsSlug): Option[CmsEntry]
+
+  def fetchEntry(url: URL): Option[CmsEntry]
 }
 
 object CmsClient {
   type HubCallback = (URL, URL) => Unit
+
+//  case class Configuration(serviceUrl: URL, workspaceName: String, postsCollection: String, pagesCollection: String)
+  trait Configuration
+
+  /**
+   * Use this configuration if you want the CMS client to find the pages/posts feeds based on a service document and
+   * collection names.
+   */
+  case class ServiceDocumentConfiguration(serviceUrl: URL, workspaceName: String, postsCollection: String, pagesCollection: String) extends Configuration
+
+  /**
+   * Use this configuration if you want to tell the CMS client where the pages/posts feeds URLs are.
+   */
+  case class ExplicitConfiguration(postsUrl: URL, pagesUrl: URL) extends Configuration
 
   def apply(logger: Logger, name: String, dir: File, hubCallback: HubCallback): CmsClient = {
     logger.info("Creating new CmsClient from " + dir + " called " + name)
@@ -105,7 +122,7 @@ object CmsClient {
       closeQuietly(inputStream);
     }
 
-    val serviceUrl = properties.getProperty("serviceUrl");
+    val serviceUrl = new URL(properties.getProperty("serviceUrl"));
     val workspaceName = properties.getProperty("workspace");
     val postsCollection = Option(properties.getProperty("postsCollection")).getOrElse("")
     val pagesCollection = Option(properties.getProperty("pagesCollection")).getOrElse("")
@@ -119,17 +136,19 @@ object CmsClient {
 
     val ttl = Option(properties.getProperty("ttl")).map(Minutes.parseMinutes(_));
 
-    val clientConfiguration = AtomPubClientConfiguration(logger, name, new File(dir, "cache"), proxyConfiguration, ttl)
-    apply(clientConfiguration, serviceUrl, workspaceName, postsCollection, pagesCollection, hubCallback)
+    val clientConfiguration = AtomPubClientConfiguration(logger, name, new File(dir, "cache"), proxyConfiguration, ttl, None)
+
+    apply(clientConfiguration, ServiceDocumentConfiguration(serviceUrl, workspaceName, postsCollection, pagesCollection), hubCallback)
   }
 
-  def apply(clientConfiguration: AtomPubClientConfiguration, serviceUrl: String, workspaceName: String, postsCollection: String, pagesCollection: String, hubCallback: HubCallback): CmsClient = {
+  def apply(clientConfiguration: AtomPubClientConfiguration, configuration: CmsClient.ServiceDocumentConfiguration, hubCallback: HubCallback): CmsClient = {
     val atomPubClient = AtomPubClient(clientConfiguration)
-    new DefaultCmsClient(clientConfiguration.logger, atomPubClient, URI.create(serviceUrl).toURL, workspaceName, postsCollection, pagesCollection, hubCallback)
+    new DefaultCmsClient(clientConfiguration.logger, atomPubClient, configuration, hubCallback)
   }
 }
 
-class DefaultCmsClient(val logger: Logger, val atomPubClient: AtomPubClient, serviceUrl: URL, workspaceName: String, postsCollection: String, pagesCollection: String, hubCallback: CmsClient.HubCallback) extends CmsClient {
+class DefaultCmsClient(val logger: Logger, val atomPubClient: AtomPubClient, config: CmsClient.Configuration, hubCallback: CmsClient.HubCallback) extends CmsClient {
+
   import CmsConstants._
   import AtomEntryConverter._
 
@@ -140,7 +159,7 @@ class DefaultCmsClient(val logger: Logger, val atomPubClient: AtomPubClient, ser
 
   def fetchEntries(offset: Int, limit: Positive) = {
 //    logger.info("fetchEntries: offset=" + offset + ", limit=" + limit);
-    fetchAllAtomEntriesIn(postsCollection).
+    fetchPosts().
         flatMap(atomEntryToCmsEntry).
         drop(offset).
         take(limit.toInt)
@@ -148,7 +167,7 @@ class DefaultCmsClient(val logger: Logger, val atomPubClient: AtomPubClient, ser
 
   def fetchEntriesForCategory(category: String, offset: Int, limit: Positive) = {
 //    logger.info("fetchEntriesForCategory: category=" + category + ", offset=" + offset + ", limit=" + limit);
-    var list = fetchAllAtomEntriesIn(postsCollection).
+    var list = fetchPosts().
         flatMap(atomEntryToCmsEntry)
 
     val totalResults = list.size
@@ -162,7 +181,7 @@ class DefaultCmsClient(val logger: Logger, val atomPubClient: AtomPubClient, ser
 
   def fetchPageById(id: AtomId) = {
 //    logger.info("fetchPageById: id=" + id)
-    fetchAllAtomEntriesIn(pagesCollection).
+    fetchPages().
         find(id.atomEntryFilter).
         flatMap(atomEntryToCmsEntry)
   }
@@ -170,7 +189,7 @@ class DefaultCmsClient(val logger: Logger, val atomPubClient: AtomPubClient, ser
   def fetchChildrenOf(parent: AtomId): Option[List[CmsEntry]] = {
 //    logger.info("fetchChildrenOf: parent=" + parent);
     for {
-      parent <- fetchAllAtomEntriesIn(pagesCollection).find(parent.atomEntryFilter)
+      parent <- fetchPages().find(parent.atomEntryFilter)
       collection <- fromNull(parent.entry.getExtension(classOf[AtomCollection]))
       url <- fromNull(collection.getResolvedHref).flatMap(iriToUrl)
       list <- dumpLeftGetRight(logger)(downloadAllEntries(url, "next"))
@@ -184,7 +203,7 @@ class DefaultCmsClient(val logger: Logger, val atomPubClient: AtomPubClient, ser
   def fetchChildrenOf(parent: CmsSlug): Option[List[CmsEntry]] = {
 //    logger.info("fetchChildrenOf: parent=" + parent);
     for {
-      parent <- fetchAllAtomEntriesIn(pagesCollection).find(parent.atomEntryFilter)
+      parent <- fetchPages().find(parent.atomEntryFilter)
       collection <- fromNull(parent.entry.getExtension(classOf[AtomCollection]))
       url <- fromNull(collection.getResolvedHref).flatMap(iriToUrl)
       list <- dumpLeftGetRight(logger)(downloadAllEntries(url, "next"))
@@ -193,7 +212,7 @@ class DefaultCmsClient(val logger: Logger, val atomPubClient: AtomPubClient, ser
 
   def fetchPageBySlug(slug: CmsSlug): Option[CmsEntry] = {
 //    logger.info("fetchPageBySlug: slug=" + slug)
-    fetchAllAtomEntriesIn(pagesCollection).
+    fetchPages().
         flatMap(atomEntryToCmsEntry).
         find(slug.cmsEntryFilter)
   }
@@ -201,7 +220,7 @@ class DefaultCmsClient(val logger: Logger, val atomPubClient: AtomPubClient, ser
   def fetchSiblingsOf(slug: CmsSlug) = {
 //    logger.info("fetchSiblingsOf: slug=" + slug)
     for {
-      entry <- fetchAllAtomEntriesIn(pagesCollection).find(slug.atomEntryFilter)
+      entry <- fetchPages().find(slug.atomEntryFilter)
       val siblings: List[CmsEntry] = entry.parent.
           flatMap(fetchChildrenOfParent).
           getOrElse(fetchTopPages())
@@ -212,7 +231,7 @@ class DefaultCmsClient(val logger: Logger, val atomPubClient: AtomPubClient, ser
 
   def fetchTopPages() = {
 //    logger.info("fetchTopPages")
-    val x = fetchAllAtomEntriesIn(pagesCollection).
+    val x = fetchPages().
         filter(_.parent.isEmpty)
     val y = x.
         flatMap(atomEntryToCmsEntry)
@@ -221,18 +240,24 @@ class DefaultCmsClient(val logger: Logger, val atomPubClient: AtomPubClient, ser
 
   def fetchPostBySlug(slug: CmsSlug): Option[CmsEntry] = {
 //    logger.info("fetchPostBySlug: slug=" + slug)
-    fetchAllAtomEntriesIn(postsCollection).
+    fetchPosts().
         flatMap(atomEntryToCmsEntry).
         find(slug.cmsEntryFilter)
   }
 
   def fetchParentOfPageBySlug(slug: CmsSlug): Option[CmsEntry] = (for {
-    entry <- fetchAllAtomEntriesIn(pagesCollection).
+    entry <- fetchPages().
         find(slug.atomEntryFilter)
     link <- entry.parent
     feed <- dumpLeftGetRight(logger)(fetchFeed(link.href))
     parent <- feed.entries.headOption
   } yield parent).flatMap(atomEntryToCmsEntry(_))
+
+  def fetchEntry(url: URL) = for {
+    feed <- dumpLeftGetRight(logger)(fetchFeed(url))
+    entry <- feed.entries.headOption
+    cmsEntry <- atomEntryToCmsEntry(entry)
+  } yield cmsEntry
 
   def fetchChildrenOfParent(link: AtomPubLink) = for {
     feed <- dumpLeftGetRight(logger)(fetchFeed(link.href))
@@ -240,10 +265,30 @@ class DefaultCmsClient(val logger: Logger, val atomPubClient: AtomPubClient, ser
     siblings <- fetchChildrenOf(parent.id)
   } yield siblings
 
+  private def fetchPosts() = {
+    config match {
+      case ServiceDocumentConfiguration(serviceUrl, workspaceName, postsCollection, _) =>
+        fetchAllAtomEntriesIn(serviceUrl, workspaceName, postsCollection)
+      case ExplicitConfiguration(postsUrl, _) =>
+        val either = downloadAllEntries(postsUrl, "next")
+        dumpLeftGetRight(logger)(either).getOrElse(List.empty[AtomPubEntry])
+    }
+  }
+
+  private def fetchPages() = {
+    config match {
+      case ServiceDocumentConfiguration(serviceUrl, workspaceName, _, pagesCollection) =>
+        fetchAllAtomEntriesIn(serviceUrl, workspaceName, pagesCollection)
+      case ExplicitConfiguration(_, pagesUrl) =>
+        val either = downloadAllEntries(pagesUrl, "next")
+        dumpLeftGetRight(logger)(either).getOrElse(List.empty[AtomPubEntry])
+    }
+  }
+
   /**
    * This should perhaps return a stream to minimize how many hits that has to be done.
    */
-  private def fetchAllAtomEntriesIn(collection: String): List[AtomPubEntry] = {
+  private def fetchAllAtomEntriesIn(serviceUrl: URL, workspaceName: String, collection: String): List[AtomPubEntry] = {
 //    logger.info("fetchAllAtomEntriesIn: collection=" + collection)
     val either: Either[String, List[AtomPubEntry]] = for {
       service <- atomPubClient.fetchService(serviceUrl).right

@@ -3,16 +3,29 @@ package no.arktekk.cms.atompub
 import java.net.URL
 import net.sf.ehcache.{Element, Cache}
 import no.arktekk.cms.CmsUtil._
-import org.apache.abdera.protocol.client.{ClientResponse, AbderaClient}
 import no.arktekk.cms.Logger
+import org.apache.abdera.protocol.client.util.MethodHelper
+import org.apache.abdera.protocol.client.{RequestOptions, ClientResponse, AbderaClient}
 
 object CachingAbderaClient {
-  def apply[E, T](logger: Logger, client: AbderaClient, cache: Cache): CachingAbderaClient[E, T] = {
-    new CachingAbderaClient(logger, client, cache);
+  def apply[E, T](logger: Logger, client: AbderaClient, requestOptions: RequestOptions, cache: Cache): CachingAbderaClient[E, T] = {
+    new CachingAbderaClient(logger, client, requestOptions, cache);
   }
+
+  val defaultRequestOptions = MethodHelper.createDefaultRequestOptions()
+
+  /**
+   * Confluence is unable to handle Accept-Encoding and Accept-Charset properly.
+   *
+   * Is fixed in version 3.5.?.
+   */
+  val confluenceFriendlyRequestOptions = MethodHelper.createDefaultRequestOptions().
+    setAcceptEncoding().
+    setAcceptCharset()
+
 }
 
-class CachingAbderaClient[E, T](logger: Logger, val client: AbderaClient, val cache: Cache) {
+class CachingAbderaClient[E, T](logger: Logger, val client: AbderaClient, requestOptions: RequestOptions, val cache: Cache) {
   def get(u: URL, generator: (ClientResponse => Either[E, T])): Either[E, T] = {
 
     val url = u.toExternalForm
@@ -32,7 +45,7 @@ class CachingAbderaClient[E, T](logger: Logger, val client: AbderaClient, val ca
         return element.getObjectValue.asInstanceOf[Either[E, T]];
       }
 
-      val response = time(logger)("Fetching " + url, client.get(url))
+      val response = time(logger)("Fetching " + url, client.get(url, requestOptions))
 
       //logger.info("------------------------------------------------------------")
       //logger.info(response.getStatus + " " + response.getStatusText)

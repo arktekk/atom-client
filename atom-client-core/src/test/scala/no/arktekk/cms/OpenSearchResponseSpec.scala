@@ -1,8 +1,8 @@
 package no.arktekk.cms
 
-import org.specs._
-import scala.xml.NodeSeq
 import no.arktekk.cms.atompub.AtomId
+import org.specs2.mutable._
+import scala.xml.NodeSeq
 
 class OpenSearchResponseSpec extends Specification {
   "OpenSearchResponse" should {

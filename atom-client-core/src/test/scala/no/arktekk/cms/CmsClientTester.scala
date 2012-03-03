@@ -10,7 +10,7 @@ object CmsClientTester extends Application {
 
 //  val url = "http://localhost/~trygvis/wordpress/?atompub=service"
   val url = "http://wp.java.no/?atompub=service"
-  val client = CmsClient(AtomPubClientConfiguration(ConsoleLogger, "cms", dir), url, "javazone11 Workspace", "javazone11 Posts", "javazone11 Pages", (_: URL, _: URL) => {})
+  val client = CmsClient(AtomPubClientConfiguration(ConsoleLogger, "cms", dir), CmsClient.ServiceDocumentConfiguration(new URL(url), "javazone11 Workspace", "javazone11 Posts", "javazone11 Pages"), (_: URL, _: URL) => {})
 
   System.setProperty("net.sf.ehcache.skipUpdateCheck", "true")
   println("Getting service document...")
@@ -20,7 +20,7 @@ object CmsClientTester extends Application {
 //  entries.foreach(entry => println(entry.title))
 //  println("------------------------------------------")
 
-  val tree = client.getTopPages().map(dumpPageTree(0)).flatten
+  val tree = client.fetchTopPages().map(dumpPageTree(0)).flatten
   println("Tree:")
   tree.foreach(println)
   println("------------------------------------------")
@@ -42,6 +42,6 @@ object CmsClientTester extends Application {
   def dumpPageTree(indent: Int)(entry: CmsEntry): List[String] = {
     println("entry.id=" + entry.id + ", title=" + entry.title)
     List(" " * indent + entry.title) ++
-        client.getChildrenOf(entry.id).get.map(dumpPageTree(indent + 1)).flatten
+        client.fetchChildrenOf(entry.id).get.map(dumpPageTree(indent + 1)).flatten
   }
 }

@@ -3,15 +3,17 @@ package no.arktekk.push
 import java.net.URL
 import org.mortbay.jetty.Server
 import org.mortbay.jetty.servlet._
-import org.specs.Specification
+import org.specs2.specification._
+import org.specs2.mutable._
 import scala.util.Random
 import scala.collection.JavaConversions
 import no.arktekk.cms.CmsUtil._
 import no.arktekk.cms.Positive
 import javax.servlet.http._
+import org.specs2.specification.Step._
 
 class PubsubhubbubSubscriberSpec extends Specification {
-  val httpPort = 8908
+  val httpPort = 8909
   val subscriber = new URL("http://localhost:" + httpPort + "/subscriber")
   val hub = new URL("http://localhost:4567/")
   val topic = new URL("http://localhost/~trygvis/wordpress/?atompub=list&pt=abc&pg=1")
@@ -53,11 +55,12 @@ class PubsubhubbubSubscriberSpec extends Specification {
   })
   server.start
 
-  doAfterSpec {
-    println("Stopping...")
-    pubsubhubbub.close
-    server.stop
-  }
+  override def is = super.is ^
+    Step {
+      println("Stopping Jetty")
+      pubsubhubbub.close()
+      server.stop()
+    }
 
   "Pubsubhubbub" should {
     "work" in {

@@ -6,7 +6,8 @@ import no.arktekk.cms.atompub.AtomPubClientConfiguration
 import org.apache.commons.io.FileUtils._
 import org.mortbay.jetty.handler._
 import org.mortbay.jetty.{MimeTypes, Server}
-import org.specs._
+import org.specs2.mutable._
+import org.specs2.specification._
 
 class CmsClientSpec extends Specification {
   //  LoggingAutoConfigurer()()
@@ -16,9 +17,9 @@ class CmsClientSpec extends Specification {
   if (tmpFile.exists)
     deleteDirectory(tmpFile)
 
-  def hubCallback(x: URL, y: URL) = {}
+  def hubCallback(x: URL, y: URL) {}
 
-  val client = CmsClient(AtomPubClientConfiguration(ConsoleLogger, "yo", tmpFile), "http://localhost:8908/service.atomsvc.xml", "javazone11 Workspace", "javazone11 Posts", "javazone11 Pages", hubCallback)
+  val client = CmsClient(AtomPubClientConfiguration(ConsoleLogger, "yo", tmpFile), CmsClient.ServiceDocumentConfiguration(new URL("http://localhost:8908/service.atomsvc.xml"), "javazone11 Workspace", "javazone11 Posts", "javazone11 Pages"), hubCallback)
 
   val server = new Server(8908)
   val contextPath = classOf[CmsClientSpec].getResource("/cms-client").getFile
@@ -30,16 +31,17 @@ class CmsClientSpec extends Specification {
     setResourceBase(contextPath)
     setMimeTypes(mimeTypes)
   })
-  server.start
+  server.start()
 
-  doAfterSpec {
-    println("Stopping Jetty")
-    server.stop
-  }
+  override def is = super.is ^
+    Step {
+      println("Stopping Jetty")
+      server.stop()
+    }
 
   "cms client" should {
     "getEntries" in {
-      val entries = client.getEntries(0, Positive.fromInt(1000))
+      val entries = client.fetchEntries(0, Positive.fromInt(1000))
 
       entries must haveSize(16)
     }

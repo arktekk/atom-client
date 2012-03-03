@@ -1,22 +1,23 @@
 package no.arktekk.cms.atompub
 
+import java.io.{Closeable, File}
+import java.lang.management.ManagementFactory
+import java.net.URL
+import javax.activation.MimeType
 import net.sf.ehcache.CacheManager
 import net.sf.ehcache.config.{DiskStoreConfiguration, Configuration, CacheConfiguration}
 import net.sf.ehcache.management.ManagementService
+import no.arktekk.cms.AtomEntryConverter._
+import no.arktekk.cms.CmsConstants._
 import no.arktekk.cms.CmsUtil._
+import no.arktekk.cms.Logger
 import org.apache.abdera._
 import org.apache.abdera.model.{Base => AtomBase, Collection => AtomCollection, Entry => AtomEntry, Feed => AtomFeed, Service => AtomService, Workspace => AtomWorkspace}
 import org.apache.abdera.parser.ParseException
 import org.apache.abdera.protocol.client._
 import org.joda.time.Minutes
-import java.io.{Closeable, File}
-import java.lang.management.ManagementFactory
-import java.net.URL
-import javax.activation.MimeType
-import no.arktekk.cms.AtomEntryConverter._
-import no.arktekk.cms.CmsConstants._
-import no.arktekk.cms.Logger
 import scala.collection.JavaConversions._
+import scala.util.control.Exception._
 
 case class AtomPubLink(rel: String, mimeType: Option[MimeType], href: URL)
 
@@ -86,17 +87,15 @@ trait AtomPubClient extends Closeable {
 
 case class ProxyConfiguration(host: String, port: Int)
 
-case class AtomPubClientConfiguration(logger: Logger, name: String, dir: File, proxy: Option[ProxyConfiguration], ttl: Option[Minutes]) {
+case class AtomPubClientConfiguration(logger: Logger, name: String, dir: File, proxy: Option[ProxyConfiguration], ttl: Option[Minutes], requestOptions: Option[RequestOptions]) {
 }
 
 object AtomPubClientConfiguration {
-  def apply(logger: Logger, name: String, dir: File) = new AtomPubClientConfiguration(logger, name, dir, None, None)
+  def apply(logger: Logger, name: String, dir: File) = new AtomPubClientConfiguration(logger, name, dir, None, None, None)
 }
 
 object AtomPubClient {
   private val abdera = new Abdera;
-
-  private var cacheManager: CacheManager = null
 
   def apply(configuration: AtomPubClientConfiguration): AtomPubClient = {
     val logger = configuration.logger
@@ -129,17 +128,22 @@ object AtomPubClient {
         //        diskPersistent(true).   The objects must be serializable first
         name("atom")
 
-    cacheManager = CacheManager.create(new Configuration().diskStore(new DiskStoreConfiguration().path(configuration.dir.getAbsolutePath)).
+    val cacheManager = CacheManager.create(new Configuration().diskStore(new DiskStoreConfiguration().path(configuration.dir.getAbsolutePath)).
         defaultCache(new CacheConfiguration()).
         cache(serviceCache).
         cache(atomCache))
     cacheManager.setName(configuration.name)
 
     logger.info("Registering MBeans..")
-    ManagementService.registerMBeans(cacheManager,
-      ManagementFactory.getPlatformMBeanServer, true, true, true, true, true)
 
-    new DefaultAtomPubClient(configuration.logger, abdera, abderaClient, cacheManager);
+    val registry = new ManagementService(
+      cacheManager, 
+      ManagementFactory.getPlatformMBeanServer, 
+      true, true, true, true, true)
+
+    registry.init()
+
+    new DefaultAtomPubClient(configuration.logger, abdera, abderaClient, configuration.requestOptions.getOrElse(CachingAbderaClient.defaultRequestOptions), cacheManager, registry);
   }
 
   /**
@@ -168,15 +172,17 @@ object AtomPubClient {
     findLinks(links, rel).filter(link => link.mimeType.isDefined && mimeType.toString.equals(link.mimeType.get.toString))
 }
 
-class DefaultAtomPubClient(logger: Logger, abdera: Abdera, client: AbderaClient, cacheManager: CacheManager) extends AtomPubClient {
-  private val serviceCache = CachingAbderaClient[String, AtomService](logger, client, cacheManager.getCache("service"));
-  private val feedCache = CachingAbderaClient[String, AtomFeed](logger, client, cacheManager.getCache("atom"));
+class DefaultAtomPubClient(logger: Logger, abdera: Abdera, client: AbderaClient, requestOptions: RequestOptions, cacheManager: CacheManager, registry: ManagementService) extends AtomPubClient {
+  private val serviceCache = CachingAbderaClient[String, AtomService](logger, client, requestOptions, cacheManager.getCache("service"));
+  private val feedCache = CachingAbderaClient[String, AtomFeed](logger, client, requestOptions, cacheManager.getCache("atom"));
 
   def close() {
+    logger.info("Unregistering JMX beans")
+    allCatch {registry.dispose()}
     logger.info("Closing AtomPubClient")
     // TODO: Dump the cache statistics
-    cacheManager.shutdown();
-    client.teardown;
+    allCatch {cacheManager.shutdown()}
+    allCatch {client.teardown}
   }
 
   def fetchService(serviceUrl: URL) =
@@ -193,16 +199,16 @@ class DefaultAtomPubClient(logger: Logger, abdera: Abdera, client: AbderaClient,
 
   private def parseService(response: ClientResponse) = for {
     status <- Some(response.getStatus).filter(_ == 200).
-        toRight("Unexpected status code: " + response.getStatus).right
+      toRight("Unexpected status code, got: " + response.getStatus + ", expected 200.").right
     contentType <- Some(response.getContentType).filter(_.`match`(serviceMimeType)).
-        toRight("Unexpected content type: " + response.getContentType).right
+      toRight("Unexpected content type, got: " + response.getContentType + ", expected: " + serviceMimeType + ".").right
   } yield response.getDocument[AtomService].getRoot.complete[AtomService]
 
   private def parseFeed(response: ClientResponse): Either[String, AtomFeed] = for {
     status <- Some(response.getStatus).filter(_ == 200).
-        toRight("Unexpected status code: " + response.getStatus).right
+      toRight("Unexpected status code, got: " + response.getStatus + ", expected 200.").right
     contentType <- Some(response.getContentType).filter(_.`match`(atomMimeType)).
-        toRight("Unexpected content type: " + response.getContentType).right
+      toRight("Unexpected content type, got: " + response.getContentType + ", expected: " + atomMimeType + ".").right
     feed <- parseXml(response).right
   } yield {
     logger.info("Feed has " + feed.getEntries.size + " entries")
