@@ -15,7 +15,7 @@ object AtomClient extends Build {
     scalaVersion := "2.9.1",
     crossScalaVersions := Seq("2.9.1"),
 	publishSetting,
-	credentials += Credentials(Path.userHome / ".sbt" / ".credentials")		
+	credentials += Credentials(Path.userHome / ".sbt" / "arktekk-credentials")
   ) ++ mavenCentralFrouFrou
 
   lazy val root = Project(
@@ -68,7 +68,7 @@ object AtomClient extends Build {
   // Things we care about primarily because Maven Central demands them
   lazy val mavenCentralFrouFrou = Seq(
     homepage := Some(new URL("https://github.com/arktekk/atom-client")),
-    startYear := Some(2012),
+    startYear := Some(2011),
     licenses := Seq(("Apache 2", new URL("http://www.apache.org/licenses/LICENSE-2.0.txt"))),
     pomExtra <<= (pomExtra, name, description) {(pom, name, desc) => pom ++ xml.Group(
       <scm>
