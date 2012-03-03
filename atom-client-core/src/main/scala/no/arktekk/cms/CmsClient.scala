@@ -256,8 +256,7 @@ class DefaultCmsClient(val logger: Logger, val atomPubClient: AtomPubClient, con
   } yield parent).flatMap(atomEntryToCmsEntry(_))
 
   def fetchEntry(url: URL) = for {
-    feed <- dumpLeftGetRight(logger)(fetchFeed(url))
-    entry <- feed.entries.headOption
+    entry <- dumpLeftGetRight(logger)(_fetchEntry(url))
     cmsEntry <- atomEntryToCmsEntry(entry)
   } yield cmsEntry
 
@@ -310,14 +309,14 @@ class DefaultCmsClient(val logger: Logger, val atomPubClient: AtomPubClient, con
     dumpLeftGetRight(logger)(either).getOrElse(List.empty[AtomPubEntry])
   }
 
-  def fetchFeed(url: URL) = atomPubClient.fetchFeed(url) match {
-    case Left(error) => Left(error)
-    case r@Right(feed) =>
-      for {
-        hub <- feed.findLink("hub")
-        first <- feed.findLink("first")
-      } yield hubCallback(hub.href, first.href)
-      r
+  def fetchFeed(url: URL) = atomPubClient.fetchFeed(url).right.map{feed =>
+    for {hub <- feed.findLink("hub"); first <- feed.findLink("first")} yield hubCallback(hub.href, first.href)
+    feed
+  }
+
+  def _fetchEntry(url: URL) = atomPubClient.fetchEntry(url).right.map{feed =>
+    for {hub <- feed.findLink("hub"); first <- feed.findLink("first")} yield hubCallback(hub.href, first.href)
+    feed
   }
 
   def downloadAllEntries(url: URL, rel: String): Either[String, List[AtomPubEntry]] =

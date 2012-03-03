@@ -82,6 +82,8 @@ trait AtomPubClient extends Closeable {
 
   def fetchFeed(url: URL): Either[String, AtomPubFeed]
 
+  def fetchEntry(url: URL): Either[String, AtomPubEntry]
+
   def emptyCache()
 }
 
@@ -121,17 +123,23 @@ object AtomPubClient {
         //        diskPersistent(true).   The objects must be serializable first
         name("service")
 
-    val atomCache = new CacheConfiguration().timeToLiveSeconds(ttl.toStandardSeconds.getSeconds).
+    val feedCache = new CacheConfiguration().timeToLiveSeconds(ttl.toStandardSeconds.getSeconds).
         timeToIdleSeconds(ttl.toStandardSeconds.getSeconds).
         maxElementsInMemory(1000).
         maxElementsOnDisk(1000).
-        //        diskPersistent(true).   The objects must be serializable first
-        name("atom")
+        name("feed")
+
+    val entryCache = new CacheConfiguration().timeToLiveSeconds(ttl.toStandardSeconds.getSeconds).
+        timeToIdleSeconds(ttl.toStandardSeconds.getSeconds).
+        maxElementsInMemory(1000).
+        maxElementsOnDisk(1000).
+        name("entry")
 
     val cacheManager = CacheManager.create(new Configuration().diskStore(new DiskStoreConfiguration().path(configuration.dir.getAbsolutePath)).
         defaultCache(new CacheConfiguration()).
         cache(serviceCache).
-        cache(atomCache))
+        cache(feedCache).
+        cache(entryCache))
     cacheManager.setName(configuration.name)
 
     logger.info("Registering MBeans..")
@@ -174,7 +182,8 @@ object AtomPubClient {
 
 class DefaultAtomPubClient(logger: Logger, abdera: Abdera, client: AbderaClient, requestOptions: RequestOptions, cacheManager: CacheManager, registry: ManagementService) extends AtomPubClient {
   private val serviceCache = CachingAbderaClient[String, AtomService](logger, client, requestOptions, cacheManager.getCache("service"));
-  private val feedCache = CachingAbderaClient[String, AtomFeed](logger, client, requestOptions, cacheManager.getCache("atom"));
+  private val feedCache = CachingAbderaClient[String, AtomFeed](logger, client, requestOptions, cacheManager.getCache("feed"));
+  private val entryCache = CachingAbderaClient[String, AtomEntry](logger, client, requestOptions, cacheManager.getCache("entry"));
 
   def close() {
     logger.info("Unregistering JMX beans")
@@ -192,9 +201,14 @@ class DefaultAtomPubClient(logger: Logger, abdera: Abdera, client: AbderaClient,
     feedCache.get(url, parseFeed).right.
         map(AtomPubFeed)
 
+  def fetchEntry(url: URL) =
+    entryCache.get(url, parseEntry).right.
+        map(AtomPubEntry)
+
   def emptyCache() {
     serviceCache.cache.flush()
     feedCache.cache.flush()
+    entryCache.cache.flush()
   }
 
   private def parseService(response: ClientResponse) = for {
@@ -215,10 +229,31 @@ class DefaultAtomPubClient(logger: Logger, abdera: Abdera, client: AbderaClient,
     feed
   }
 
+  private def parseEntry(response: ClientResponse): Either[String, AtomEntry] = for {
+    status <- Some(response.getStatus).filter(_ == 200).
+      toRight("Unexpected status code, got: " + response.getStatus + ", expected 200.").right
+    contentType <- Some(response.getContentType).filter(_.`match`(atomEntryMimeType)).
+      toRight("Unexpected content type, got: " + response.getContentType + ", expected: " + atomEntryMimeType + ".").right
+    entry <- parseEntryXml(response).right
+  } yield {
+    entry
+  }
+
   private def parseXml(response: ClientResponse): Either[String, AtomFeed] = try {
     val root = response.getDocument[AtomFeed].getRoot.complete[AtomBase]
     if(root.isInstanceOf[AtomFeed])
       Right(root.asInstanceOf[AtomFeed])
+    else
+      // This will happen on random parse errors too (for example inline PHP errors)
+      Left("Not a feed: " + root.getClass)
+  } catch {
+    case e: ParseException => Left("Unable to parse document: " + e.toString)
+  }
+
+  private def parseEntryXml(response: ClientResponse): Either[String, AtomEntry] = try {
+    val root = response.getDocument[AtomFeed].getRoot.complete[AtomBase]
+    if(root.isInstanceOf[AtomEntry])
+      Right(root.asInstanceOf[AtomEntry])
     else
       // This will happen on random parse errors too (for example inline PHP errors)
       Left("Not a feed: " + root.getClass)

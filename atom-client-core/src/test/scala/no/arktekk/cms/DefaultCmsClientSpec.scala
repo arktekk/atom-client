@@ -44,6 +44,8 @@ class DefaultCmsClientSpec extends Specification {
 
     def fetchFeed(url: URL) = error("not implemented")
 
+    def fetchEntry(url: URL) = error("not implemented")
+
     def emptyCache() {}
 
     def close() {}
