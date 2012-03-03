@@ -13,8 +13,10 @@ object AtomClient extends Build {
   lazy val buildSettings = Defaults.defaultSettings ++ Seq(
     organization := "no.arktekk.atom-client",
     scalaVersion := "2.9.1",
-    crossScalaVersions := Seq("2.9.1") // Seq("2.9.0", "2.9.1"),
-  )
+    crossScalaVersions := Seq("2.9.1"),
+	publishSetting,
+	credentials += Credentials(Path.userHome / ".sbt" / ".credentials")		
+  ) ++ mavenCentralFrouFrou
 
   lazy val root = Project(
     id = "root",
@@ -39,6 +41,55 @@ object AtomClient extends Build {
       }
     )
   ).aggregate(core, lift)
+
+  lazy val publishSetting = publishTo <<= (version) { version: String =>
+    if (version.trim.endsWith("SNAPSHOT"))
+      Some(Resolvers.sonatypeNexusSnapshots)
+    else
+      Some(Resolvers.sonatypeNexusStaging)
+  }
+
+  lazy val manifestSetting = packageOptions <+= (name, version, organization) map {
+    (title, version, vendor) =>
+      Package.ManifestAttributes(
+        "Created-By" -> "Simple Build Tool",
+        "Built-By" -> System.getProperty("user.name"),
+        "Build-Jdk" -> System.getProperty("java.version"),
+        "Specification-Title" -> title,
+        "Specification-Version" -> version,
+        "Specification-Vendor" -> vendor,
+        "Implementation-Title" -> title,
+        "Implementation-Version" -> version,
+        "Implementation-Vendor-Id" -> vendor,
+        "Implementation-Vendor" -> vendor
+      )
+  }
+
+  // Things we care about primarily because Maven Central demands them
+  lazy val mavenCentralFrouFrou = Seq(
+    homepage := Some(new URL("https://github.com/arktekk/atom-client")),
+    startYear := Some(2012),
+    licenses := Seq(("Apache 2", new URL("http://www.apache.org/licenses/LICENSE-2.0.txt"))),
+    pomExtra <<= (pomExtra, name, description) {(pom, name, desc) => pom ++ xml.Group(
+      <scm>
+        <url>https://github.com/arktekk/atom-client</url>
+        <connection>scm:git:git://github.com/arktekk/atom-client.git</connection>
+        <developerConnection>scm:git:git@github.com:arktekk/atom-client.git</developerConnection>
+      </scm>
+      <developers>
+      	<developer>
+          <id>trygvis</id>
+          <name>Trygve Laugstøl</name>
+          <url>http://twitter.com/trygvis</url>
+        </developer>
+        <developer>
+          <id>hamnis</id>
+          <name>Erlend Hamnaberg</name>
+          <url>http://twitter.com/hamnis</url>
+        </developer>
+      </developers>
+    )}
+  )
 
   val testDependencies = Seq(
     "org.mortbay.jetty" % "jetty" % "6.1.22" % "test",
@@ -77,4 +128,9 @@ object AtomClient extends Build {
       ) ++ testDependencies
     )
   ).dependsOn(core)
+}
+
+object Resolvers {
+    val sonatypeNexusSnapshots = "Sonatype Nexus Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
+    val sonatypeNexusStaging = "Sonatype Nexus Staging" at "https://oss.sonatype.org/service/local/staging/deploy/maven2"
 }
