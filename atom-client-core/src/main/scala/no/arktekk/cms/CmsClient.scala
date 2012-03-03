@@ -80,6 +80,8 @@ trait CmsClient extends Closeable {
   def fetchParentOfPageBySlug(slug: CmsSlug): Option[CmsEntry]
 
   def fetchEntry(url: URL): Option[CmsEntry]
+
+  def flushCaches()
 }
 
 object CmsClient {
@@ -258,6 +260,10 @@ class DefaultCmsClient(val logger: Logger, val atomPubClient: AtomPubClient, con
     entry <- feed.entries.headOption
     cmsEntry <- atomEntryToCmsEntry(entry)
   } yield cmsEntry
+
+  def flushCaches() {
+    atomPubClient.emptyCache()
+  }
 
   def fetchChildrenOfParent(link: AtomPubLink) = for {
     feed <- dumpLeftGetRight(logger)(fetchFeed(link.href))
