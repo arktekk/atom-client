@@ -139,8 +139,8 @@ object AtomPubClient {
         defaultCache(new CacheConfiguration()).
         cache(serviceCache).
         cache(feedCache).
-        cache(entryCache))
-    cacheManager.setName(configuration.name)
+        cache(entryCache).
+        name(configuration.name))
 
     logger.info("Registering MBeans..")
 
