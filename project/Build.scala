@@ -40,7 +40,7 @@ object AtomClient extends Build {
         )
       }
     )
-  ).aggregate(core, lift)
+  ).aggregate(core)
 
   lazy val publishSetting = publishTo <<= (version) { version: String =>
     if (version.trim.endsWith("SNAPSHOT"))
@@ -113,21 +113,11 @@ object AtomClient extends Build {
         "commons-io" % "commons-io" % "1.4",
         "net.sf.ehcache" % "ehcache-core" % "2.3.0",
         "org.apache.geronimo.specs" % "geronimo-jta_1.1_spec" % "1.1.1",
-        "joda-time" % "joda-time" % "1.6"
+        "joda-time" % "joda-time" % "1.6",
+        "org.scalaz" %% "scalaz-core" % "6.0.4"
       ) ++ testDependencies
     )
   )
-
-  lazy val lift = Project(
-    id = "atom-client-lift",
-    base = file("atom-client-lift"),
-    settings = buildSettings ++ Seq(
-      description := "Atom Client, Lift support",
-      libraryDependencies := Seq(
-        "net.liftweb" %% "lift-webkit" % liftVersion
-      ) ++ testDependencies
-    )
-  ).dependsOn(core)
 }
 
 object Resolvers {

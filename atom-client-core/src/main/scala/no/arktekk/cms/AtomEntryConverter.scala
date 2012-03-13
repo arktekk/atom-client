@@ -4,11 +4,11 @@ import java.net.URL
 import no.arktekk.cms.atompub._
 import no.arktekk.cms.CmsUtil._
 import org.apache.abdera.model.{Link => AtomLink, Category => AtomCategory, Content => AtomContent, DateTime => AtomDateTime, Element => AtomElement, Div => AtomDiv, Text => AtomText}
-import org.joda.time.DateTime
 import org.apache.abdera.i18n.iri.IRI
+import org.joda.time.DateTime
 import scala.io.Source
-import scala.xml._
 import scala.collection.immutable.WrappedString
+import scala.xml._
 import scala.xml.parsing.XhtmlParser
 
 object AtomEntryConverter {
@@ -31,7 +31,7 @@ object AtomEntryConverter {
         orElse(entry.publishedElement).
         map(atomDateTimeToDateTime)
     val categories = entry.categories.map(atomCategoryToString)
-    CmsEntry(entry.id, updatedOrPublished, title, slug, categories, content)
+    CmsEntry(entry.id, updatedOrPublished, title, slug, categories, entry.links, content, entry)
   }
 
   def atomDateTimeToDateTime(dateTime: AtomDateTime) =
