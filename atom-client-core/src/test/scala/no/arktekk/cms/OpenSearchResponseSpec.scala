@@ -7,7 +7,7 @@ import scala.xml.NodeSeq
 class OpenSearchResponseSpec extends Specification {
   "OpenSearchResponse" should {
     "have a useful .left" in {
-      val entry = CmsEntry(AtomId("a"), None, "title", CmsSlug("slug"), List.empty, NodeSeq.Empty)
+      val entry = CmsEntry(AtomId("a"), None, "title", CmsSlug("slug"), List.empty, List.empty, NodeSeq.Empty, null)
       val page = List(entry, entry, entry)
 
       OpenSearchResponse(page, 100, 0, 10).pageCount must_== 10
