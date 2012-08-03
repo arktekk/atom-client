@@ -12,7 +12,7 @@ object AtomClientServletFilter extends Build {
 
   lazy val core = Project(
     id = "atom-client-servlet-filter",
-    base = file("atom-client-servlet-filter"),
+    base = file("."),
     settings = buildSettings ++ Seq(
       description := "Atom Client, servlet filter",
       libraryDependencies := Seq(
