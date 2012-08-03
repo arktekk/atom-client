@@ -1,0 +1,648 @@
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Children of Public Pages</title><id>urn:confluence:page:id:12682119</id><updated>2012-03-03T13:02:53.323Z</updated><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682119/children" rel="self" /><link href="http://wiki.java.no/rest/atompub/latest/spaces" rel="up" /><entry xmlns:app="http://www.w3.org/2007/app"><link href="http://wiki.java.no/display/javazone2012/Program" rel="alternate" type="text/html" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682160" rel="self" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012" rel="collection" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682160/edit" rel="edit" /><category scheme="urn:confluence:category" term="page" /><title type="text">Program</title><author><name>espen.herseth.halvorsen</name></author><id>urn:confluence:page:id:12682160</id><app:edited>2012-07-12T09:17:05.847Z</app:edited><updated>2012-07-12T09:17:05.847Z</updated><published>2012-03-03T12:37:38.152Z</published><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><h2>
+<a id="Program-Program" name="Program-Program" />Program</h2>
+<p>The 
+<a href="http://javazone.no/incogito10/events/JavaZone%202012/sessions" class="external-link" rel="nofollow">program for JavaZone 2012</a>
+is now available.
+<br />The 
+<a href="http://jz12.java.no/cfs.html" class="external-link" rel="nofollow">Call for Speakers</a> now closed for general
+submissions. Below are all important dates for the Call for
+Speakers.</p>
+<ul>
+  <li>Call for Speakers opens 
+  <b>February 3rd, 2012</b></li>
+  <li>Presentation workshop 
+  <b>March, 2012</b></li>
+  <li>Call for Speakers closes 
+  <b>April 16th, 2012</b></li>
+  <li>All speakers notified by 
+  <b>June 29th, 2012</b></li>
+  <li>Schedule announced by 
+  <b>June 29th, 2012</b></li>
+  <li>Deadline for submission of slides 
+  <b>August 18th, 2012</b></li>
+  <li>Conference 
+  <b>September 12-13th, 2012</b></li>
+</ul>
+<hr />
+<h2>
+<a id="Program-Previousyears" name="Program-Previousyears" />Previous years</h2>
+<p>
+<b>While you wait</b> for the program to get ready, and this years
+JavaZone, you can have a look at both the programs and videos from
+previous years.</p>
+<ul>
+  <li>
+  <a href="http://vimeo.com/javazone/videos" class="external-link" rel="nofollow">Videos</a> and the 
+  <a href="http://javazone.no/incogito10/events/JavaZone%202011/sessions" class="external-link" rel="nofollow">program</a> from JavaZone
+  2011</li>
+  <li>
+  <a href="http://streaming.java.no/tcs/#page:recordingList&amp;pageNumber:1&amp;category:DFA06647-6DF6-4FE1-943E-903DF9C74B12" class="external-link" rel="nofollow">Videos</a> and the 
+  <a href="http://javazone.no/incogito10/events/JavaZone%202010/sessions" class="external-link" rel="nofollow">program</a> from JavaZone
+  2010</li>
+  <li>
+  <a href="http://tcs.java.no/tcs/#page:conferenceList&amp;status:recorded&amp;pageNumber:1" class="external-link" rel="nofollow">Videos</a> and the 
+  <a href="http://javazone.no/incogito10/events/JavaZone%202009/sessions" class="external-link" rel="nofollow">program</a> from JavaZone
+  2009</li>
+</ul>
+</div></content><collection xmlns="http://www.w3.org/2007/app" href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682160/children"><atom:title xmlns:atom="http://www.w3.org/2005/Atom" type="text">children</atom:title></collection><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682160/attachments" rel="related" /></entry><entry xmlns:app="http://www.w3.org/2007/app"><link href="http://wiki.java.no/display/javazone2012/Tickets" rel="alternate" type="text/html" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682162" rel="self" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012" rel="collection" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682162/edit" rel="edit" /><category scheme="urn:confluence:category" term="page" /><title type="text">Tickets</title><author><name>espen.herseth.halvorsen</name></author><id>urn:confluence:page:id:12682162</id><app:edited>2012-03-15T21:25:45.748Z</app:edited><updated>2012-03-15T21:25:45.748Z</updated><published>2012-03-03T12:37:54.650Z</published><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><h2>
+<a id="Tickets-Tickets" name="Tickets-Tickets" />Tickets</h2>
+<p>
+<b>JavaZone</b> will be held in Oslo Spektrum September 12th-13th
+2012. The sale of Early Bird tickets will end April 1st. and Late
+Bird tickets will be available untill we are sold out.</p>
+<p>You can buy any number of tickets and assign them to co-workers
+and friends who shall attend the conference. Each individual
+attendee is responsible for updating his or her contact
+information. When required information has been registered, the
+ticket will be sent directly to the attendee.</p>
+<p>Tickets for JavaZone 2012 are administrated by Event Systems
+AS;</p>
+<p>
+  <a href="https://www.eventsystems.no/javazone/" class="external-link" rel="nofollow">» Buy your ticket
+  now!</a>
+</p>
+</div></content><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682162/attachments" rel="related" /><link href="http://wiki.java.no/download/attachments/12682162/EarlBirdplakat_JZ12.pdf%3Fversion=1&amp;modificationDate=1332861105125" rel="enclosure" length="2004422" title="EarlBirdplakat_JZ12.pdf" type="application/pdf" /></entry><entry xmlns:app="http://www.w3.org/2007/app"><link href="http://wiki.java.no/display/javazone2012/Speakers" rel="alternate" type="text/html" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682164" rel="self" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012" rel="collection" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682164/edit" rel="edit" /><category scheme="urn:confluence:category" term="page" /><title type="text">Speakers</title><author><name>espen.herseth.halvorsen</name></author><id>urn:confluence:page:id:12682164</id><app:edited>2012-04-23T15:41:58.772Z</app:edited><updated>2012-04-23T15:41:58.772Z</updated><published>2012-03-03T12:38:24.153Z</published><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><h2>
+<a id="Speakers-CallforSpeakersisnowclosed" name="Speakers-CallforSpeakersisnowclosed" />Call for Speakers is
+now closed</h2>
+<p>To take place in Oslo, Norway, on September 12th-13th 2012, the
+conference will offer a combination of technical talks and panels
+in an informal atmosphere with an expected attendence of 2000.
+JavaZone 2012 will be the eleventh consecutive JavaZone conference.
+Join us in recreating the success from last years!</p>
+<p>As previous years, last year's conference was a massive success,
+with software professionals and partners enjoying more than 100
+sessions covering multiple topics, and an impressive lineup of
+internationally known speakers. Leading evangelists in the
+community rate JavaZone as one of the most important Java events in
+Europe. Both 
+<a href="http://vimeo.com/javazone/videos" class="external-link" rel="nofollow">videos</a> and 
+<a href="http://bit.ly/jz11sessions" class="external-link" rel="nofollow">programs</a> from previous years are available.</p>
+<p>The JavaZone conference is organized by javaBin, the Norwegian
+Java User Group (JUG). JavaBin is an idealistic, non-profit
+organization established in 1996 by a group of Java enthusiasts.
+The JUG has since evolved to be the leading group for promotion of
+the Java platform in Scandinavia.</p>
+<hr />
+<p>
+  <span class="image-wrap" style="">
+    <img src="http://wiki.java.no/download/attachments/12682164/speaker3.jpg?version=1&amp;modificationDate=1330791616663" style="border: 0px solid black" />
+  </span>
+</p>
+<hr />
+<h3>
+<a id="Speakers-Topics" name="Speakers-Topics" />Topics</h3>
+<p>Abstracts should be tagged with the appropriate topics from the
+list below:</p>
+<ul>
+  <li>
+  <b>Alternative Languages</b> - Programming paradigms, concepts,
+  and languages...</li>
+  <li>
+  <b>Architecture in Practice</b> - Architectures of amazing
+  applications, architecture refactoring, accidental/evolutionary
+  architecture, why it suceeded / why it failed?</li>
+  <li>
+  <b>Big Data and NoSQL</b> - Cassandra, Hadoop, MongoDB, HBase,
+  CouchDB, DynamoDB, Neo4j, ...</li>
+  <li>
+  <b>Continuous Delivery</b> - Automated build &amp; deployment,
+  DevOps, virtualization, monitoring, infrastructure ...</li>
+  <li>
+  <b>Core Java</b> - AOP, concurrency, generics, Java memory model,
+  bytecode, ...</li>
+  <li>
+  <b>Distributed Systems and Cloud</b> - High performance /
+  scalability / availability, concurrency in cloud applications,
+  integration technology, ...</li>
+  <li>
+  <b>Enterprise</b> - Big projects, big systems, integration,
+  simpler enterprise software development, coping with complexity
+  ...</li>
+  <li>
+  <b>Experience Report</b> - Going from Maven to Gradle, How we
+  failed when replacing SQL with NoSQL, ...</li>
+  <li>
+  <b>Frontend</b> - Rich user experience, AJAX, thick clients /
+  Swing, JavaScript, CoffeeScript, ClojureScript, HTML5, CSS,
+  Sass</li>
+  <li>
+  <b>Innovation and Startups</b> - Creativity and follow-through,
+  Profiting off ideas, Lean Startups, Funding and organisation,
+  ...</li>
+  <li>
+  <b>Mobile</b> - Android, iOS, web apps for mobile, ...</li>
+  <li>
+  <b>Research and Trends</b> - Beyond Java, technology radar, "Next
+  big thing", ...</li>
+  <li>
+  <b>Security</b> - Secure Coding, design patterns for application
+  security, security howtos, SSO, REST- and WS security</li>
+  <li>
+  <b>Software Craftsmanship and Tools</b> - Testing, programming
+  practices, refactoring, tools, TDD / BDD, ...</li>
+</ul>
+<p>If you have a sufficiently awesome talk that falls outside these
+areas but fits the idea of the conference, please submit that too.
+The audience consists mostly of software developers and generally
+talks should be technical enough that they include code (although
+that is not a requirement). Talks purely related to practices
+(agile etc.) are less likely to be accepted.</p>
+<h3>
+<a id="Speakers-Communities" name="Speakers-Communities" />Communities</h3>
+<p>This year we would like also to invite the Communities to submit
+suggestions for talks, and we will provide dedicated slots for
+topics not normally associated with earlier JavaZone
+conferences.</p>
+<h3>
+<a id="Speakers-Formatandduration" name="Speakers-Formatandduration" />Format and duration</h3>
+<p>The presentations may be given in two formats, either a 60
+minute presentation or a 10 minute lightning talk.</p>
+<ul>
+  <li>Speakers of accepted 
+  <b>presentations</b> will get free admission to the conference.
+  They will also be invited to the speakers dinner and can join us
+  on the JourneyZone.</li>
+  <li>Speakers of accepted 
+  <b>lightning talks</b> will be invited to the speakers dinner and
+  can join us on the JourneyZone but have to provide for their own
+  admission to JavaZone. Lightning talk speakers will be able to
+  buy tickets at early bird price no matter when the ticket is
+  bought.</li>
+</ul>
+<h3>
+<a id="Speakers-Levels" name="Speakers-Levels" />Levels</h3>
+<ul>
+  <li>
+  <b>Introductory</b> - a basic introduction to a subject. Assume
+  no knowledge of the subject.</li>
+  <li>
+  <b>Intermediate</b> - expecting more than basic knowledge of a
+  subject, but not yet advanced.</li>
+  <li>
+  <b>Advanced</b> - Good knowledge of the subject.</li>
+  <li>
+  <b>Hardcore</b> - Assume a fair amount of knowledge in the
+  audience. Do not spend more than 5-7 minutes on setting the stage
+  or introducing your topic.</li>
+</ul>
+<p>To mark the talk as "Hardcore", please follow these
+guidelines:</p>
+<ul>
+  <li>Must be technical in nature</li>
+  <li>Must avoid unnecessary introductory material.</li>
+  <li>Should not spend more than 5 minutes on the
+  introduction/setting.</li>
+  <li>Should ideally focus on a single subject, for instance
+  "classloaders", "debugging", "bytecode generation", "the
+  monoid".</li>
+  <li>Should be between 45 to 55 minutes (or a hardcore 10 minute
+  lightning talk if its feasible)
+  <br /> Remember: The deeper and more hardcore, the better.</li>
+</ul>
+<hr />
+<p>
+  <span class="image-wrap" style="">
+    <img src="http://wiki.java.no/download/attachments/12682164/speaker2.jpg?version=1&amp;modificationDate=1330791685335" style="border: 0px solid black" />
+  </span>
+</p>
+<hr />
+<h3>
+<a id="Speakers-Wheretosubmit%3F" name="Speakers-Wheretosubmit%3F" />Where to submit?</h3>
+<p>The Call for Speakers is now closed.</p>
+<h3>
+<a id="Speakers-Dates" name="Speakers-Dates" />Dates</h3>
+<ul>
+  <li>Call for Speakers opens 
+  <b>February 3rd, 2012</b></li>
+  <li>Presentation workshop 
+  <b>March, 2012</b></li>
+  <li>Call for Speakers closes 
+  <b>April 16th, 2012</b></li>
+  <li>All speakers notified by 
+  <b>June 29th, 2012</b></li>
+  <li>Schedule announced by 
+  <b>June 29th, 2012</b></li>
+  <li>Deadline for submission of slides 
+  <b>August 18th, 2012</b></li>
+  <li>Conference 
+  <b>September 12-13th, 2012</b></li>
+</ul>
+<h3>
+<a id="Speakers-Presentationworkshop" name="Speakers-Presentationworkshop" />Presentation workshop</h3>
+<p>Do you need help with getting an idea for a talk, or help
+develop your talk? We are planning to host a presentation workshop
+in Oslo in the middle of March. If you are interested in attending,
+please send a mail to 
+<span class="error">[program@java.no]</span> and we will send you a
+detailed invitation.</p>
+<h3>
+<a id="Speakers-JourneyZone" name="Speakers-JourneyZone" />JourneyZone</h3>
+<p>We are arranging JourneyZone on the first weekend after
+JavaZone, September 13th-16th. This is our third annual journey to
+the Norwegian wilds. We would like to invite all speakers exclusive
+to explore the Norwegian nature, enjoy the very best of Norwegian
+food and have a great time together. The Journey will be a great
+base for trips at all skill levels.</p>
+<p>To ensure safety and exclusivity, this journey is limited to 40
+participants on a first come, first served basis. JavaZone will
+subsidize the journey with qualified guides to ensure the best
+possible experience. Your personal expenses will be around NOK
+1500.</p>
+<p>More information about the trips destination, departure and
+arrival times to Oslo will be provided.</p>
+<p>Practical information summarized:</p>
+<ul>
+  <li>Transport, food, guides and accommodation are arranged and
+  provided.</li>
+  <li>The Journey will be adjusted for all hiking skill
+  levels.</li>
+  <li>Your personal expenses are estimated to NOK 1500.</li>
+</ul>
+<p>This will be epic - make your reservation today!</p>
+<p>If you're uncertain, take a look at some pictures from 
+<a href="http://picasaweb.google.com/andreas.roe/201009JourneyZone?authkey=Gv1sRgCMHcycO1io6h1QE&amp;feat=directlink" class="external-link" rel="nofollow">the Journey of 2010</a> and 
+<a href="http://gallery.me.com/nchaugen#100022" class="external-link" rel="nofollow">JourneyZone 2011</a>.</p>
+<p>Some additional pictures can be found in the 
+<a href="http://www.idg.no/computerworld/article220078.ece" class="external-link" rel="nofollow">Norwegian Computerworld</a>
+(norwegian).</p>
+<p>More detailed information will be provided closer to the
+conference. For questions and registration get in touch with us at 
+<span class="error">[program@java.no]</span>.</p>
+<hr />
+<p>
+  <span class="image-wrap" style="">
+    <img src="http://wiki.java.no/download/attachments/12682164/speaker1.jpg?version=1&amp;modificationDate=1330791750875" style="border: 0px solid black" />
+  </span>
+</p>
+<hr />
+<h3>
+<a id="Speakers-Monetarypolicy" name="Speakers-Monetarypolicy" />Monetary policy</h3>
+<p>The organiser of JavaZone is javaBin (the Norwegian Java User
+Group), an independent, non-profit organization. The conference has
+partners but no sponsors. The agenda is defined by the Program
+Committee without external interference. This independence is among
+the things that make JavaZone unique. We therefore have a limited
+budget for reimbursing conference speakers. Please see our 
+<a href="http://jz10.java.no/moneypolicy.html" class="external-link" rel="nofollow">monetary policy</a> for more
+information.</p>
+<h3>
+<a id="Speakers-Contactinformation" name="Speakers-Contactinformation" />Contact information</h3>
+<p>Please do not hesitate to contact us at program@java.no should
+you need any further information.
+<br />Hope to see you there, and feel free to spread the word about
+JavaZone 2012 in your local community.
+<br />Best Regards,
+<br />The JavaZone Program Committee</p>
+<p>
+  <a href="http://java.no/submitit" class="external-link" rel="nofollow">» Submit your presentation</a>
+</p>
+</div></content><collection xmlns="http://www.w3.org/2007/app" href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682164/children"><atom:title xmlns:atom="http://www.w3.org/2005/Atom" type="text">children</atom:title></collection><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682164/attachments" rel="related" /><link href="http://wiki.java.no/download/attachments/12682164/speaker3.jpg%3Fversion=1&amp;modificationDate=1330791616663" rel="enclosure" length="119096" title="speaker3.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682164/speaker2.jpg%3Fversion=1&amp;modificationDate=1330791685335" rel="enclosure" length="103581" title="speaker2.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682164/speaker1.jpg%3Fversion=1&amp;modificationDate=1330791750875" rel="enclosure" length="101258" title="speaker1.jpg" type="image/jpeg" /></entry><entry xmlns:app="http://www.w3.org/2007/app"><link href="http://wiki.java.no/display/javazone2012/Partners" rel="alternate" type="text/html" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682167" rel="self" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012" rel="collection" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682167/edit" rel="edit" /><category scheme="urn:confluence:category" term="page" /><title type="text">Partners</title><author><name>espen.herseth.halvorsen</name></author><id>urn:confluence:page:id:12682167</id><app:edited>2012-06-12T10:27:22.823Z</app:edited><updated>2012-06-12T10:27:22.823Z</updated><published>2012-03-03T12:38:53.413Z</published><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><h2>
+<a id="Partners-Becomeapartner" name="Partners-Becomeapartner" />Become a partner</h2>
+<p>
+<b>JavaZone</b> is a conference organized by and for a great
+community of developers. The conference is not possible without the
+involvement and support of our partners buying both stands and
+tickets for their employees to the conference. In addition to
+gaining access to the exhibition area we involve our partners in
+both forming the agenda of and the conference itself.</p>
+<p>In the exhibition space, we have organized a range of
+activities, from whiteboards, where speakers can expand on their
+presentations and answer questions arising from the presentation,
+to music and stand-up performances. Contact us at partner@java.no
+for more information on becoming a partner.</p>
+<h2>
+<a id="Partners-Currentpartners" name="Partners-Currentpartners" />Current partners</h2>
+<div id="partners">
+  <p>
+  <a href="http://10gen.com" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/10gen_2012.jpg?version=1&amp;modificationDate=1339496295219" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://academicwork.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/academic_work_2012.jpg?version=1&amp;modificationDate=1339496822031" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://www.acando.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/acando_2012.jpg?version=1&amp;modificationDate=1338831356514" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://accenture.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/accenture_2012.jpg?version=1&amp;modificationDate=1330778825284" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://www.antares.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/antares_2012.jpg?version=1&amp;modificationDate=1335005603800" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://arktekk.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/arktekk_2012.jpg?version=1&amp;modificationDate=1330778834426" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://bekk.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/bekk_2012.jpg?version=1&amp;modificationDate=1330778838105" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://bouvet.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/bouvet_2012.jpg?version=1&amp;modificationDate=1330780150458" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://capgemeni.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/capgemini_2012.jpg?version=1&amp;modificationDate=1330780150466" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://ciber.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/ciber_2012.jpg?version=1&amp;modificationDate=1330780150474" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://cisco.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/cisco_2012.jpg?version=1&amp;modificationDate=1330780150450" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://computas.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/computas_2012.jpg?version=1&amp;modificationDate=1330780150441" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://www.conduct.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/conduct_2012.jpg?version=1&amp;modificationDate=1331194188399" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://www.inmeta.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/inmeta_2012.jpg?version=1&amp;modificationDate=1335005691811" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://iterate.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/iterate_2012.jpg?version=1&amp;modificationDate=1330780176300" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://itera.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/itera_2012.jpg?version=1&amp;modificationDate=1330780176312" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://conax.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/conax_2012.jpg?version=1&amp;modificationDate=1330780176320" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://evry.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/evry_2012.jpg?version=1&amp;modificationDate=1332251501036" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://finn.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/finn_2012.jpg?version=1&amp;modificationDate=1330780176337" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://kodemaker.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/kodemaker_2012.jpg?version=1&amp;modificationDate=1330780201233" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://jpro.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/jpro_2012.jpg?version=1&amp;modificationDate=1330780201242" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://kantega.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/kantega_2012.jpg?version=1&amp;modificationDate=1335005802474" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://knowit.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/knowit_2012.jpg?version=1&amp;modificationDate=1331714751505" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://nith.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/nith_2012.jpg?version=1&amp;modificationDate=1330780226678" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://nets.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/nets_2012.jpg?version=1&amp;modificationDate=1330780226687" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://marcello.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/marcello_2012.jpg?version=1&amp;modificationDate=1330780201220" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://mesan.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/mesan_2012.jpg?version=1&amp;modificationDate=1330780226695" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://microsoft.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/microsoft_2012.jpg?version=1&amp;modificationDate=1330780226703" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://miles.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/miles_2012.jpg?version=1&amp;modificationDate=1330780226712" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://www.netlight.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/netlight_2012.jpg?version=1&amp;modificationDate=1331217089312" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://norgesgruppen.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/norgesgruppen_2012.jpg?version=1&amp;modificationDate=1330780247714" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://programutvikling.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/programutvikling_2012.jpg?version=2&amp;modificationDate=1331194188292" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://www.redhat.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/redhat_2012.jpg?version=1&amp;modificationDate=1331714751516" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://steria.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/steria_2012.jpg?version=1&amp;modificationDate=1330780247731" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://webstep.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/webstep_2012.jpg?version=1&amp;modificationDate=1332334806840" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://www.schlumberger.com" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/schlumberger_2012.jpg?version=1&amp;modificationDate=1331194188407" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://www.skatteetaten.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/skatteetaten_2012.jpg?version=1&amp;modificationDate=1331194188416" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://systek.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/systek_2012.jpg?version=1&amp;modificationDate=1330780247706" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://visma.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/visma_2012.jpg?version=1&amp;modificationDate=1330780247698" style="border: 0px solid black" />
+    </span>
+  </a> 
+  <a href="http://oracle.no" class="external-link" rel="nofollow">
+    <span class="image-wrap" style="">
+      <img src="http://wiki.java.no/download/attachments/12682167/oracle_2012.jpg?version=1&amp;modificationDate=1331217062984" style="border: 0px solid black" />
+    </span>
+  </a></p>
+</div>
+</div></content><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682167/attachments" rel="related" /><link href="http://wiki.java.no/download/attachments/12682167/accenture_2012.jpg%3Fversion=1&amp;modificationDate=1330778825284" rel="enclosure" length="4891" title="accenture_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/arktekk_2012.jpg%3Fversion=1&amp;modificationDate=1330778834426" rel="enclosure" length="3939" title="arktekk_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/bekk_2012.jpg%3Fversion=1&amp;modificationDate=1330778838105" rel="enclosure" length="4040" title="bekk_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/computas_2012.jpg%3Fversion=1&amp;modificationDate=1330780150441" rel="enclosure" length="4209" title="computas_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/cisco_2012.jpg%3Fversion=1&amp;modificationDate=1330780150450" rel="enclosure" length="4699" title="cisco_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/bouvet_2012.jpg%3Fversion=1&amp;modificationDate=1330780150458" rel="enclosure" length="3924" title="bouvet_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/capgemini_2012.jpg%3Fversion=1&amp;modificationDate=1330780150466" rel="enclosure" length="5777" title="capgemini_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/ciber_2012.jpg%3Fversion=1&amp;modificationDate=1330780150474" rel="enclosure" length="3836" title="ciber_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/iterate_2012.jpg%3Fversion=1&amp;modificationDate=1330780176300" rel="enclosure" length="4443" title="iterate_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/itera_2012.jpg%3Fversion=1&amp;modificationDate=1330780176312" rel="enclosure" length="4093" title="itera_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/conax_2012.jpg%3Fversion=1&amp;modificationDate=1330780176320" rel="enclosure" length="4238" title="conax_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/edb_int_2012.jpg%3Fversion=1&amp;modificationDate=1330780176329" rel="enclosure" length="4744" title="edb_int_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/finn_2012.jpg%3Fversion=1&amp;modificationDate=1330780176337" rel="enclosure" length="3288" title="finn_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/marcello_2012.jpg%3Fversion=1&amp;modificationDate=1330780201220" rel="enclosure" length="3195" title="marcello_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/kodemaker_2012.jpg%3Fversion=1&amp;modificationDate=1330780201233" rel="enclosure" length="4405" title="kodemaker_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/jpro_2012.jpg%3Fversion=1&amp;modificationDate=1330780201242" rel="enclosure" length="3700" title="jpro_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/nith_2012.jpg%3Fversion=1&amp;modificationDate=1330780226678" rel="enclosure" length="3761" title="nith_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/nets_2012.jpg%3Fversion=1&amp;modificationDate=1330780226687" rel="enclosure" length="4355" title="nets_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/mesan_2012.jpg%3Fversion=1&amp;modificationDate=1330780226695" rel="enclosure" length="4104" title="mesan_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/microsoft_2012.jpg%3Fversion=1&amp;modificationDate=1330780226703" rel="enclosure" length="4120" title="microsoft_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/miles_2012.jpg%3Fversion=1&amp;modificationDate=1330780226712" rel="enclosure" length="4065" title="miles_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/visma_2012.jpg%3Fversion=1&amp;modificationDate=1330780247698" rel="enclosure" length="3820" title="visma_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/systek_2012.jpg%3Fversion=1&amp;modificationDate=1330780247706" rel="enclosure" length="4539" title="systek_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/norgesgruppen_2012.jpg%3Fversion=1&amp;modificationDate=1330780247714" rel="enclosure" length="3844" title="norgesgruppen_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/programutvikling_2012.jpg%3Fversion=1&amp;modificationDate=1330780247722" rel="enclosure" length="5583" title="programutvikling_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/steria_2012.jpg%3Fversion=1&amp;modificationDate=1330780247731" rel="enclosure" length="4219" title="steria_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/wepstep_2012.jpg%3Fversion=1&amp;modificationDate=1330780257302" rel="enclosure" length="4137" title="wepstep_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/programutvikling_2012.jpg%3Fversion=2&amp;modificationDate=1331194188292" rel="enclosure" length="4071" title="programutvikling_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/conduct_2012.jpg%3Fversion=1&amp;modificationDate=1331194188399" rel="enclosure" length="4993" title="conduct_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/schlumberger_2012.jpg%3Fversion=1&amp;modificationDate=1331194188407" rel="enclosure" length="4254" title="schlumberger_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/skatteetaten_2012.jpg%3Fversion=1&amp;modificationDate=1331194188416" rel="enclosure" length="3723" title="skatteetaten_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/oracle_2012.jpg%3Fversion=1&amp;modificationDate=1331217062984" rel="enclosure" length="3855" title="oracle_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/netlight_2012.jpg%3Fversion=1&amp;modificationDate=1331217089312" rel="enclosure" length="3993" title="netlight_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/knowit_2012.jpg%3Fversion=1&amp;modificationDate=1331714751505" rel="enclosure" length="4314" title="knowit_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/redhat_2012.jpg%3Fversion=1&amp;modificationDate=1331714751516" rel="enclosure" length="4452" title="redhat_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/evry_2012.jpg%3Fversion=1&amp;modificationDate=1332251501036" rel="enclosure" length="4140" title="evry_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/webstep_2012.jpg%3Fversion=1&amp;modificationDate=1332334806840" rel="enclosure" length="3827" title="webstep_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/antares_2012.jpg%3Fversion=1&amp;modificationDate=1335005603800" rel="enclosure" length="3070" title="antares_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/inmeta_2012.jpg%3Fversion=1&amp;modificationDate=1335005691811" rel="enclosure" length="4426" title="inmeta_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/kantega_2012.jpg%3Fversion=1&amp;modificationDate=1335005802474" rel="enclosure" length="4517" title="kantega_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/acando_2012.jpg%3Fversion=1&amp;modificationDate=1338831356514" rel="enclosure" length="4326" title="acando_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/10gen_2012.jpg%3Fversion=1&amp;modificationDate=1339496295219" rel="enclosure" length="4167" title="10gen_2012.jpg" type="image/jpeg" /><link href="http://wiki.java.no/download/attachments/12682167/academic_work_2012.jpg%3Fversion=1&amp;modificationDate=1339496822031" rel="enclosure" length="6628" title="academic_work_2012.jpg" type="image/jpeg" /></entry><entry xmlns:app="http://www.w3.org/2007/app"><link href="http://wiki.java.no/display/javazone2012/Awezone" rel="alternate" type="text/html" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682157" rel="self" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012" rel="collection" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682157/edit" rel="edit" /><category scheme="urn:confluence:category" term="page" /><title type="text">Awezone</title><author><name>espen.herseth.halvorsen</name></author><id>urn:confluence:page:id:12682157</id><app:edited>2012-06-12T07:14:38.066Z</app:edited><updated>2012-06-12T07:14:38.066Z</updated><published>2012-03-03T12:29:16.340Z</published><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><h2>
+<a id="Awezone-AweZone" name="Awezone-AweZone" />AweZone</h2>
+<p>
+  <span class="image-wrap" style="">
+    <img src="http://wiki.java.no/download/attachments/12682157/AweZone_poster.jpg?version=1&amp;modificationDate=1339485190739" style="border: 0px solid black" />
+  </span>
+</p>
+</div></content><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682157/attachments" rel="related" /><link href="http://wiki.java.no/download/attachments/12682157/AweZone_poster.jpg%3Fversion=1&amp;modificationDate=1339485190739" rel="enclosure" length="389101" title="AweZone_poster.jpg" type="image/jpeg" /></entry><entry xmlns:app="http://www.w3.org/2007/app"><link href="http://wiki.java.no/display/javazone2012/Videos" rel="alternate" type="text/html" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682170" rel="self" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012" rel="collection" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682170/edit" rel="edit" /><category scheme="urn:confluence:category" term="page" /><title type="text">Videos</title><author><name>espen.herseth.halvorsen</name></author><id>urn:confluence:page:id:12682170</id><app:edited>2012-06-20T08:36:12.431Z</app:edited><updated>2012-06-20T08:36:12.431Z</updated><published>2012-03-03T12:39:17.409Z</published><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><h2>
+<a id="Videos-JavaZoneVideos" name="Videos-JavaZoneVideos" />JavaZone Videos</h2>
+<p>
+<b>Videos</b> has been the hallmark feature of every years JavaZone
+for several years. Check out our awesome promo videos.</p>
+<hr />
+<h2>
+<a id="Videos-2012" name="Videos-2012" />2012</h2>
+<p>The Java Heist</p>
+<iframe class="youtube-player" type="text/html" style="width: 730px; height: 401px" src="http://www.youtube.com/embed/HXvm76e2X1Q" frameborder="0" /> 
+<p>Teaser for The Java Heist of 2012!</p>
+<iframe src="http://player.vimeo.com/video/44098786" width="730" height="401" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" /> 
+<hr />
+<h2>
+<a id="Videos-2011" name="Videos-2011" />2011</h2>
+<p>In 2011, JavaZone was more scary than ever! The media even used
+the phrase "
+<a href="http://www.digi.no/877395/arrangerer-javazone-for-tiende-gang" class="external-link" rel="nofollow">Hold deg fast</a>", can you
+get a higher praise than that? We don't think so...</p>
+<iframe class="youtube-player" type="text/html" style="width: 730px; height: 401px" src="http://www.youtube.com/embed/5U1_KW6ww7Y" frameborder="0" /> 
+<hr />
+<h2>
+<a id="Videos-2010" name="Videos-2010" />2010</h2>
+<p>
+<b>The windowsian commmunity</b> is no huge fan of Java as we can
+see from the trailer Java-4-ever. But the Norwegian Pizza-queen
+definitely is!</p>
+<iframe class="youtube-player" type="text/html" style="width: 730px; height: 401px" src="http://www.youtube.com/embed/kLO1djacsfg" frameborder="0" /> 
+<iframe class="youtube-player" type="text/html" style="width: 730px; height: 401px" src="http://www.youtube.com/embed/1JZnj4eNHXE" frameborder="0" /> 
+<hr />
+<h2>
+<a id="Videos-Videosfromthesessionsandlightningspeeches" name="Videos-Videosfromthesessionsandlightningspeeches" />Videos
+from the sessions and lightning speeches</h2>
+<p>
+<b>JavaZone</b> have filmed talks for the past years and made them
+publicaly available for both attendees and others. Among the filme
+talks available are the ones from 
+<a href="http://tcs.java.no/tcs/#page:conferenceList&amp;status:recorded&amp;pageNumber:1" class="external-link" rel="nofollow">JavaZone 2009</a>, 
+<a href="http://streaming.java.no/tcs/#page:recordingList&amp;pageNumber:1&amp;category:DFA06647-6DF6-4FE1-943E-903DF9C74B12" class="external-link" rel="nofollow">JavaZone 2010</a> and last
+years 
+<a href="http://vimeo.com/javazone/videos" class="external-link" rel="nofollow">JavaZone X</a></p>
+</div></content><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682170/attachments" rel="related" /></entry><entry xmlns:app="http://www.w3.org/2007/app"><link href="http://wiki.java.no/display/javazone2012/About" rel="alternate" type="text/html" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682097" rel="self" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012" rel="collection" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682097/edit" rel="edit" /><category scheme="urn:confluence:category" term="page" /><title type="text">About</title><author><name>trygvis</name></author><id>urn:confluence:page:id:12682097</id><app:edited>2012-03-08T15:46:02.766Z</app:edited><updated>2012-03-08T15:46:02.766Z</updated><published>2012-02-29T18:26:14.504Z</published><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><h2>
+<a id="About-AboutJavaZone2012" name="About-AboutJavaZone2012" />About JavaZone 2012</h2>
+<p>JavaZone is the biggest meeting place for software developers in
+Scandinavia, and one of Europe's most important. JavaZone has been
+described as a high quality, independent conference - a leading
+forum for knowledge exchange for IT-professionals. Each year around
+2,300 conference tickets are sold. This years JavaZone is the
+eleventh and surely not the last.</p>
+<p>Over 30 large and mid-sized companies - our partners - exhibit
+their products and services in a separate exhibition space, while
+more than 100 presentations are given in the conference
+facilities.</p>
+<p>Over the two conference days, we deliver more than 200,000 hours
+of expertise. In addition, many informal discussions take place at
+stands and between attendees. Altogether, JavaZone stands out as a
+tremendous arena for knowledge transfer.</p>
+<p>A conference involving so many developers is also a key arena
+for recruitment. Through their exhibitions and other activities,
+our partners use the opportunity to promote their business and
+recruit new staff. JavaZone is more than just a conference. It's a
+place to meet, network and socialize!</p>
+<p>One of the key factors in the huge success of JavaZone has been
+the support of a great numbers of volunteers. JavaZone is a
+conference by and for software developers. Each year thousands of
+hours are put into making the conference a success.</p>
+<p>The Program Committee invites speakers from all over the world.
+Professionals know what professionals want, so the speakers are
+hand-picked, and the presentations are highly relevant. In the
+tradition of the conference, speakers are not paid an appearance
+fee for their contributions. Around half of the presentations are
+given in English and the other half in one of the Scandinavian
+languages. The conference's unconventional and non-commercial
+approach has also boosted its popularity.</p>
+<h2>
+<a id="About-History" name="About-History" />History</h2>
+<p>This year sees the eleventh consecutive JavaZone. The event
+started out as a Sun Microsystems event in 2002, with 350
+participants in the basement of Chateau Neuf, one of the main
+hang-outs for Oslo University students. The javaBin user group was
+given the responsibility for ensuring the technical quality of the
+event.</p>
+<p>In 2004, javaBin took over the whole event, with Sun
+Microsystems contributing as a partner, on a par with the other
+partners. javaBin moved the conference to the SAS Hotel on Holbergs
+plass in Oslo. By then, it had grown to 800 participants and 23
+partners.</p>
+<p>Over the next three years, interest in JavaZone increased
+steadily, with 800, 1,000 and then 1,400 participants, and it
+reached an all-time high in 2008, with 2,300 participants and 47
+partners.</p>
+<p>javaBin is expecting this year's conference to be a sell-out as
+well, in terms of both participants and partners.</p>
+<p>To experience the atmosphere at previous JavaZone conferences,
+check out the pages below:</p>
+<ul>
+  <li>
+  <a href="http://jz11.java.no/" class="external-link" rel="nofollow">JavaZone 2011</a> 
+  <a href="http://vimeo.com/javazone/videos" class="external-link" rel="nofollow">(Video)</a></li>
+  <li>
+  <a href="http://jz10.java.no/" class="external-link" rel="nofollow">JavaZone 2010</a> 
+  <a href="http://streaming.java.no/tcs/#page:recordingList&amp;pageNumber:1&amp;category:DFA06647-6DF6-4FE1-943E-903DF9C74B12" class="external-link" rel="nofollow">(Video)</a></li>
+  <li>
+  <a href="http://jz09.java.no/" class="external-link" rel="nofollow">JavaZone 2009</a> 
+  <a href="http://tcs.java.no/tcs" class="external-link" rel="nofollow">(Video)</a></li>
+  <li>
+    <a href="http://www4.java.no/web/show.do?page=197" class="external-link" rel="nofollow">JavaZone 2008</a>
+  </li>
+  <li>
+    <a href="http://www4.java.no/javazone/2007/" class="external-link" rel="nofollow">JavaZone 2007</a>
+  </li>
+  <li>
+    <a href="http://www4.java.no/javazone/2006/" class="external-link" rel="nofollow">JavaZone 2006</a>
+  </li>
+  <li>JavaZone 2005</li>
+  <li>
+  <a href="http://www4.java.no/javazone/2004/" class="external-link" rel="nofollow">JavaZone 2004</a> (
+  <a href="http://www4.java.no/web/docs/javaBin%20administrativt/JavaZone%202003%20presentasjon.wmv" class="external-link" rel="nofollow">Video</a>)</li>
+  <li>
+    <a href="http://www4.java.no/javazone/2003/" class="external-link" rel="nofollow">JavaZone 2003</a>
+  </li>
+  <li>JavaZone 2002</li>
+</ul>
+</div></content><collection xmlns="http://www.w3.org/2007/app" href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682097/children"><atom:title xmlns:atom="http://www.w3.org/2005/Atom" type="text">children</atom:title></collection><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/pages/12682097/attachments" rel="related" /></entry></feed>

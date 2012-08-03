@@ -17,7 +17,11 @@ object AtomClientServletFilter extends Build {
       description := "Atom Client, servlet filter",
       libraryDependencies := Seq(
         "no.arktekk.atom-client" %% "atom-client-core" % "1.1-SNAPSHOT",
-        "javax.servlet" % "servlet-api" % "2.5"
+        "javax.servlet" % "servlet-api" % "2.5",
+        "org.specs2" %% "specs2" % "1.6.1" % "test",
+        "org.scalamock" %% "scalamock-specs2-support" % "2.4" % "test",
+        "org.mockito" % "mockito-core" % "1.9.0" % "test",
+        "org.slf4j" % "slf4j-simple" % "1.5.11" % "test"
       )
     ))
 
