@@ -1,6 +1,6 @@
 package no.javabin.atomclientservletfilter
 
-import no.arktekk.cms.{CmsEntry, CmsSlug, CmsClient}
+import no.arktekk.cms.{CmsSlug, CmsClient}
 import scalaz.NonEmptyList
 
 class CmsProperties(cmsClient: CmsClient, pathInfo: String) {

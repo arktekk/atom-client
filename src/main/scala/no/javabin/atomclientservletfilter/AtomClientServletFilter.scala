@@ -4,15 +4,18 @@ import javax.servlet.http.HttpServletRequest
 import javax.servlet._
 import java.net.URL
 import org.joda.time.Minutes._
-import no.arktekk.cms.{ConsoleLogger, DefaultCmsClient, CmsClient}
 import reflect.BeanProperty
 import no.arktekk.cms.atompub.{AtomPubClient, CachingAbderaClient, AtomPubClientConfiguration}
 import java.io.File
+import no.arktekk.cms.{ConsoleLogger, DefaultCmsClient, CmsClient}
 
 class AtomClientServletFilter extends Filter {
   private var cmsClient: CmsClient = null
   @BeanProperty var pagesUrl: URL = null
   @BeanProperty var postsUrl: URL = null
+
+  def createAtomPubClient(atomPubClientConfiguration: AtomPubClientConfiguration) =
+    AtomPubClient(atomPubClientConfiguration)
 
   override def init(filterConfig: FilterConfig) {
     implicit def toURL(s: String) = new URL(s)
@@ -25,7 +28,7 @@ class AtomClientServletFilter extends Filter {
       logger, "CMS", createTempDirectory(), None, Some(minutes(10)),
       Some(CachingAbderaClient.confluenceFriendlyRequestOptions))
     val configuration = new CmsClient.ExplicitConfiguration(postsUrl, pagesUrl)
-    cmsClient = new DefaultCmsClient(logger, AtomPubClient(atomPubClientConfiguration), configuration, (_, _) => ())
+    cmsClient = new DefaultCmsClient(logger, createAtomPubClient(atomPubClientConfiguration), configuration, (_, _) => ())
   }
 
   private def createTempDirectory(): File = {
