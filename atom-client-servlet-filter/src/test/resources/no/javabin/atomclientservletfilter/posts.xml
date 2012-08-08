@@ -1,0 +1,47 @@
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:os="http://a9.com/-/spec/opensearch/1.1/"><title type="text">JavaZone 2012</title><id>urn:confluence:space:id:13041665</id><updated>2012-02-29T18:23:22.600Z</updated><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012" rel="self" /><link href="http://wiki.java.no/rest/atompub/latest/spaces" rel="up" /><link rel="first" href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/news?pw=1" /><link rel="last" href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/news?pw=2" /><link rel="next" href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/news?pw=2" /><os:itemsPerPage>10</os:itemsPerPage><os:totalResults>11</os:totalResults><entry xmlns:app="http://www.w3.org/2007/app"><link href="http://wiki.java.no/display/javazone2012/2012/06/15/Nicking+bits+and+bytes" rel="alternate" type="text/html" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/news/12683372" rel="self" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/news/12683372/edit" rel="self" /><category scheme="urn:confluence:category" term="news" /><title type="text">Nicking bits and bytes</title><author><name>ole-alexander.moy</name></author><id>urn:confluence:blogentry:id:12683372</id><app:edited>2012-06-20T14:24:48.722Z</app:edited><updated>2012-06-20T14:24:48.722Z</updated><published>2012-06-15T08:44:06.574Z</published><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>
+<a href="http://jz12.java.no/videos" class="external-link" rel="nofollow">
+  <span class="image-wrap" style="">
+    <img src="http://wiki.java.no/download/attachments/12683372/the_heist_boss.jpg?version=1&amp;modificationDate=1339760688659" style="border: 0px solid black" />
+  </span>
+</a>
+<br />Paper money is obsolete, it's all bits and bytes these
+day!</p>
+</div></content><category scheme="urn:confluence:label" term="news" label="news" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/news/12683372/attachments" rel="related" /><link href="http://wiki.java.no/download/attachments/12683372/the_heist_boss.jpg%3Fversion=1&amp;modificationDate=1339760688659" rel="enclosure" length="9885" title="the_heist_boss.jpg" type="image/jpeg" /></entry><entry xmlns:app="http://www.w3.org/2007/app"><link href="http://wiki.java.no/display/javazone2012/2012/06/20/The+heist+is+on%21" rel="alternate" type="text/html" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/news/12683429" rel="self" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/news/12683429/edit" rel="self" /><category scheme="urn:confluence:category" term="news" /><title type="text">The heist is on!</title><author><name>ole-alexander.moy</name></author><id>urn:confluence:blogentry:id:12683429</id><app:edited>2012-06-20T07:58:17.564Z</app:edited><updated>2012-06-20T07:58:17.564Z</updated><published>2012-06-20T06:48:01.868Z</published><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>The crew is gathered and good to go! 
+<a href="http://jz12.java.no/videos" class="external-link" rel="nofollow">See how the heist goes</a>!</p>
+</div></content><category scheme="urn:confluence:label" term="news" label="news" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/news/12683429/attachments" rel="related" /></entry><entry xmlns:app="http://www.w3.org/2007/app"><link href="http://wiki.java.no/display/javazone2012/2012/06/12/AweZone%21+An+evening+to+remember" rel="alternate" type="text/html" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/news/12683331" rel="self" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/news/12683331/edit" rel="self" /><category scheme="urn:confluence:category" term="news" /><title type="text">AweZone! An evening to remember</title><author><name>ole-alexander.moy</name></author><id>urn:confluence:blogentry:id:12683331</id><app:edited>2012-06-12T10:16:12.940Z</app:edited><updated>2012-06-12T10:16:12.940Z</updated><published>2012-06-12T10:16:09.009Z</published><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>AweZone! The bands are booked and we are sure they will make the
+evening at Rockerfeller an evening to remember!
+<br />Don't miss out on this years JavaZone and the biggest
+IT-party of the year!</p>
+<p>
+  <a href="http://jz12.java.no/tickets" class="external-link" rel="nofollow">Buy your ticket today!</a>
+</p>
+</div></content><category scheme="urn:confluence:label" term="news" label="news" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/news/12683331/attachments" rel="related" /></entry><entry xmlns:app="http://www.w3.org/2007/app"><link href="http://wiki.java.no/display/javazone2012/2012/03/30/PhotoZone+-+Photo+Challenge" rel="alternate" type="text/html" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/news/12682585" rel="self" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/news/12682585/edit" rel="self" /><category scheme="urn:confluence:category" term="news" /><title type="text">PhotoZone - Photo Challenge</title><author><name>ole-alexander.moy</name></author><id>urn:confluence:blogentry:id:12682585</id><app:edited>2012-03-30T12:28:04.573Z</app:edited><updated>2012-03-30T12:28:04.573Z</updated><published>2012-03-30T11:39:54.598Z</published><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>This year JavaZone is challenging your creative sense outside of
+code. Bring your camera with you where ever you go, seize the
+moment and join PhotoZone!</p>
+<p>The challenge starts April 1st, and runs until September 1st. We
+challenge you to interpret the following themes in your most geeky
+way.</p>
+<ul>
+  <li>Theme 1: Programming in (the) Spring . (Runs from April 1st
+  until June 1st)</li>
+  <li>Theme 2: Nerds in the Sun (Runs from June 1st until August
+  1st)</li>
+  <li>Theme 3: I'm looking forward to JavaZone! (Runs from April
+  1st until September 1st)</li>
+</ul>
+<p>
+  <a href="http://jz12.java.no/program/photozone" title="http://jz12.java.no/program/photozone" class="external-link" rel="nofollow">» Rules and how to
+  submit photos!</a>
+</p>
+</div></content><category scheme="urn:confluence:label" term="news" label="news" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/news/12682585/attachments" rel="related" /></entry><entry xmlns:app="http://www.w3.org/2007/app"><link href="http://wiki.java.no/pages/viewpage.action%3FpageId=12682479" rel="alternate" type="text/html" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/news/12682479" rel="self" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/news/12682479/edit" rel="self" /><category scheme="urn:confluence:category" term="news" /><title type="text">Want to speak at JavaZone?</title><author><name>ole-alexander.moy</name></author><id>urn:confluence:blogentry:id:12682479</id><app:edited>2012-03-26T08:58:19.954Z</app:edited><updated>2012-03-26T08:58:19.954Z</updated><published>2012-03-26T08:47:20.415Z</published><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Do you have a topic that you think others would find interesting
+or have you heard a good tech-oriented talk lately? JavaZone is not
+possible without your suggestions for presentations! All techies
+have a passion for more knowledge, and JavaZone is a hub where you
+can both share and get ideas from and with others. To ensure that
+the Program Committee can give the majority of submissions feedback
+before July 1st, the submission dead line for abstracts is April
+the 16th!</p>
+<p>
+  <a href="http://jz12.java.no/speakers/" class="external-link" rel="nofollow">» Submit a presentation today!</a>
+</p>
+</div></content><category scheme="urn:confluence:label" term="news" label="news" /><link href="http://wiki.java.no/rest/atompub/latest/spaces/javazone2012/news/12682479/attachments" rel="related" /></entry></feed>
