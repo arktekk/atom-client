@@ -4,7 +4,7 @@ import java.io.{Closeable, File}
 import java.lang.management.ManagementFactory
 import java.net.URL
 import javax.activation.MimeType
-import net.sf.ehcache.CacheManager
+import net.sf.ehcache.{CacheException, CacheManager}
 import net.sf.ehcache.config.{DiskStoreConfiguration, Configuration, CacheConfiguration}
 import net.sf.ehcache.management.ManagementService
 import no.arktekk.cms.AtomEntryConverter._
@@ -145,11 +145,19 @@ object AtomPubClient {
     logger.info("Registering MBeans..")
 
     val registry = new ManagementService(
-      cacheManager, 
-      ManagementFactory.getPlatformMBeanServer, 
+      cacheManager,
+      ManagementFactory.getPlatformMBeanServer,
       true, true, true, true, true)
 
-    registry.init()
+    try {
+      registry.init()
+    }
+    catch {
+      case e: CacheException => {
+        registry.dispose()
+        registry.init()
+      }
+    }
 
     new DefaultAtomPubClient(configuration.logger, abdera, abderaClient, configuration.requestOptions.getOrElse(CachingAbderaClient.defaultRequestOptions), cacheManager, registry);
   }

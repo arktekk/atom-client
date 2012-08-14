@@ -8,6 +8,7 @@ import org.mortbay.jetty.handler._
 import org.mortbay.jetty.{MimeTypes, Server}
 import org.specs2.mutable._
 import org.specs2.specification._
+import net.sf.ehcache.CacheManager
 
 class CmsClientSpec extends Specification {
   //  LoggingAutoConfigurer()()
@@ -35,6 +36,7 @@ class CmsClientSpec extends Specification {
 
   override def is = super.is ^
     Step {
+      CacheManager.getInstance().clearAll()
       println("Stopping Jetty")
       server.stop()
     }
