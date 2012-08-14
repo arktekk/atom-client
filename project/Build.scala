@@ -22,7 +22,7 @@ object AtomClient extends Build {
     settings = buildSettings ++ Aether.aetherPublishSettings ++ Seq(
       description := "Atom Client"
     )
-  ).aggregate(core)
+  ).aggregate(core, servletFilter)
 
   lazy val publishSetting = publishTo <<= (version) { version: String =>
     if (version.trim.endsWith("SNAPSHOT"))
@@ -75,8 +75,7 @@ object AtomClient extends Build {
 
   val testDependencies = Seq(
     "org.mortbay.jetty" % "jetty" % "6.1.22" % "test",
-    "junit" % "junit" % "4.5" % "test",
-    "org.specs2" %% "specs2" % "1.6.1" % "test",
+    "org.specs2" %% "specs2" % "1.12" % "test",
     "com.h2database" % "h2" % "1.2.138" % "test",
     "org.slf4j" % "slf4j-simple" % "1.6.1" % "test")
 
@@ -100,6 +99,21 @@ object AtomClient extends Build {
       ) ++ testDependencies
     )
   )
+
+  lazy val servletFilter = Project(
+    id = "atom-client-servlet-filter",
+    base = file("atom-client-servlet-filter"),
+    settings = buildSettings ++ Seq(
+      description := "Atom Client, servlet filter",
+      libraryDependencies := Seq(
+        "javax.servlet" % "servlet-api" % "2.5" % "provided",
+        "org.specs2" %% "specs2" % "1.12" % "test",
+        "org.scalamock" %% "scalamock-specs2-support" % "2.4" % "test",
+        "org.mockito" % "mockito-core" % "1.9.0" % "test",
+        "org.slf4j" % "slf4j-simple" % "1.6.1" % "test"
+      )
+    )
+  ).dependsOn(core)
 }
 
 object Resolvers {
