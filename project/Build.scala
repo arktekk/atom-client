@@ -1,8 +1,6 @@
 import sbt._
 import sbt.Keys._
-import sbtrelease.Release._
-import sbtrelease.ReleasePart
-import sbtrelease.ReleaseKeys._
+import aether._
 
 object AtomClient extends Build {
 
@@ -21,24 +19,8 @@ object AtomClient extends Build {
   lazy val root = Project(
     id = "root",
     base = file("."),
-    settings = buildSettings ++ releaseSettings ++ Seq(
-      description := "Atom Client",
-      releaseProcess <<= thisProjectRef apply { ref =>
-        import sbtrelease.ReleaseStateTransformations._
-        Seq[ReleasePart](
-          initialGitChecks,
-          checkSnapshotDependencies,
-          inquireVersions,
-          runTest,
-          setReleaseVersion,
-          commitReleaseVersion,
-          tagRelease,
-        // Enable when we're deploying to Sonatype
-  //        releaseTask(publish in Global in ref),
-          setNextVersion,
-          commitNextVersion
-        )
-      }
+    settings = buildSettings ++ Aether.aetherPublishSettings ++ Seq(
+      description := "Atom Client"
     )
   ).aggregate(core)
 
