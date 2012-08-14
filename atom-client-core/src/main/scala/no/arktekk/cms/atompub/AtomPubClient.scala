@@ -97,7 +97,25 @@ object AtomPubClientConfiguration {
 }
 
 object AtomPubClient {
-  private val abdera = new Abdera;
+  private val abdera = new Abdera
+
+  private def registerManagementService(registry: ManagementService, retry: Boolean = true) {
+    try {
+      registry.init()
+    }
+    catch {
+      case e: CacheException => {
+        registry.dispose()
+        if (retry) {
+          registerManagementService(registry, retry = false)
+        }
+        else {
+          throw e
+        }
+      }
+    }
+  }
+
 
   def apply(configuration: AtomPubClientConfiguration): AtomPubClient = {
     val logger = configuration.logger
@@ -149,15 +167,7 @@ object AtomPubClient {
       ManagementFactory.getPlatformMBeanServer,
       true, true, true, true, true)
 
-    try {
-      registry.init()
-    }
-    catch {
-      case e: CacheException => {
-        registry.dispose()
-        registry.init()
-      }
-    }
+    registerManagementService(registry)
 
     new DefaultAtomPubClient(configuration.logger, abdera, abderaClient, configuration.requestOptions.getOrElse(CachingAbderaClient.defaultRequestOptions), cacheManager, registry);
   }
