@@ -1,5 +1,6 @@
 package no.javabin.atomclientservletfilter
 
+import collection.JavaConverters._
 import org.mockito.ArgumentCaptor
 import org.mockito.Matchers
 import org.mockito.Mockito._
@@ -35,11 +36,18 @@ class AtomClientServletFilterSpec extends Specification {
 
   val request = mock(classOf[HttpServletRequest])
   when(request.getRequestURI).thenReturn("/about.jspx")
+  val requestCaptor = ArgumentCaptor.forClass(classOf[HttpServletRequest])
+  filter.doFilter(request, mock(classOf[HttpServletResponse]), mock(classOf[FilterChain]))
+  verify(request).setAttribute(Matchers.eq("cms"), requestCaptor.capture())
+  val properties = requestCaptor.getValue.asInstanceOf[CmsProperties]
 
   "pages contain about page" in {
-    val requestCaptor = ArgumentCaptor.forClass(classOf[HttpServletRequest])
-    filter.doFilter(request, mock(classOf[HttpServletResponse]), mock(classOf[FilterChain]))
-    verify(request).setAttribute(Matchers.eq("cms"), requestCaptor.capture())
-    requestCaptor.getValue.asInstanceOf[CmsProperties].getPage.getContent must startWith("<div><h2 xmlns=\"h")
+    properties.getPage.getContent must startWith("<div><h2 xmlns=\"h")
+  }
+
+  "posts contain invitation" in {
+    properties.getPosts.asScala("3").asScala("0").asScala.head.getTitle must_== "Nicking bits and bytes"
+    properties.getPosts.asScala("3").asScala("0").asScala.last.getTitle must_== "AweZone! An evening to remember"
+    properties.getPosts.asScala("3").asScala("4").asScala.last.getTitle must_== "Want to speak at JavaZone?"
   }
 }
